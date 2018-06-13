@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 
     public int health = 100;
     public Slider playerHealth;
+    public int playerState = 0;
 
 	// Use this for initialization
 	void Start () {

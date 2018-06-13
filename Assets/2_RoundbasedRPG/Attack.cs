@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class VbScript : MonoBehaviour, IVirtualButtonEventHandler {
+public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
 
     public GameObject vbBtnObj;
     public float timer = 0.0f;
@@ -43,7 +43,7 @@ public class VbScript : MonoBehaviour, IVirtualButtonEventHandler {
 
         if(timer >= 5.0f)
         {
-            Debug.Log("BTN GOOOOO");
+            Debug.Log("Attack");
             Enemy.GetComponent<EnemyController>().getDamaged(25);
             timerstart = false;
             timer = 0.0f;

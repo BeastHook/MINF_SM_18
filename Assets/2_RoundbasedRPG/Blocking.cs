@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class VbScriptHeal : MonoBehaviour, IVirtualButtonEventHandler
+public class Blocking : MonoBehaviour, IVirtualButtonEventHandler
 {
 
     public GameObject vbBtnObj;
@@ -30,7 +30,7 @@ public class VbScriptHeal : MonoBehaviour, IVirtualButtonEventHandler
     // Use this for initialization
     void Start()
     {
-        vbBtnObj = GameObject.Find("VirtualButton2");
+        vbBtnObj = GameObject.Find("VirtualButton3");
         vbBtnObj.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
 
     }
@@ -45,8 +45,8 @@ public class VbScriptHeal : MonoBehaviour, IVirtualButtonEventHandler
 
         if (timer >= 5.0f)
         {
-            Debug.Log("BTN GOOOOO");
-            Player.GetComponent<PlayerController>().getHealed(15);
+            Debug.Log("Blocking");
+            Player.GetComponent<PlayerController>().playerState = 2;
             timerstart = false;
             timer = 0.0f;
             Enemy.GetComponent<EnemyController>().playerturn = false;
