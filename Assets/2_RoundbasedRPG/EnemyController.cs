@@ -40,37 +40,44 @@ public class EnemyController : MonoBehaviour {
         if (stateList[enemyState] == 1)
         {
             Debug.Log("Flammenatem");
+            this.gameObject.GetComponent<playerControl>().FlameAttack();
         }
         else if (stateList[enemyState] == 2)
         {
             if(playerstate != 1)
             {
+                this.gameObject.GetComponent<playerControl>().FlyFlameAttack();
                 player.GetComponent<PlayerController>().getDamaged(50);
                 player.GetComponent<PlayerController>().playerState = 0;
             }
             else
             {
+                this.gameObject.GetComponent<playerControl>().FlyFlameAttack();
                 player.GetComponent<PlayerController>().playerState = 0;
             }
         }
         else if (stateList[enemyState] == 3)
         {
+            this.gameObject.GetComponent<playerControl>().BasicAttack();
             Debug.Log("Ausholen");
         }
         else if (stateList[enemyState] == 4)
         {
             if (playerstate != 2)
             {
+                this.gameObject.GetComponent<playerControl>().ClawAttack();
                 player.GetComponent<PlayerController>().getDamaged(40);
                 player.GetComponent<PlayerController>().playerState = 0;
             }
             else
             {
+                this.gameObject.GetComponent<playerControl>().ClawAttack();
                 player.GetComponent<PlayerController>().playerState = 0;
             }
         }
         else if (stateList[enemyState] == 5)
         {
+            this.gameObject.GetComponent<playerControl>().GetHit();
             Debug.Log("Taumeln");
         }
        
