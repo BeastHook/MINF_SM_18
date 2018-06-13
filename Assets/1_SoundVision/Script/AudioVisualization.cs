@@ -79,26 +79,46 @@ public class AudioVisualization : MonoBehaviour
     private AudioSource audioSource34;
     private GameObject audioReaderObject12;
     private AudioSource audioSource12;
+    public AudioClip audioClipA;
 
-    private float[] channel1;
-    private float[] channel2;
-    private float[] channel3;
-    private float[] channel4;
+    private float[] channel1 ;
+    private float[] channel2 ;
+    private float[] channel3 ;
+    private float[] channel4 ;
+    private float[] samples ;
+    private int counter = 0;
     //private float[] channelThree;
+
 
     private void Awake()
     {
+        samples = new float[audioClipA.samples * audioClipA.channels];
+        channel1 = new float[audioClipA.samples];
+        channel2 = new float[audioClipA.samples];
+        channel3 = new float[audioClipA.samples];
+        channel4 = new float[audioClipA.samples];
+        Debug.Log("Audio Channels: " + audioClipA.channels);
+        Debug.Log("Audio Samples: " + audioClipA.samples);
+        audioClipA.GetData(samples, 0);
+        Debug.Log("Audio Samples: " + samples.Length);
         audioReaderObject34 = GameObject.Find("Channel3-4");
-        audioSource34 = audioReaderObject34.GetComponent<AudioSource>();
+        //audioSource34 = audioReaderObject34.GetComponent<AudioSource>();
         audioReaderObject12 = GameObject.Find("Channel1-2");
         audioSource12 = audioReaderObject12.GetComponent<AudioSource>();
         particles = new ParticleSystem[audioReader.audioSamples.Length];
         inverted_particles = new ParticleSystem[audioReader.audioSamples.Length];
-        Debug.Log(audioReader.audioSamples.Length);
+        Debug.Log("Particles: " + audioReader.audioSamples.Length);
         if (movement) { originalPosition = transform.position; }
 
         for (int i = 0; i < audioReader.audioSamples.Length; i++)
         {
+
+            channel1[i] = samples[i * 4];
+            channel2[i] = samples[i * 4 + 1];
+            channel3[i] = samples[i * 4 + 2];
+            channel4[i] = samples[i * 4 + 3];
+
+
             float i2 = i;
 
             if (centered)
@@ -134,6 +154,8 @@ public class AudioVisualization : MonoBehaviour
                 case AudioVisualization_Type.tunnel:
                     pos = new Vector3((Mathf.Sin((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, (Mathf.Cos((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, transform.position.z);
                     particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(-Camera.main.transform.forward), parent_Visualization).GetComponent<ParticleSystem>();
+                    Debug.Log("Audio Samples Array: " + samples[i]);
+                    //particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(transform.position - pos), parent_Visualization).GetComponent<ParticleSystem>();
                     particles[i].name = "Particle: " + i;
                     if (duplicateInverted)
                     {
@@ -158,20 +180,36 @@ public class AudioVisualization : MonoBehaviour
     private void Update()
     {
 
-#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        channel1 = audioSource12.GetOutputData(audioReader.audioSamples.Length, 0);
-#pragma warning restore CS0618 // Typ oder Element ist veraltet
-#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        channel2 = audioSource12.GetOutputData(audioReader.audioSamples.Length, 1);
-#pragma warning restore CS0618 // Typ oder Element ist veraltet
+        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
+        //        channel1 = audioSource12.GetOutputData(256, 0);
+        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
+        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
+        //        channel2 = audioSource12.GetOutputData(256, 1);
+        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
 
 
-#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        channel3 = audioSource34.GetOutputData(audioReader.audioSamples.Length, 0);
-#pragma warning restore CS0618 // Typ oder Element ist veraltet
-#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        channel4 = audioSource34.GetOutputData(audioReader.audioSamples.Length, 1);
-#pragma warning restore CS0618 // Typ oder Element ist veraltet
+
+        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
+        //        channel3 = audioSource34.GetOutputData(256, 0);
+        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
+        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
+        //        channel4 = audioSource34.GetOutputData(256, 1);
+        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
+        if (counter >= audioClipA.samples)
+        {
+            counter = 0;
+        }
+            for (int i = 0; i < 256; i++)
+        {
+            channel1[i] = samples[(counter + i) * 4];
+            channel2[i] = samples[(counter + i) * 4 + 1];
+            channel3[i] = samples[(counter + i) * 4 + 2];
+            channel4[i] = samples[(counter + i) * 4 + 3];
+        }
+
+
+        counter += 256;
+
 
         //#pragma warning disable CS0618 // Typ oder Element ist veraltet
         //        channelThree = audioSource.GetOutputData(8192, 2);
@@ -220,7 +258,7 @@ public class AudioVisualization : MonoBehaviour
                         var main = particles[i].main;
                         main.startSpeed = Mathf.Lerp(main.startSpeed.constant, audioReader.audioSamples[i] * audioMultiplier, audioSmooth);
                         //übergabe der channel data an die Position
-                        particles[i].transform.position = new Vector3(channel1[i] * 100, channel2[i] * 100, channel3[i] * 150);
+                        particles[i].transform.position = new Vector3(channel1[i] * 100, channel2[i] * 100, 0);
                         //particles[i].transform.position = new Vector3(channel1[i] * 100, channel2[i] * 100, channel3[i] * 150);
                     }
                     else

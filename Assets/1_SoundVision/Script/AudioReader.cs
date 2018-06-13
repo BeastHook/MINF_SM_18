@@ -10,7 +10,7 @@ public class AudioReader : MonoBehaviour
     [Space]
     public bool changeTime;
     public float audioTime;
-    public float[] audioSamples = new float[512];
+    public float[] audioSamples = new float[256];
 
     private AudioSource audioSource;
 
