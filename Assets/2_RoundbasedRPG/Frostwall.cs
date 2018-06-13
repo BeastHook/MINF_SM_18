@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class Block : MonoBehaviour, IVirtualButtonEventHandler
+public class Frostwall: MonoBehaviour, IVirtualButtonEventHandler
 {
 
     public GameObject vbBtnObj;
