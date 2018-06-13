@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="IceWall_Marker" size="0.150000 0.198058" />
+    <ImageTarget name="Shield_Marker" size="0.150000 0.190194" />
+    <ImageTarget name="Fireball_Marker" size="0.150000 0.190194" />
+    <ImageTarget name="MainGame_Marker" size="0.200000 0.253592" />
+  </Tracking>
+</QCARConfig>
