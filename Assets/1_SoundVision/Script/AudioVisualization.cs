@@ -12,6 +12,7 @@ public class AudioVisualization : MonoBehaviour
 
     public AudioVisualization_Type _AudioVisualizationType = AudioVisualization_Type.none;
     public ParticleEffect_Type _ParticleEffectType = ParticleEffect_Type.none;
+    public AudioClip audioClipA;
 
     [Space]
     public bool rotation;
@@ -79,7 +80,6 @@ public class AudioVisualization : MonoBehaviour
     private AudioSource audioSource34;
     private GameObject audioReaderObject12;
     private AudioSource audioSource12;
-    public AudioClip audioClipA;
 
     private float[] channel1 ;
     private float[] channel2 ;
