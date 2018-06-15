@@ -154,8 +154,6 @@ public class AudioVisualization : MonoBehaviour
                 case AudioVisualization_Type.tunnel:
                     pos = new Vector3((Mathf.Sin((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, (Mathf.Cos((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, transform.position.z);
                     particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(-Camera.main.transform.forward), parent_Visualization).GetComponent<ParticleSystem>();
-                    Debug.Log("Audio Samples Array: " + samples[i]);
-                    //particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(transform.position - pos), parent_Visualization).GetComponent<ParticleSystem>();
                     particles[i].name = "Particle: " + i;
                     if (duplicateInverted)
                     {
