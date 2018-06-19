@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -410,7 +410,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.39433423, y: 0, z: 0.5}
+      m_Extent: {x: 0.39732152, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -463,7 +463,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 2de6c9be00000000000000bf000000000000803f0000000000000000000000002de6c9be000000000000003f000000000000803f00000000000000000000803f2de6c93e00000000000000bf000000000000803f000000000000803f000000002de6c93e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: ba6dcbbe00000000000000bf000000000000803f000000000000000000000000ba6dcbbe000000000000003f000000000000803f00000000000000000000803fba6dcb3e00000000000000bf000000000000803f000000000000803f00000000ba6dcb3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -529,7 +529,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Fireball_MarkerMaterial
+  m_Name: ALT_FireballMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -542,7 +542,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 45ed026dc8f5409bb36d5850d70ebc46, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5460414659f64827944bda5036cad57a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -574,7 +574,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 292640813}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.016, y: 0.001, z: -0.334}
+  m_LocalPosition: {x: -0.016000014, y: 0.0009999999, z: -0.334}
   m_LocalScale: {x: 0.2, y: 1, z: 0.2}
   m_Children: []
   m_Father: {fileID: 604498860}
@@ -647,18 +647,18 @@ MonoBehaviour:
   mSensitivity: 0
   mHasUpdatedPose: 1
   mPrevTransform:
-    e00: 0.0380388
+    e00: 0.037752803
     e01: 0
     e02: 0
-    e03: -0.1710431
+    e03: -0.17102022
     e10: 0
-    e11: 0.190194
+    e11: 0.188764
     e12: 0
-    e13: 0.000190194
+    e13: 0.000188764
     e20: 0
     e21: 0
-    e22: 0.0380388
-    e23: -0.06352479
+    e22: 0.037752803
+    e23: -0.06304718
     e30: 0
     e31: 0
     e32: 0
@@ -681,7 +681,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.39433423, y: 0, z: 0.5}
+      m_Extent: {x: 0.4004528, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -734,7 +734,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 2de6c9be00000000000000bf000000000000803f0000000000000000000000002de6c9be000000000000003f000000000000803f00000000000000000000803f2de6c93e00000000000000bf000000000000803f000000000000803f000000002de6c93e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 2608cdbe00000000000000bf000000000000803f0000000000000000000000002608cdbe000000000000003f000000000000803f00000000000000000000803f2608cd3e00000000000000bf000000000000803f000000000000803f000000002608cd3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1042,7 +1042,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f2aaf900ae504acc82bef38ceeede80b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5365238c5af04c89816981e61bbb1cfe, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1277,15 +1277,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Shield_Marker
+  mTrackableName: ALT_Shield
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/1V1DB.xml
   mExtendedTracking: 0
-  mAspectRatio: 1.26796
+  mAspectRatio: 1.2584267
   mImageTargetType: 0
   mWidth: 0.15
-  mHeight: 0.190194
+  mHeight: 0.188764
 --- !u!4 &604498860
 Transform:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ Transform:
   m_GameObject: {fileID: 604498853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.168, y: 0, z: 0}
-  m_LocalScale: {x: 0.190194, y: 0.190194, z: 0.190194}
+  m_LocalScale: {x: 0.188764, y: 0.188764, z: 0.188764}
   m_Children:
   - {fileID: 292640814}
   m_Father: {fileID: 0}
@@ -1433,7 +1433,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Shield_MarkerMaterial
+  m_Name: ALT_ShieldMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1446,7 +1446,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f2d02dc0f10a4fafaaadbd77a3ee6d0f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0afeb97a919243ffad6d81c69881dbae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1537,7 +1537,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.37867698, y: 0, z: 0.5}
+      m_Extent: {x: 0.37959117, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1590,7 +1590,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: f3e1c1be00000000000000bf00000000ffff7f3f000000000000000000000000f3e1c1be000000000000003f00000000ffff7f3f00000000000000000000803ff3e1c13e00000000000000bf00000000ffff7f3f000000000000803f00000000f3e1c13e000000000000003f00000000ffff7f3f000000000000803f0000803f
+    _typelessdata: c659c2be00000000000000bf000000000000803f000000000000000000000000c659c2be000000000000003f000000000000803f00000000000000000000803fc659c23e00000000000000bf000000000000803f000000000000803f00000000c659c23e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1891,15 +1891,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: IceWall_Marker
+  mTrackableName: ALT_IceWall
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/1V1DB.xml
   mExtendedTracking: 0
-  mAspectRatio: 1.3203865
+  mAspectRatio: 1.3172066
   mImageTargetType: 0
   mWidth: 0.15
-  mHeight: 0.198058
+  mHeight: 0.197581
 --- !u!4 &1415310207
 Transform:
   m_ObjectHideFlags: 0
@@ -1908,7 +1908,7 @@ Transform:
   m_GameObject: {fileID: 1415310200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.169, y: 0, z: 0}
-  m_LocalScale: {x: 0.198058, y: 0.198058, z: 0.198058}
+  m_LocalScale: {x: 0.197581, y: 0.197581, z: 0.197581}
   m_Children:
   - {fileID: 1822361237}
   m_Father: {fileID: 0}
@@ -2161,15 +2161,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Fireball_Marker
+  mTrackableName: ALT_Fireball
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/1V1DB.xml
   mExtendedTracking: 0
-  mAspectRatio: 1.26796
+  mAspectRatio: 1.2485867
   mImageTargetType: 0
   mWidth: 0.15
-  mHeight: 0.190194
+  mHeight: 0.187288
 --- !u!4 &1669914783
 Transform:
   m_ObjectHideFlags: 0
@@ -2178,7 +2178,7 @@ Transform:
   m_GameObject: {fileID: 1669914776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.190194, y: 0.190194, z: 0.190194}
+  m_LocalScale: {x: 0.187288, y: 0.187288, z: 0.187288}
   m_Children:
   - {fileID: 1672885578}
   m_Father: {fileID: 0}
@@ -2283,18 +2283,18 @@ MonoBehaviour:
   mSensitivity: 0
   mHasUpdatedPose: 1
   mPrevTransform:
-    e00: 0.0380388
+    e00: 0.0374576
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 0.190194
+    e11: 0.187288
     e12: 0
-    e13: 0.000190194
+    e13: 0.00018728801
     e20: 0
     e21: 0
-    e22: 0.0380388
-    e23: -0.06295421
+    e22: 0.0374576
+    e23: -0.06199233
     e30: 0
     e31: 0
     e32: 0
@@ -2520,7 +2520,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: IceWall_MarkerMaterial
+  m_Name: ALT_IceWallMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2533,7 +2533,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 082b8e7510504c8680e3a5bea9d05749, type: 3}
+        m_Texture: {fileID: 2800000, guid: e1a50ebbce4d492381ec317da612d45d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -2638,18 +2638,18 @@ MonoBehaviour:
   mSensitivity: 0
   mHasUpdatedPose: 1
   mPrevTransform:
-    e00: 0.0396116
+    e00: 0.0395162
     e01: 0
     e02: 0
     e03: 0.169
     e10: 0
-    e11: 0.198058
+    e11: 0.197581
     e12: 0
-    e13: 0.000198058
+    e13: 0.000197581
     e20: 0
     e21: 0
-    e22: 0.0396116
-    e23: -0.060407694
+    e22: 0.0395162
+    e23: -0.06026221
     e30: 0
     e31: 0
     e32: 0
