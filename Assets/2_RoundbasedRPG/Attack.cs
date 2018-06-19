@@ -41,7 +41,7 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
 
         }   
 
-        if(timer >= 5.0f)
+        if(timer >= 2.0f)
         {
             Debug.Log("Attack");
             Enemy.GetComponent<EnemyController>().getDamaged(25);

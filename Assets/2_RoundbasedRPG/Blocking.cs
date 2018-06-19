@@ -43,7 +43,7 @@ public class Blocking : MonoBehaviour, IVirtualButtonEventHandler
 
         }
 
-        if (timer >= 5.0f)
+        if (timer >= 2.0f)
         {
             Debug.Log("Blocking");
             Player.GetComponent<PlayerController>().playerState = 2;
