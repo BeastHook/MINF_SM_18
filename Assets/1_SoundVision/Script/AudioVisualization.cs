@@ -12,7 +12,9 @@ public class AudioVisualization : MonoBehaviour
 
     public AudioVisualization_Type _AudioVisualizationType = AudioVisualization_Type.none;
     public ParticleEffect_Type _ParticleEffectType = ParticleEffect_Type.none;
+    //two AudioClips who interpolate between eachother
     public AudioClip audioClipA;
+    public AudioClip audioClipB;
 
     [Space]
     public bool rotation;
@@ -76,35 +78,62 @@ public class AudioVisualization : MonoBehaviour
 
 
     private Vector3 originalPosition;
-    private GameObject audioReaderObject34;
-    private AudioSource audioSource34;
-    private GameObject audioReaderObject12;
-    private AudioSource audioSource12;
 
-    private float[] channel1 ;
-    private float[] channel2 ;
-    private float[] channel3 ;
-    private float[] channel4 ;
-    private float[] samples ;
-    private int counter = 0;
-    //private float[] channelThree;
+    // new Stuff
+    private GameObject audioReaderObjectMic;
+    private AudioSource audioSourceMic;
+    private float[] micChannel1;
+    private float[] micChannel2;
+
+    //AudioClipA
+    private float[] aChannel1 ;
+    private float[] aChannel2 ;
+    private float[] aChannel3 ;
+    private float[] aChannel4 ;
+    private float[] aSamples ;
+    //AudioClipB
+    private float[] bChannel1;
+    private float[] bChannel2;
+    private float[] bChannel3;
+    private float[] bChannel4;
+    private float[] bSamples;
+
+    private bool startInterpolation = false;
+
+    private int counterA = 0;
+    private int counterB = 0;
+    private float interpolationA = 1;
+    private float interpolationB = 0;
+
+
 
 
     private void Awake()
     {
-        samples = new float[audioClipA.samples * audioClipA.channels];
-        channel1 = new float[audioClipA.samples];
-        channel2 = new float[audioClipA.samples];
-        channel3 = new float[audioClipA.samples];
-        channel4 = new float[audioClipA.samples];
-        Debug.Log("Audio Channels: " + audioClipA.channels);
-        Debug.Log("Audio Samples: " + audioClipA.samples);
-        audioClipA.GetData(samples, 0);
-        Debug.Log("Audio Samples: " + samples.Length);
-        audioReaderObject34 = GameObject.Find("Channel3-4");
-        //audioSource34 = audioReaderObject34.GetComponent<AudioSource>();
-        audioReaderObject12 = GameObject.Find("Channel1-2");
-        audioSource12 = audioReaderObject12.GetComponent<AudioSource>();
+        //AudioClipA
+        aSamples = new float[audioClipA.samples * audioClipA.channels];
+        aChannel1 = new float[audioClipA.samples];
+        aChannel2 = new float[audioClipA.samples];
+        aChannel3 = new float[audioClipA.samples];
+        aChannel4 = new float[audioClipA.samples];
+        Debug.Log("Clib A Audio Channels: " + audioClipA.channels);
+        Debug.Log("Clib A Audio Samples: " + audioClipA.samples);
+        audioClipA.GetData(aSamples, 0);
+        Debug.Log("Clib A Audio Samples all channels: " + aSamples.Length);
+
+        //AudioClipB
+        bSamples = new float[audioClipB.samples * audioClipB.channels];
+        bChannel1 = new float[audioClipB.samples];
+        bChannel2 = new float[audioClipB.samples];
+        bChannel3 = new float[audioClipB.samples];
+        bChannel4 = new float[audioClipB.samples];
+        Debug.Log("Clib B Channels: " + audioClipB.channels);
+        Debug.Log("Clib B Samples: " + audioClipB.samples);
+        audioClipB.GetData(bSamples, 0);
+        Debug.Log("Clib B Audio Samples all channels: " + bSamples.Length);
+
+        audioReaderObjectMic = GameObject.Find("ChannelMic");
+        audioSourceMic = audioReaderObjectMic.GetComponent<AudioSource>();
         particles = new ParticleSystem[audioReader.audioSamples.Length];
         inverted_particles = new ParticleSystem[audioReader.audioSamples.Length];
         Debug.Log("Particles: " + audioReader.audioSamples.Length);
@@ -112,13 +141,7 @@ public class AudioVisualization : MonoBehaviour
 
         for (int i = 0; i < audioReader.audioSamples.Length; i++)
         {
-
-            channel1[i] = samples[i * 4];
-            channel2[i] = samples[i * 4 + 1];
-            channel3[i] = samples[i * 4 + 2];
-            channel4[i] = samples[i * 4 + 3];
-
-
+        
             float i2 = i;
 
             if (centered)
@@ -175,38 +198,83 @@ public class AudioVisualization : MonoBehaviour
 
     }
 
+
+    public void InterpolationBetweenAandB()
+    {
+        interpolationA -= 0.1f;
+        interpolationB += 0.1f;
+        Debug.Log("Interpolation started... Prozent = " + interpolationB * 100);
+        if (!startInterpolation)
+        {
+            startInterpolation = true;
+        }
+        else
+        { 
+            //startInterpolation = false; 
+        }
+    }
+
+    private void RereadAudioClips()
+    {
+        //AudioClipA
+        aSamples = new float[audioClipA.samples * audioClipA.channels];
+        aChannel1 = new float[audioClipA.samples];
+        aChannel2 = new float[audioClipA.samples];
+        aChannel3 = new float[audioClipA.samples];
+        aChannel4 = new float[audioClipA.samples];
+        Debug.Log("Clib A Audio Channels: " + audioClipA.channels);
+        Debug.Log("Clib A Audio Samples: " + audioClipA.samples);
+        audioClipA.GetData(aSamples, 0);
+        Debug.Log("Clib A Audio Samples all channels: " + aSamples.Length);
+
+        //AudioClipB
+        bSamples = new float[audioClipB.samples * audioClipB.channels];
+        bChannel1 = new float[audioClipB.samples];
+        bChannel2 = new float[audioClipB.samples];
+        bChannel3 = new float[audioClipB.samples];
+        bChannel4 = new float[audioClipB.samples];
+        Debug.Log("Clib B Channels: " + audioClipB.channels);
+        Debug.Log("Clib B Samples: " + audioClipB.samples);
+        audioClipB.GetData(bSamples, 0);
+        Debug.Log("Clib B Audio Samples all channels: " + bSamples.Length);
+    }
+
     private void Update()
     {
 
-        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        //        channel1 = audioSource12.GetOutputData(256, 0);
-        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
-        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        //        channel2 = audioSource12.GetOutputData(256, 1);
-        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
+        #pragma warning disable CS0618 // Typ oder Element ist veraltet
+                micChannel1 = audioSourceMic.GetOutputData(512, 0);
+        #pragma warning restore CS0618 // Typ oder Element ist veraltet
+        #pragma warning disable CS0618 // Typ oder Element ist veraltet
+                micChannel2 = audioSourceMic.GetOutputData(512, 1);
+        #pragma warning restore CS0618 // Typ oder Element ist veraltet
 
-
-
-        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        //        channel3 = audioSource34.GetOutputData(256, 0);
-        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
-        //#pragma warning disable CS0618 // Typ oder Element ist veraltet
-        //        channel4 = audioSource34.GetOutputData(256, 1);
-        //#pragma warning restore CS0618 // Typ oder Element ist veraltet
-        if (counter >= audioClipA.samples)
+        if (counterA >= audioClipA.samples)
         {
-            counter = 0;
+            counterA = 0;
         }
-            for (int i = 0; i < 256; i++)
+            for (int i = 0; i < 512; i++)
         {
-            channel1[i] = samples[(counter + i) * 4];
-            channel2[i] = samples[(counter + i) * 4 + 1];
-            channel3[i] = samples[(counter + i) * 4 + 2];
-            channel4[i] = samples[(counter + i) * 4 + 3];
+            aChannel1[i] = aSamples[(counterA + i) * 4];
+            aChannel2[i] = aSamples[(counterA + i) * 4 + 1];
+            aChannel3[i] = aSamples[(counterA + i) * 4 + 2];
+            aChannel4[i] = aSamples[(counterA + i) * 4 + 3];
         }
 
+        if (counterB >= audioClipB.samples)
+        {
+            counterB = 0;
+        }
+        for (int i = 0; i < 512; i++)
+        {
+            bChannel1[i] = bSamples[(counterB + i) * 4];
+            bChannel2[i] = bSamples[(counterB + i) * 4 + 1];
+            bChannel3[i] = bSamples[(counterB + i) * 4 + 2];
+            bChannel4[i] = bSamples[(counterB + i) * 4 + 3];
+        }
 
-        counter += 256;
+        counterA += 512;
+        counterB += 512;
 
 
         //#pragma warning disable CS0618 // Typ oder Element ist veraltet
@@ -256,8 +324,25 @@ public class AudioVisualization : MonoBehaviour
                         var main = particles[i].main;
                         main.startSpeed = Mathf.Lerp(main.startSpeed.constant, audioReader.audioSamples[i] * audioMultiplier, audioSmooth);
                         //übergabe der channel data an die Position
-                        particles[i].transform.position = new Vector3(channel1[i] * 100, channel2[i] * 100, 0);
-                        //particles[i].transform.position = new Vector3(channel1[i] * 100, channel2[i] * 100, channel3[i] * 150);
+                        if (startInterpolation)
+                        {
+                            particles[i].transform.position = new Vector3(((aChannel1[i] * interpolationA) * 100) + ((bChannel1[i] * interpolationB) * 100), 
+                                                                          ((aChannel2[i] * interpolationA) * 100) + ((bChannel2[i] * interpolationB) * 100), 
+                                                                          ((aChannel3[i] * interpolationA) * 100) + ((bChannel3[i] * interpolationB) * 100));
+                            if(interpolationA < 0)
+                            {
+                                interpolationA = 1;
+                                interpolationB = 0;
+                                audioClipA = GetComponent<AudioVisualization>().audioClipB;
+                                RereadAudioClips();
+                                startInterpolation = false;
+                            }
+                        }
+                        else
+                        {
+                            particles[i].transform.position = new Vector3(aChannel1[i] * 100, aChannel2[i] * 100, aChannel3[i] * 100);
+                        }
+                       
                     }
                     else
                     {
