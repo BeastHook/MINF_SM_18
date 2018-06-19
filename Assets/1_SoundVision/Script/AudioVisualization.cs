@@ -13,8 +13,8 @@ public class AudioVisualization : MonoBehaviour
     public AudioVisualization_Type _AudioVisualizationType = AudioVisualization_Type.none;
     public ParticleEffect_Type _ParticleEffectType = ParticleEffect_Type.none;
     //two AudioClips who interpolate between eachother
-    public AudioClip audioClipA;
-    public AudioClip audioClipB;
+    public AudioClip[] clips;
+    public Material paticleMat;
 
     [Space]
     public bool rotation;
@@ -37,6 +37,7 @@ public class AudioVisualization : MonoBehaviour
     public float mulColorAmmount;
     public float inverted_maxColorAmmount;
     public float inverted_mulColorAmmount;
+    public Gradient particleColorGradient;
     [Space]
     public bool movement;
     public float movXAmmount;
@@ -86,11 +87,11 @@ public class AudioVisualization : MonoBehaviour
     private float[] micChannel2;
 
     //AudioClipA
-    private float[] aChannel1 ;
-    private float[] aChannel2 ;
-    private float[] aChannel3 ;
-    private float[] aChannel4 ;
-    private float[] aSamples ;
+    private float[] aChannel1;
+    private float[] aChannel2;
+    private float[] aChannel3;
+    private float[] aChannel4;
+    private float[] aSamples;
     //AudioClipB
     private float[] bChannel1;
     private float[] bChannel2;
@@ -100,38 +101,21 @@ public class AudioVisualization : MonoBehaviour
 
     private bool startInterpolation = false;
 
+    private int clipCount = 0;
     private int counterA = 0;
     private int counterB = 0;
     private float interpolationA = 1;
     private float interpolationB = 0;
+
+    private float waitTime = 10f;
+    private float timer;
 
 
 
 
     private void Awake()
     {
-        //AudioClipA
-        aSamples = new float[audioClipA.samples * audioClipA.channels];
-        aChannel1 = new float[audioClipA.samples];
-        aChannel2 = new float[audioClipA.samples];
-        aChannel3 = new float[audioClipA.samples];
-        aChannel4 = new float[audioClipA.samples];
-        Debug.Log("Clib A Audio Channels: " + audioClipA.channels);
-        Debug.Log("Clib A Audio Samples: " + audioClipA.samples);
-        audioClipA.GetData(aSamples, 0);
-        Debug.Log("Clib A Audio Samples all channels: " + aSamples.Length);
-
-        //AudioClipB
-        bSamples = new float[audioClipB.samples * audioClipB.channels];
-        bChannel1 = new float[audioClipB.samples];
-        bChannel2 = new float[audioClipB.samples];
-        bChannel3 = new float[audioClipB.samples];
-        bChannel4 = new float[audioClipB.samples];
-        Debug.Log("Clib B Channels: " + audioClipB.channels);
-        Debug.Log("Clib B Samples: " + audioClipB.samples);
-        audioClipB.GetData(bSamples, 0);
-        Debug.Log("Clib B Audio Samples all channels: " + bSamples.Length);
-
+        StartCoroutine(RereadAudioClips());
         audioReaderObjectMic = GameObject.Find("ChannelMic");
         audioSourceMic = audioReaderObjectMic.GetComponent<AudioSource>();
         particles = new ParticleSystem[audioReader.audioSamples.Length];
@@ -141,7 +125,7 @@ public class AudioVisualization : MonoBehaviour
 
         for (int i = 0; i < audioReader.audioSamples.Length; i++)
         {
-        
+
             float i2 = i;
 
             if (centered)
@@ -178,6 +162,10 @@ public class AudioVisualization : MonoBehaviour
                     pos = new Vector3((Mathf.Sin((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, (Mathf.Cos((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, transform.position.z);
                     particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(-Camera.main.transform.forward), parent_Visualization).GetComponent<ParticleSystem>();
                     particles[i].name = "Particle: " + i;
+                    var mainP = particles[i].main;
+                    mainP.startSize = 2;
+                    var emission = particles[i].emission;
+                    emission.rateOverTime = 100;
                     if (duplicateInverted)
                     {
                         inverted_particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(Camera.main.transform.forward), parent_Visualization).GetComponent<ParticleSystem>();
@@ -201,59 +189,75 @@ public class AudioVisualization : MonoBehaviour
 
     public void InterpolationBetweenAandB()
     {
-        interpolationA -= 0.1f;
-        interpolationB += 0.1f;
-        Debug.Log("Interpolation started... Prozent = " + interpolationB * 100);
+        //interpolationA -= 0.1f;
+        //interpolationB += 0.1f;
+        //Debug.Log("Interpolation started... Prozent = " + interpolationB * 100);
         if (!startInterpolation)
         {
             startInterpolation = true;
         }
         else
-        { 
+        {
             //startInterpolation = false; 
         }
     }
 
-    private void RereadAudioClips()
+    private IEnumerator RereadAudioClips()
     {
+
+        Debug.Log(clipCount);
         //AudioClipA
-        aSamples = new float[audioClipA.samples * audioClipA.channels];
-        aChannel1 = new float[audioClipA.samples];
-        aChannel2 = new float[audioClipA.samples];
-        aChannel3 = new float[audioClipA.samples];
-        aChannel4 = new float[audioClipA.samples];
-        Debug.Log("Clib A Audio Channels: " + audioClipA.channels);
-        Debug.Log("Clib A Audio Samples: " + audioClipA.samples);
-        audioClipA.GetData(aSamples, 0);
+        aSamples = new float[clips[clipCount].samples * clips[clipCount].channels];
+        aChannel1 = new float[clips[clipCount].samples];
+        aChannel2 = new float[clips[clipCount].samples];
+        aChannel3 = new float[clips[clipCount].samples];
+        aChannel4 = new float[clips[clipCount].samples];
+        Debug.Log("Clib A Audio Channels: " + clips[clipCount].channels);
+        Debug.Log("Clib A Audio Samples: " + clips[clipCount].samples);
+        clips[clipCount].GetData(aSamples, 0);
         Debug.Log("Clib A Audio Samples all channels: " + aSamples.Length);
 
+        if (clipCount == clips.Length - 1)
+        {
+            clipCount = 0;
+        }
+
         //AudioClipB
-        bSamples = new float[audioClipB.samples * audioClipB.channels];
-        bChannel1 = new float[audioClipB.samples];
-        bChannel2 = new float[audioClipB.samples];
-        bChannel3 = new float[audioClipB.samples];
-        bChannel4 = new float[audioClipB.samples];
-        Debug.Log("Clib B Channels: " + audioClipB.channels);
-        Debug.Log("Clib B Samples: " + audioClipB.samples);
-        audioClipB.GetData(bSamples, 0);
+        bSamples = new float[clips[clipCount + 1].samples * clips[clipCount + 1].channels];
+        bChannel1 = new float[clips[clipCount + 1].samples];
+        bChannel2 = new float[clips[clipCount + 1].samples];
+        bChannel3 = new float[clips[clipCount + 1].samples];
+        bChannel4 = new float[clips[clipCount + 1].samples];
+        Debug.Log("Clib B Channels: " + clips[clipCount + 1].channels);
+        Debug.Log("Clib B Samples: " + clips[clipCount + 1].samples);
+        clips[clipCount + 1].GetData(bSamples, 0);
         Debug.Log("Clib B Audio Samples all channels: " + bSamples.Length);
+
+        yield return new WaitForSeconds(0.01f);
     }
 
     private void Update()
     {
+        timer += Time.deltaTime;
+        if (timer > waitTime)
+        {
+            startInterpolation = true;
+            timer = 0f;
+        }
 
-        #pragma warning disable CS0618 // Typ oder Element ist veraltet
-                micChannel1 = audioSourceMic.GetOutputData(512, 0);
-        #pragma warning restore CS0618 // Typ oder Element ist veraltet
-        #pragma warning disable CS0618 // Typ oder Element ist veraltet
-                micChannel2 = audioSourceMic.GetOutputData(512, 1);
-        #pragma warning restore CS0618 // Typ oder Element ist veraltet
 
-        if (counterA >= audioClipA.samples)
+#pragma warning disable CS0618 // Typ oder Element ist veraltet
+        micChannel1 = audioSourceMic.GetOutputData(512, 0);
+#pragma warning restore CS0618 // Typ oder Element ist veraltet
+#pragma warning disable CS0618 // Typ oder Element ist veraltet
+        micChannel2 = audioSourceMic.GetOutputData(512, 1);
+#pragma warning restore CS0618 // Typ oder Element ist veraltet
+
+        if (counterA >= clips[clipCount].samples)
         {
             counterA = 0;
         }
-            for (int i = 0; i < 512; i++)
+        for (int i = 0; i < 512; i++)
         {
             aChannel1[i] = aSamples[(counterA + i) * 4];
             aChannel2[i] = aSamples[(counterA + i) * 4 + 1];
@@ -261,7 +265,7 @@ public class AudioVisualization : MonoBehaviour
             aChannel4[i] = aSamples[(counterA + i) * 4 + 3];
         }
 
-        if (counterB >= audioClipB.samples)
+        if (counterB >= clips[clipCount + 1].samples)
         {
             counterB = 0;
         }
@@ -318,31 +322,35 @@ public class AudioVisualization : MonoBehaviour
                 for (int i = 0; i < audioReader.audioSamples.Length; i++)
                 {
                     float count = i;
-                    if (audioReader.audioSamples[i] * audioMultiplier > audioMax) { audioReader.audioSamples[i] = audioMax / audioMultiplier; }
-                    if (audioReader.audioSamples[i] > audioSensibility)
+                    if (aChannel1[i] * audioMultiplier > audioMax) { aChannel1[i] = audioMax / audioMultiplier; }
+                    if (aChannel1[i] > audioSensibility)
                     {
                         var main = particles[i].main;
-                        main.startSpeed = Mathf.Lerp(main.startSpeed.constant, audioReader.audioSamples[i] * audioMultiplier, audioSmooth);
+                        main.startSpeed = Mathf.Lerp(main.startSpeed.constant, aChannel1[i] * audioMultiplier, audioSmooth);
                         //übergabe der channel data an die Position
+                        //#Übergabe A zu B und dann soll weiter laufen auf B und nächstes mal inverse B zu A damit nicht der Laufende Cyklus gebrochen wird. 
                         if (startInterpolation)
                         {
-                            particles[i].transform.position = new Vector3(((aChannel1[i] * interpolationA) * 100) + ((bChannel1[i] * interpolationB) * 100), 
-                                                                          ((aChannel2[i] * interpolationA) * 100) + ((bChannel2[i] * interpolationB) * 100), 
+                            particles[i].transform.position = new Vector3(((aChannel1[i] * interpolationA) * 100) + ((bChannel1[i] * interpolationB) * 100),
+                                                                          ((aChannel2[i] * interpolationA) * 100) + ((bChannel2[i] * interpolationB) * 100),
                                                                           ((aChannel3[i] * interpolationA) * 100) + ((bChannel3[i] * interpolationB) * 100));
-                            if(interpolationA < 0)
+                            if (interpolationA < 0)
                             {
+                                clipCount++;
+                                StartCoroutine(RereadAudioClips());
+                                startInterpolation = false;
                                 interpolationA = 1;
                                 interpolationB = 0;
-                                audioClipA = GetComponent<AudioVisualization>().audioClipB;
-                                RereadAudioClips();
-                                startInterpolation = false;
+
                             }
+                            interpolationA -= Time.deltaTime / 1000;
+                            interpolationB += Time.deltaTime / 1000;
                         }
                         else
                         {
                             particles[i].transform.position = new Vector3(aChannel1[i] * 100, aChannel2[i] * 100, aChannel3[i] * 100);
                         }
-                       
+
                     }
                     else
                     {
@@ -403,9 +411,9 @@ public class AudioVisualization : MonoBehaviour
 
             for (int i = (int)rotateSensitivityRange.x; i < rotateSensitivityRange.y; i++)
             {
-                if (audioReader.audioSamples[i] > rotateSensitivity)
+                if (micChannel1[i] > rotateSensitivity)
                 {
-                    sum += audioReader.audioSamples[i];
+                    sum += micChannel1[i];
                 }
             }
 
@@ -419,9 +427,9 @@ public class AudioVisualization : MonoBehaviour
 
             for (int i = (int)scaleSensitivityRange.x; i < scaleSensitivityRange.y; i++)
             {
-                if (audioReader.audioSamples[i] > scaleSensitivity)
+                if (micChannel1[i] > scaleSensitivity)
                 {
-                    sum += audioReader.audioSamples[i];
+                    sum += micChannel1[i];
                 }
             }
 
@@ -431,12 +439,14 @@ public class AudioVisualization : MonoBehaviour
         }
         if (color)
         {
-            for (int i = 0; i < audioReader.audioSamples.Length; i++)
+            for (int i = 0; i < particles.Length; i++)
             {
-                float k = audioReader.audioSamples[i] * mulColorAmmount / maxColorAmmount;
-
+                //float k = audioReader.audioSamples[i] * mulColorAmmount / maxColorAmmount;
+                float k = Mathf.Abs(micChannel1[i]) * mulColorAmmount / maxColorAmmount;
+                //Debug.Log(k);
                 var main = particles[i].main;
-                main.startColor = Color.Lerp(minColor, maxColor, k);
+                //main.startColor = Color.Lerp(minColor, maxColor, k);
+                main.startColor = particleColorGradient.Evaluate(Random.Range(-0.1f, k));
 
                 if (duplicateInverted)
                 {
