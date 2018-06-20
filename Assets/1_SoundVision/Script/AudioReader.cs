@@ -10,7 +10,7 @@ public class AudioReader : MonoBehaviour
     [Space]
     public bool changeTime;
     public float audioTime;
-    public float[] audioSamples = new float[256];
+    public float[] audioSamples = new float[512];
 
     private AudioSource audioSource;
 
@@ -27,8 +27,5 @@ public class AudioReader : MonoBehaviour
         if (changeTime) { audioSource.time = audioTime; changeTime = false; audioTime = 0; }
 
         audioSource.GetSpectrumData(audioSamples, 0, FFTWindow.Hanning);
-        //audioSource.GetOutputData(audioSamples, 0);
-        //audioSource.GetOutputData(audioSamplesTwo, 1);
-        //audioSource.GetOutputData(audioSamples, 1);
     }
 }
