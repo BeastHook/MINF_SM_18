@@ -281,7 +281,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d65590495f938814fafd3f5042d5e388, type: 3}
   - {fileID: 8300000, guid: 5aae1751919f3bf4391ae38e739d9824, type: 3}
   - {fileID: 8300000, guid: e5ea4fd2d4f7c1747b1140882e75ad64, type: 3}
-  voiceOverClips: []
+  voiceOver: {fileID: 56968533}
   paticleMat: {fileID: 2100000, guid: 6597e242da8e37e4ca60602811c9c1ef, type: 2}
   particleRate: 100
   rotation: 0
@@ -354,6 +354,7 @@ MonoBehaviour:
   inverted_audioMultiplier: 2000
   inverted_audioMax: 800
   inverted_audioSmooth: 0.9
+  voiceOverClips: []
 --- !u!1 &473084688
 GameObject:
   m_ObjectHideFlags: 0
