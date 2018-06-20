@@ -2,15 +2,15 @@
 #X declare -path abs;
 #X obj 71 112 *~;
 #X floatatom 98 92 5 0 0 0 - - -, f 5;
-#X obj 639 706 *~;
-#X obj 663 677 vline~;
-#X msg 814 645 0 20;
-#X msg 775 645 1 20;
+#X obj 639 666 *~;
+#X obj 663 637 vline~;
+#X msg 834 611 0 20;
+#X msg 795 611 1 20;
 #X floatatom 639 544 5 0 0 0 - - -, f 5;
 #X msg 606 496 440;
 #X obj 585 528 t b f;
 #X obj 575 106 metro 500;
-#X obj 575 44 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
+#X obj 575 44 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 1 1
 ;
 #X obj 575 161 f;
 #X obj 575 182 t f f;
@@ -18,8 +18,8 @@
 #X msg 588 137 0;
 #X obj 575 399 t a;
 #X obj 575 479 mtof;
-#X text 778 625 on;
-#X text 816 626 off;
+#X text 798 591 on;
+#X text 836 592 off;
 #X floatatom 575 420 5 0 0 0 - - -, f 5;
 #X obj 83 394 print pitch1;
 #X floatatom 162 304 5 0 0 0 - - -, f 5;
@@ -67,24 +67,24 @@
 #X obj 1163 568 s soll-melodie;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array input-melodie 17 float 3;
-#A 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#A 0 1 0 0 0 0 0 0 0 0 0 0 0 0 53 0 0 0;
 #X coords 1 90 17 30 200 140 1 0 0;
 #X restore 330 433 graph;
 #X obj 169 493 r step;
 #X obj 71 793 tabwrite input-melodie;
-#X obj 639 819 *~;
-#X obj 683 701 vsl 15 50 0.01 1 1 0 empty empty empty 0 -9 0 10 -4034
+#X obj 639 839 *~;
+#X obj 761 779 vsl 15 50 0.01 1 1 0 empty empty empty 0 -9 0 10 -4034
 -1 -1 4900 1;
-#X obj 683 797 line~ \$1 20;
-#X obj 702 699 cnv 15 120 17 empty empty <-MasterVolume 2 8 0 12 -204786
+#X obj 683 817 line~ \$1 20;
+#X obj 780 777 cnv 15 120 17 empty empty <-MasterVolume 2 8 0 12 -204786
 -66577 0;
-#X msg 665 645 0.7 50 \, 0 500 500;
+#X msg 665 605 0.7 50 \, 0 500 500;
 #X obj 597 440 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -4034 -1 -1 0 256;
 #X obj 659 439 cnv 15 85 17 empty empty <-transpose 2 8 0 12 -204786
 -66577 0;
-#X obj 683 758 - 0.01;
-#X floatatom 683 778 5 0 0 0 - - -, f 5;
+#X obj 683 778 - 0.01;
+#X floatatom 683 798 5 0 0 0 - - -, f 5;
 #N canvas 0 23 450 300 ohne-step 0;
 #X obj 149 170 f;
 #X obj 149 192 t f f;
@@ -166,7 +166,7 @@ kann man ins mik;
 #X obj 67 427 f;
 #X obj 105 427 + 1;
 #X obj 55 554 nbx 3 14 -1e+37 1e+37 0 0 empty empty % 45 8 0 12 -204786
--1 -1 0 256;
+-1 -1 20 256;
 #X obj 105 479 * 10;
 #X obj 198 434 print correct;
 #X obj 196 394 pack f f;
@@ -249,12 +249,12 @@ kann man ins mik;
 #X msg 476 45 1;
 #X obj 634 135 s \$0-metro;
 #X obj 473 692 nbx 3 14 -1e+37 1e+37 0 0 empty empty % 45 8 0 12 -204786
--1 -1 0 256;
+-1 -1 20 256;
 #X obj 473 715 change;
 #X obj 473 754 line 0 20;
 #X msg 473 735 \$1 1000;
 #X obj 473 776 nbx 5 20 -1e+37 1e+37 0 0 empty empty % 85 10 0 16 -4034
--1 -1 0 256;
+-1 -1 20 256;
 #X msg 234 334 \; input-melodie const 1;
 #X obj 377 336 cnv 15 140 17 empty empty <-reset_input_table 2 8 0
 12 -204786 -66577 0;
@@ -266,7 +266,7 @@ kann man ins mik;
 1;
 #X obj 476 67 s \$0-loadbang-1;
 #X obj 119 718 r \$0-loadbang-1;
-#X obj 822 683 r \$0-loadbang-1;
+#X obj 900 761 r \$0-loadbang-1;
 #X obj 869 477 cnv 15 100 60 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #N canvas 692 38 450 300 test_adc2dac 0;
@@ -278,7 +278,7 @@ kann man ins mik;
 #X connect 0 1 2 0;
 #X restore 871 499 pd test_adc2dac;
 #X obj 71 7 adc~ 1 2;
-#X obj 634 851 dac~ 1 2;
+#X obj 639 871 dac~ 1 2;
 #X obj 473 826 s correct;
 #X floatatom 433 804 5 0 0 0 - - -, f 5;
 #X obj 575 460 + 0;
@@ -673,9 +673,11 @@ kann man ins mik;
 #X floatatom 180 198 5 0 0 0 - - -, f 5;
 #X obj 123 195 > 45;
 #X obj 71 58 delread~ input-delay 0;
+#X obj 639 690 delwrite~ output-delay 1000;
+#X obj 639 710 delread~ output-delay 500;
 #X connect 0 0 141 0;
 #X connect 1 0 0 1;
-#X connect 2 0 59 0;
+#X connect 2 0 151 0;
 #X connect 3 0 2 1;
 #X connect 4 0 3 0;
 #X connect 5 0 3 0;
@@ -781,3 +783,4 @@ kann man ins mik;
 #X connect 147 1 149 0;
 #X connect 149 0 130 0;
 #X connect 150 0 0 0;
+#X connect 152 0 59 0;
