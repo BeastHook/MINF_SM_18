@@ -15,7 +15,7 @@ public class AudioVisualization : MonoBehaviour
     //two AudioClips who interpolate between eachother
     public AudioClip[] clips;
     [Space]
-    public GameObject VoiceOver;
+    public GameObject voiceOver;
     [Space]
     public Material paticleMat;
     public float particleRate;
@@ -114,6 +114,7 @@ public class AudioVisualization : MonoBehaviour
     private AudioSource voiceOverSource;
     public AudioClip[] voiceOverClips;
 
+    private int voiceOverIndex = 0;
     private float waitTimeInterpolationsZyklus = 20f;
     private float timerInterpolationsZyklus;
     private float waitTimeVoiceOverp1 = 20f;
@@ -124,9 +125,11 @@ public class AudioVisualization : MonoBehaviour
 
     private void Awake()
     {
-        VoiceOverSource
+        voiceOverSource = voiceOver.GetComponent<AudioSource>();
         voiceOverClips = Resources.LoadAll<AudioClip>("Gruppe1/VoiceOver");
         print(voiceOverClips.Length);
+        ChangeVoiceOver();
+
         StartCoroutine(RereadAudioClips());
         audioReaderObjectMic = GameObject.Find("ChannelMic");
         audioSourceMic = audioReaderObjectMic.GetComponent<AudioSource>();
@@ -198,6 +201,15 @@ public class AudioVisualization : MonoBehaviour
 
     }
 
+    private void ChangeVoiceOver()
+    {
+        voiceOverSource.clip = voiceOverClips[voiceOverIndex];
+        voiceOverSource.Play();
+        if (!voiceOverSource.isPlaying)
+        {
+            voiceOverIndex = 1;
+        }
+    }
 
     public void InterpolationBetweenAandB()
     {
