@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour {
     public AudioClip stolpern;
     public AudioClip gewonnen;
     public AudioClip verloren;
+    public Boolean gameEnd = false;
 
 
 
@@ -35,14 +36,17 @@ public class EnemyController : MonoBehaviour {
     void Update() {
         
 
-        if (enemyturn)
+        if (enemyturn && gameEnd == false )
         {
             Debug.Log("ENEMY TURN");
             if (player.GetComponent<PlayerController>().health <= 0)
             {
                 StartCoroutine(Loose());
+                gameEnd = true;
+
             }
-            else if (enemyhealth > 0)
+
+            if (enemyhealth > 0)
             {
                 StartCoroutine(EnemyAttack());
                 enemyturn = false;
@@ -50,7 +54,7 @@ public class EnemyController : MonoBehaviour {
             else
             {
                 StartCoroutine(Win());
-                
+                gameEnd = true;
             }
 
             
