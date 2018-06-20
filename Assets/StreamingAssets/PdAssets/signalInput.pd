@@ -262,7 +262,7 @@ kann man ins mik;
 #X floatatom 58 186 5 0 0 0 - - -, f 5;
 #X text 227 228 pitch;
 #X obj 64 252 spigot;
-#X obj 107 225 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 107 225 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 476 67 s \$0-loadbang-1;
 #X obj 119 718 r \$0-loadbang-1;
@@ -663,10 +663,10 @@ kann man ins mik;
 #X connect 35 0 18 0;
 #X connect 35 1 34 0;
 #X restore 74 154 pd pitch-tracking;
-#X obj 728 68 dsp;
-#X floatatom 764 88 5 0 0 0 - - -, f 5;
-#X floatatom 728 88 5 0 0 0 - - -, f 5;
-#X obj 728 45 tgl 20 0 empty empty empty 17 7 0 10 -257985 -1 -1 0
+#X obj 746 68 dsp;
+#X floatatom 782 88 5 0 0 0 - - -, f 5;
+#X floatatom 746 88 5 0 0 0 - - -, f 5;
+#X obj 746 45 tgl 20 0 empty empty empty 17 7 0 10 -257985 -1 -1 0
 1;
 #X floatatom 137 263 5 0 0 0 - - -, f 5;
 #X obj 214 122 sigmund~ pitch env;
@@ -675,6 +675,9 @@ kann man ins mik;
 #X obj 71 58 delread~ input-delay 0;
 #X obj 639 690 delwrite~ output-delay 1000;
 #X obj 639 710 delread~ output-delay 500;
+#X obj 675 36 delay 24000;
+#X obj 675 12 loadbang;
+#X msg 683 59 1;
 #X connect 0 0 141 0;
 #X connect 1 0 0 1;
 #X connect 2 0 151 0;
@@ -757,7 +760,6 @@ kann man ins mik;
 #X connect 99 0 119 0;
 #X connect 116 0 117 0;
 #X connect 117 0 131 0;
-#X connect 117 0 10 0;
 #X connect 119 0 120 0;
 #X connect 120 0 122 0;
 #X connect 121 0 123 0;
@@ -784,3 +786,6 @@ kann man ins mik;
 #X connect 149 0 130 0;
 #X connect 150 0 0 0;
 #X connect 152 0 59 0;
+#X connect 153 0 155 0;
+#X connect 154 0 153 0;
+#X connect 155 0 10 0;
