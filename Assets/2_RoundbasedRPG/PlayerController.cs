@@ -6,18 +6,19 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     public int health = 100;
-    public Slider playerHealth;
+    
     public int playerState = 0;
+    public AudioSource source;
 
-	// Use this for initialization
-	void Start () {
-        playerHealth.maxValue = 100;
+    // Use this for initialization
+    void Start () {
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        playerHealth.value = health;
+        
 	}
 
     public void getDamaged(int damage)

@@ -11,6 +11,8 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
 
     public GameObject Enemy;
     public GameObject Player;
+    public AudioSource source;
+    public AudioClip feuer;
 
 
     public void OnButtonPressed(VirtualButtonBehaviour vb)
@@ -30,6 +32,7 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
     void Start () {
         vbBtnObj = GameObject.Find("VirtualButton");
         vbBtnObj.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
+        
 
     }
 
@@ -44,6 +47,8 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
         if(timer >= 2.0f)
         {
             Debug.Log("Attack");
+            source.clip = feuer;
+            source.Play();
             Enemy.GetComponent<EnemyController>().getDamaged(25);
             timerstart = false;
             timer = 0.0f;

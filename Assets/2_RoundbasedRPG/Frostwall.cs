@@ -12,6 +12,8 @@ public class Frostwall: MonoBehaviour, IVirtualButtonEventHandler
 
     public GameObject Enemy;
     public GameObject Player;
+    public AudioSource source;
+    public AudioClip frost;
 
 
     public void OnButtonPressed(VirtualButtonBehaviour vb)
@@ -46,6 +48,8 @@ public class Frostwall: MonoBehaviour, IVirtualButtonEventHandler
         if (timer >= 2.0f)
         {
             Debug.Log("Frostwall");
+            source.clip = frost;
+            source.Play();
             Player.GetComponent<PlayerController>().playerState = 1;
             timerstart = false;
             timer = 0.0f;
