@@ -14,7 +14,11 @@ public class AudioVisualization : MonoBehaviour
     public ParticleEffect_Type _ParticleEffectType = ParticleEffect_Type.none;
     //two AudioClips who interpolate between eachother
     public AudioClip[] clips;
+    [Space]
+    public GameObject VoiceOver;
+    [Space]
     public Material paticleMat;
+    public float particleRate;
 
     [Space]
     public bool rotation;
@@ -107,14 +111,22 @@ public class AudioVisualization : MonoBehaviour
     private float interpolationA = 1;
     private float interpolationB = 0;
 
-    private float waitTime = 10f;
-    private float timer;
+    private AudioSource voiceOverSource;
+    public AudioClip[] voiceOverClips;
+
+    private float waitTimeInterpolationsZyklus = 20f;
+    private float timerInterpolationsZyklus;
+    private float waitTimeVoiceOverp1 = 20f;
+    private float timerVoiceOver;
 
 
 
 
     private void Awake()
     {
+        VoiceOverSource
+        voiceOverClips = Resources.LoadAll<AudioClip>("Gruppe1/VoiceOver");
+        print(voiceOverClips.Length);
         StartCoroutine(RereadAudioClips());
         audioReaderObjectMic = GameObject.Find("ChannelMic");
         audioSourceMic = audioReaderObjectMic.GetComponent<AudioSource>();
@@ -165,7 +177,7 @@ public class AudioVisualization : MonoBehaviour
                     var mainP = particles[i].main;
                     mainP.startSize = 2;
                     var emission = particles[i].emission;
-                    emission.rateOverTime = 100;
+                    emission.rateOverTime = particleRate;
                     if (duplicateInverted)
                     {
                         inverted_particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(Camera.main.transform.forward), parent_Visualization).GetComponent<ParticleSystem>();
@@ -238,11 +250,10 @@ public class AudioVisualization : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > waitTime)
+        timerInterpolationsZyklus += Time.deltaTime;
+        if (timerInterpolationsZyklus > waitTimeInterpolationsZyklus)
         {
             startInterpolation = true;
-            timer = 0f;
         }
 
 
@@ -340,10 +351,11 @@ public class AudioVisualization : MonoBehaviour
                                 startInterpolation = false;
                                 interpolationA = 1;
                                 interpolationB = 0;
+                                timerInterpolationsZyklus = 0f;
 
                             }
-                            interpolationA -= Time.deltaTime / 1000;
-                            interpolationB += Time.deltaTime / 1000;
+                            interpolationA -= Time.deltaTime / 2000;
+                            interpolationB += Time.deltaTime / 2000;
                         }
                         else
                         {
