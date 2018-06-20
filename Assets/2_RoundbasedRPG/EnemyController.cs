@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour {
     public AudioClip gewonnen;
     public AudioClip verloren;
     public Boolean gameEnd = false;
+    public GameObject chest;
 
 
 
@@ -72,8 +73,11 @@ public class EnemyController : MonoBehaviour {
     private IEnumerator Win()
     {
         yield return new WaitForSeconds(7);
+        
         source.clip = gewonnen;
         source.Play();
+        yield return new WaitForSeconds(3);
+        chest.SetActive(true);
     }
 
     private IEnumerator EnemyAttack()
