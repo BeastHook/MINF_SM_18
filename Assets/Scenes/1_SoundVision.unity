@@ -282,6 +282,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5aae1751919f3bf4391ae38e739d9824, type: 3}
   - {fileID: 8300000, guid: e5ea4fd2d4f7c1747b1140882e75ad64, type: 3}
   voiceOver: {fileID: 56968533}
+  prozentTEST: 0
   paticleMat: {fileID: 2100000, guid: 6597e242da8e37e4ca60602811c9c1ef, type: 2}
   particleRate: 100
   rotation: 0
@@ -507,7 +508,8 @@ AudioSource:
   m_GameObject: {fileID: 522178017}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 7391476fa4fdb4a46ae6753f7b3c6fc8,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1782,6 +1784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f63df4216a045c89d8ae9f5c655924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fromPd: 0
 --- !u!4 &1742508491
 Transform:
   m_ObjectHideFlags: 0
