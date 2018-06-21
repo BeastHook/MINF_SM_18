@@ -16,6 +16,7 @@ public class AudioVisualization : MonoBehaviour
     public AudioClip[] clips;
     [Space]
     public GameObject voiceOver;
+    public int prozentTEST;
     [Space]
     public Material paticleMat;
     public float particleRate;
@@ -114,12 +115,17 @@ public class AudioVisualization : MonoBehaviour
     private AudioSource voiceOverSource;
     public AudioClip[] voiceOverClips;
 
-    private int voiceOverIndex = 0;
+    private fromPdScript pd = new fromPdScript();
+
+    private float gameTime = 0f;
+    private bool halfProcent = false;
+    private bool hiddenSecretRevealed = false;
+    private bool gameOver = false;
+
     private float waitTimeInterpolationsZyklus = 20f;
     private float timerInterpolationsZyklus;
-    private float waitTimeVoiceOverp1 = 20f;
+    private float waitTimeVoiceOver20 = 20f;
     private float timerVoiceOver;
-
 
 
 
@@ -128,7 +134,7 @@ public class AudioVisualization : MonoBehaviour
         voiceOverSource = voiceOver.GetComponent<AudioSource>();
         voiceOverClips = Resources.LoadAll<AudioClip>("Gruppe1/VoiceOver");
         print(voiceOverClips.Length);
-        ChangeVoiceOver();
+        ChangeVoiceOver(0);
 
         StartCoroutine(RereadAudioClips());
         audioReaderObjectMic = GameObject.Find("ChannelMic");
@@ -201,14 +207,11 @@ public class AudioVisualization : MonoBehaviour
 
     }
 
-    private void ChangeVoiceOver()
+    private void ChangeVoiceOver(int i)
     {
-        voiceOverSource.clip = voiceOverClips[voiceOverIndex];
+        voiceOverSource.clip = voiceOverClips[i];
         voiceOverSource.Play();
-        if (!voiceOverSource.isPlaying)
-        {
-            voiceOverIndex = 1;
-        }
+        timerVoiceOver = 0;
     }
 
     public void InterpolationBetweenAandB()
@@ -262,11 +265,49 @@ public class AudioVisualization : MonoBehaviour
 
     private void Update()
     {
+        gameTime += Time.deltaTime;
         timerInterpolationsZyklus += Time.deltaTime;
         if (timerInterpolationsZyklus > waitTimeInterpolationsZyklus)
         {
             startInterpolation = true;
         }
+        if (!voiceOverSource.isPlaying)
+        {
+            timerVoiceOver += Time.deltaTime;
+            //if (timerVoiceOver > waitTimeVoiceOver20 && pd.fromPd < 20 )
+            if (timerVoiceOver > waitTimeVoiceOver20 && prozentTEST < 20)     
+            {
+                Debug.Log(waitTimeVoiceOver20 + " sekunden unter 20%");
+                ChangeVoiceOver(1);
+            }
+            else if (timerVoiceOver > waitTimeVoiceOver20 && (prozentTEST >= 20 && prozentTEST < 40))
+            {
+                Debug.Log(waitTimeVoiceOver20 + " sekunden unter 40%");
+                ChangeVoiceOver(2);
+            }
+            else if (prozentTEST >= 50 && prozentTEST < 100 && !halfProcent)
+            {
+                Debug.Log("50% erreicht");
+                ChangeVoiceOver(3);
+                halfProcent = true;
+            }
+            else if (prozentTEST >= 100 && !hiddenSecretRevealed )
+            {
+                Debug.Log("100% erreicht");
+                ChangeVoiceOver(4);
+                hiddenSecretRevealed = true;
+            }
+        }
+        // Game Ends after 3 Minutes = 180 Secounds
+        if(gameTime >= 180 && !gameOver)
+        {
+            Debug.Log("Zeit ist um");
+            ChangeVoiceOver(5);
+            gameOver = true;
+            //SceneManager usw
+        }
+
+
 
 
 #pragma warning disable CS0618 // Typ oder Element ist veraltet

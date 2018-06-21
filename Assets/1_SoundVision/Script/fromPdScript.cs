@@ -5,7 +5,7 @@ using System;
 
 public class fromPdScript : MonoBehaviour {
 
-	float fromPd;
+	public float fromPd;
 
 	void Start() {
 
@@ -15,16 +15,18 @@ public class fromPdScript : MonoBehaviour {
 
 		// subscribing to receive
 		LibPD.Subscribe("correct");
-		LibPD.Float += receiveFloat;
-	}
+        LibPD.Float += receiveFloat;
+    }
 
 	void OnGUI() {
 		GUI.Label(new Rect(10, 50, 300, 300), "correct notes: " + fromPd + "%");
 	}
 
-	void receiveFloat(string nameofSend, float value) {
-		if (String.Compare (nameofSend, "correct") == 0) {
-			fromPd = value;
-		}
-	}
+    void receiveFloat(string nameofSend, float value)
+    {
+        if (String.Compare(nameofSend, "correct") == 0)
+        {
+            fromPd = value;
+        }
+    }
 }
