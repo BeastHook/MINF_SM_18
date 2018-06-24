@@ -265,33 +265,40 @@ public class AudioVisualization : MonoBehaviour
 
     private void Update()
     {
+        //prozentTest == pd.correct;
+
         gameTime += Time.deltaTime;
+        //Interpolation Timer
         timerInterpolationsZyklus += Time.deltaTime;
         if (timerInterpolationsZyklus > waitTimeInterpolationsZyklus)
         {
             startInterpolation = true;
         }
+        //VoiceOver Timer
         if (!voiceOverSource.isPlaying)
         {
             timerVoiceOver += Time.deltaTime;
-            //if (timerVoiceOver > waitTimeVoiceOver20 && pd.fromPd < 20 )
+            //if (timerVoiceOver > waitTimeVoiceOver20 && pd.correct < 20 )
             if (timerVoiceOver > waitTimeVoiceOver20 && prozentTEST < 20)     
             {
                 Debug.Log(waitTimeVoiceOver20 + " sekunden unter 20%");
                 ChangeVoiceOver(1);
+                prozentTEST = 30;
             }
             else if (timerVoiceOver > waitTimeVoiceOver20 && (prozentTEST >= 20 && prozentTEST < 40))
             {
                 Debug.Log(waitTimeVoiceOver20 + " sekunden unter 40%");
                 ChangeVoiceOver(2);
+                prozentTEST = 50;
             }
-            else if (prozentTEST >= 50 && prozentTEST < 100 && !halfProcent)
+            //### ab hier muss eigentlich die waitTime
+            else if (timerVoiceOver > waitTimeVoiceOver20 && (prozentTEST >= 50 && prozentTEST < 100 && !halfProcent))
             {
                 Debug.Log("50% erreicht");
                 ChangeVoiceOver(3);
                 halfProcent = true;
             }
-            else if (prozentTEST >= 100 && !hiddenSecretRevealed )
+            else if (timerVoiceOver > waitTimeVoiceOver20 && (prozentTEST >= 100 && !hiddenSecretRevealed ))
             {
                 Debug.Log("100% erreicht");
                 ChangeVoiceOver(4);
