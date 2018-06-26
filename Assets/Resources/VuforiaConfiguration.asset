@@ -44,12 +44,14 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - ForestWalkMarker
     - PuzzleD_1
     - 1V1DB
     - MINF
     - VuforiaMars_Images
     - VuforiaMars_VuMark
     dataSetsToActivate:
+    - ForestWalkMarker
     - PuzzleD_1
     - VuforiaMars_Images
     - 1V1DB

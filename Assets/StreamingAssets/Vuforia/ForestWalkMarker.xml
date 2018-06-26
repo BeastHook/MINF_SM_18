@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="JumpMarker" size="0.200000 0.200000" />
+    <ImageTarget name="SlideMarker" size="0.200000 0.200000" />
+    <ImageTarget name="images" size="0.200000 0.200893" />
+    <ImageTarget name="PebbleTextSlide" size="0.200000 0.189736" />
+    <ImageTarget name="PebbleTextJump" size="0.200000 0.189736" />
+  </Tracking>
+</QCARConfig>
