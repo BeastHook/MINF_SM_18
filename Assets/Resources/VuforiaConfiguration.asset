@@ -16,7 +16,7 @@ MonoBehaviour:
     ufoLicenseKey: QVYxaWJQUC8vLy8vQUFBQUtNSU9UUEUxQkU1RWt2TmFGc1plTjFVQnduTUpTZUk0RVFLTkhKTk04Q3ZtOVhEcys5dWN6WjhCTEZGdFM3NmpQVmZJMXhMeDhLSlZYRDFmQkRGMUFVRlJhZnpib2hJdVlJd1NPTTEzTEtFaXl0YmRiWDB5ZnJKZ1o2a1QvM295dS9CbDJidGhqOEFzMGVSUXkrVU1wWE1rbEIyWEhQOE1YYVBwbFJsalRkUWhVTGZ0cmFQVkxzUlBpS01lTzZhalJwRkY1bjA5dU84aE1KYkladEhyaDU2azZhTXkxcm9OY2NaWDNIdk5ZNjhXYVdzbjVoOUtFRUNxc0lxcUFYYnZhWmh4S2JtZlBZWnBVRWV2R0hESVJzRFZxdkpYQlZuQVlUbERjWlBvak9CYzZWaGIvN0hPK245SzBWNDRGYWp3alNvdkVqejhTZGI2VjhSSnAwSlJaUnFNMzR1UVg0cGVqM0thMDIvSDRCWUc=
     delayedInitialization: 0
     cameraDeviceModeSetting: -2
-    maxSimultaneousImageTargets: 3
+    maxSimultaneousImageTargets: 9
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
-    eyewearType: 2
+    eyewearType: 0
     stereoFramework: 0
     seeThroughConfiguration: 0
     viewerName: Cardboard v1
@@ -44,11 +44,13 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - PuzzleD_1
     - 1V1DB
     - MINF
     - VuforiaMars_Images
     - VuforiaMars_VuMark
     dataSetsToActivate:
+    - PuzzleD_1
     - VuforiaMars_Images
     - 1V1DB
     - MINF
