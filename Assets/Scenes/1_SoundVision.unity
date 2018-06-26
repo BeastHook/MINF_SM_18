@@ -508,8 +508,7 @@ AudioSource:
   m_GameObject: {fileID: 522178017}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: 7391476fa4fdb4a46ae6753f7b3c6fc8,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1119,7 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb99556d51917a4478f731869bfca562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfPatch: signalInput.pd
+  nameOfPatch: route-mic-through-dirac.pd
 --- !u!1 &1221199019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f63df4216a045c89d8ae9f5c655924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromPd: 0
+  correct: 0
+  debug: 0
 --- !u!4 &1742508491
 Transform:
   m_ObjectHideFlags: 0

@@ -231,8 +231,8 @@ public class AudioVisualization : MonoBehaviour
 
     private IEnumerator RereadAudioClips()
     {
-
-        Debug.Log(clipCount);
+        Debug.Log("####################################################################");
+        Debug.Log("Starting Clip: " + clipCount);
         //AudioClipA
         aSamples = new float[clips[clipCount].samples * clips[clipCount].channels];
         aChannel1 = new float[clips[clipCount].samples];
@@ -248,7 +248,8 @@ public class AudioVisualization : MonoBehaviour
         {
             clipCount = 0;
         }
-
+        Debug.Log("--------------------------------------------------------------------");
+        Debug.Log("Following Clip: " + clipCount+1);
         //AudioClipB
         bSamples = new float[clips[clipCount + 1].samples * clips[clipCount + 1].channels];
         bChannel1 = new float[clips[clipCount + 1].samples];
