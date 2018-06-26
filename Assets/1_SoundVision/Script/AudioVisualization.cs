@@ -249,7 +249,7 @@ public class AudioVisualization : MonoBehaviour
             clipCount = 0;
         }
         Debug.Log("--------------------------------------------------------------------");
-        Debug.Log("Following Clip: " + clipCount);
+        Debug.Log("Following Clip: " + clipCount+1);
         //AudioClipB
         bSamples = new float[clips[clipCount + 1].samples * clips[clipCount + 1].channels];
         bChannel1 = new float[clips[clipCount + 1].samples];
