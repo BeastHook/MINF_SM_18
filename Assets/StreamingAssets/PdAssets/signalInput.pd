@@ -68,14 +68,14 @@
 #X obj 1163 568 s soll-melodie;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array input-melodie 17 float 3;
-#A 0 1 1 1 57 1 53 1 1 1 1 1 1 52 53 1 1 1;
+#A 0 1 1 1 57 1 1 53 1 1 1 1 1 1 1 1 55 1;
 #X coords 1 90 17 30 200 140 1 0 0;
 #X restore 330 463 graph;
 #X obj 170 478 r step;
 #X obj 71 793 tabwrite input-melodie;
 #X obj 639 839 *~;
 #X obj 771 779 vsl 15 50 0.01 1 1 0 empty empty empty 0 -9 0 10 -4034
--1 -1 4100 1;
+-1 -1 3800 1;
 #X obj 790 777 cnv 15 120 17 empty empty <-MasterVolume 2 8 0 12 -204786
 -66577 0;
 #X msg 665 605 0.7 50 \, 0 500 500;
@@ -86,7 +86,7 @@
 #X obj 683 757 - 0.01;
 #X floatatom 683 777 5 0 0 0 - - -, f 5;
 #X obj 71 715 spigot;
-#X obj 119 689 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
+#X obj 119 689 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 1 1
 ;
 #X msg 587 310 set soll-melodie;
 #X msg 597 328 set input-melodie;
@@ -144,7 +144,7 @@ kann man ins mik;
 #X obj 67 427 f;
 #X obj 105 427 + 1;
 #X obj 55 554 nbx 3 14 -1e+37 1e+37 0 0 empty empty % 45 8 0 12 -204786
--1 -1 40 256;
+-1 -1 20 256;
 #X obj 105 479 * 10;
 #X obj 198 434 print correct;
 #X obj 196 394 pack f f;
@@ -227,12 +227,12 @@ kann man ins mik;
 #X msg 476 45 1;
 #X obj 634 135 s \$0-metro;
 #X obj 473 692 nbx 3 14 -1e+37 1e+37 0 0 empty empty % 45 8 0 12 -204786
--1 -1 40 256;
+-1 -1 20 256;
 #X obj 473 715 change;
 #X obj 473 754 line 0 20;
 #X msg 473 735 \$1 1000;
 #X obj 473 776 nbx 5 20 -1e+37 1e+37 0 0 empty empty % 85 10 0 16 -4034
--1 -1 40 256;
+-1 -1 20 256;
 #X msg 233 303 \; input-melodie const 1;
 #X obj 376 305 cnv 15 140 17 empty empty <-reset_input_table 2 8 0
 12 -204786 -66577 0;
@@ -841,7 +841,7 @@ to easily plot the unit::response of a system;
 #X obj 299 427 print;
 #X obj 306 343 f;
 #X obj 258 267 sel 1;
-#N canvas 537 44 1139 689 snac 0;
+#N canvas 537 44 1139 689 snac 1;
 #X obj 180 606 outlet;
 #X obj 323 201 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
 -260097 -1;
@@ -1657,10 +1657,10 @@ errors in the case of weak fundamentals.;
 #X obj 639 567 osc~ 100;
 #X obj 123 195 > 65;
 #X msg 425 244 450;
-#X obj 675 36 delay 0;
 #X text 741 26 mit leni 24000;
 #X text 721 170 hier muss loadbang;
 #X text 455 246 sony: 487;
+#X obj 675 36 delay 26000;
 #X connect 0 0 136 0;
 #X connect 1 0 0 1;
 #X connect 2 0 185 0;
@@ -1763,7 +1763,7 @@ errors in the case of weak fundamentals.;
 #X connect 142 0 170 0;
 #X connect 142 1 169 0;
 #X connect 144 0 189 0;
-#X connect 144 0 190 0;
+#X connect 144 0 193 0;
 #X connect 145 0 10 0;
 #X connect 146 0 59 1;
 #X connect 147 0 60 0;
@@ -1803,4 +1803,5 @@ errors in the case of weak fundamentals.;
 #X connect 187 0 2 0;
 #X connect 188 0 125 0;
 #X connect 189 0 174 0;
-#X connect 190 0 145 0;
+#X connect 193 0 145 0;
+#X connect 193 0 147 0;
