@@ -11,7 +11,7 @@
 #X msg 606 496 440;
 #X obj 585 528 t b f;
 #X obj 575 106 metro 500;
-#X obj 575 44 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
+#X obj 575 44 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 1 1
 ;
 #X obj 575 161 f;
 #X obj 575 182 t f f;
@@ -75,7 +75,7 @@
 #X obj 71 793 tabwrite input-melodie;
 #X obj 639 839 *~;
 #X obj 771 779 vsl 15 50 0.01 1 1 0 empty empty empty 0 -9 0 10 -4034
--1 -1 3919 1;
+-1 -1 0 1;
 #X obj 790 777 cnv 15 120 17 empty empty <-MasterVolume 2 8 0 12 -204786
 -66577 0;
 #X msg 665 605 0.7 50 \, 0 500 500;
@@ -249,7 +249,7 @@ kann man ins mik;
 0;
 #N canvas 692 38 450 300 test_adc2dac 0;
 #X obj 126 113 adc~;
-#X obj 128 146 *~ 4;
+#X obj 124 147 *~ 4;
 #X obj 158 146 *~ 4;
 #X obj 126 176 dac~ 1 2 3 4;
 #X connect 0 0 1 0;
@@ -456,7 +456,7 @@ kann man ins mik;
 #X obj 167 331 spigot;
 #X obj 167 374 t b b b;
 #X msg 184 292 0;
-#X obj 200 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 200 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 212 293 1;
 #X obj 163 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -840,7 +840,7 @@ to easily plot the unit::response of a system;
 #X obj 299 427 print;
 #X obj 306 343 f;
 #X obj 258 267 sel 1;
-#N canvas 537 44 1139 689 snac 1;
+#N canvas 537 44 1139 689 snac 0;
 #X obj 180 606 outlet;
 #X obj 323 201 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
 -260097 -1;
@@ -1530,7 +1530,7 @@ errors in the case of weak fundamentals.;
 #X text 741 26 mit leni 24000;
 #X text 721 170 hier muss loadbang;
 #X text 455 246 sony: 487;
-#X obj 871 406 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 871 406 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 871 430 metro 5000;
 #X obj 904 817 phasor~ 150;
