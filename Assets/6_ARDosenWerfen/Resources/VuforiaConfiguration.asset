@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2067402452, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: VuforiaConfiguration
+  m_EditorClassIdentifier: 
+  vuforia:
+    vuforiaLicenseKey: Af//2XP/////AAABmTS9qnC1rkMGjVZowGgcjWwStApuLUC1RF/M2MyOVuBf3sXCgebxY3EhOWl54pwlqIgiJnbDHXOId6LTXDJp6M3QXDi/U9K80WdsFMyIY52HxBsr5Q5OC+hSwEdGKh4dcWPgr3GuxRov/n9O6buNroT4wZJnWFFQle9v1NQyzhkli17OJHwoZ0KE9IHD8VlYyJmV0CoEj468uSHpljLyx3tBcnfnOnhFRZGCHrnQYH8yjZNmHfj+CGOLtPG8Syszc9n4Yq9DgJrY8V9wuXNC73eGw31O4GBiW6lO8aPk+/MXObfaebbHbAA+GBu0HXOPOZftLHAZXzy23eAbMGHkZbGbf2/YAHOYlQlZ0g3KpdXE
+    ufoLicenseKey: QVRTRUsyZi8vLy8vQUFBQUtCTFNZQnhDSmtXVGo2VmVMRFdhT2ZjcUhKemdxRlI2WlZNVGFoTTJYNjdDV01KUmR0SWhOOFh6RVl2UU9xdE9mbWltUWdKNEoyaDQ4bVJCVGNrY013YmRMcTFhMGFIMzRYN3RQbG1VV1FjMDg2R1NuRU9SbGhyaVJJQmkwOWFOZzdzdUZlQTFCWmFTVmFlcXdKeEdPL3dPOVJ6K3JITzdzOXdPbzRXSEN5MU43eTJjUWRwZUpUSmZQaDN4MmJUVit6enFBSnpXRC9ONnVvM011Y3BSYzYzVklOa3lxdTZlM3c2ZlRWb1VnMk5vUStSQkpzNm9ISFBlc2pScXJndHBTWVVOV1FlcVErZ1QwZ1lqM29XR21KcXV2eHhTSHBPTldnK1FLSUx6SzBmeGJzSFNTQW92d0tpc1ErRnRFeUVWblF5Y1YzWjRaS1N5UGlOQm1hd2FRNkhEcFNiSUwwQTlpTzdnd2dHNEZmVHo=
+    delayedInitialization: 0
+    cameraDeviceModeSetting: -2
+    maxSimultaneousImageTargets: 2
+    maxSimultaneousObjectTargets: 2
+    useDelayedLoadingObjectTargets: 0
+    cameraDirection: 0
+    mirrorVideoBackground: 0
+  digitalEyewear:
+    cameraOffset: 0.06
+    distortionRenderingLayer: 31
+    eyewearType: 2
+    stereoFramework: 0
+    seeThroughConfiguration: 0
+    viewerName: Cardboard v1
+    viewerManufacturer: Google
+    useCustomViewer: 0
+    customViewer:
+      Version: 0
+      Name: 
+      Manufacturer: 
+      ButtonType: 0
+      ScreenToLensDistance: 0
+      InterLensDistance: 0
+      TrayAlignment: 0
+      LensCenterToTrayDistance: 0
+      DistortionCoefficients: {x: 0, y: 0}
+      FieldOfView: {x: 0, y: 0, z: 0, w: 0}
+      ContainsMagnet: 0
+  databaseLoad:
+    dataSetsToLoad:
+    - AR_Dosenwerfen
+    - Minf-Test
+    - VuforiaMars_Images
+    - VuforiaMars_VuMark
+    dataSetsToActivate:
+    - AR_Dosenwerfen
+    - Minf-Test
+    - VuforiaMars_Images
+    - VuforiaMars_VuMark
+  videoBackground:
+    clippingMode: 0
+    numDivisions: 2
+    videoBackgroundShader: {fileID: 15311, guid: 0000000000000000f000000000000000,
+      type: 0}
+    matteShader: {fileID: 15310, guid: 0000000000000000f000000000000000, type: 0}
+    videoBackgroundEnabled: 1
+  deviceTracker:
+    autoInitTracker: 0
+    autoStartTracker: 0
+    trackingMode: 0
+    posePrediction: 0
+    modelCorrectionMode: 0
+    modelTransformEnabled: 0
+    modelTransform: {x: 0, y: 0.1, z: -0.1}
+  smartTerrain:
+    autoInitTracker: 0
+    autoStartTracker: 0
+  webcam:
+    deviceNameSetInEditor: HP Truevision HD
+    flipHorizontally: 0
+    turnOffWebCam: 0
+    renderTextureLayer: 30
