@@ -30,10 +30,11 @@ public class PlatformMovement : MonoBehaviour {
         //Debug.Log(distance);
         //platformSpeed = distance * 0.1f;
         float dif = Mathf.Abs(prevDistance - distance);
-
-        if (dif>0.021f)//distance != prevDistance)
+        Debug.Log(dif);
+        if (dif>0.02f)//distance != prevDistance)
         {
             speed = platformSpeed * dif * 90;
+            Debug.Log("yay");
         }
         else
         {

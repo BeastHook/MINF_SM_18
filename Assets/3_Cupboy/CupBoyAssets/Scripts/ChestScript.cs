@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class ChestScript : MonoBehaviour {
 
-    //public Text winText;
-    public GameObject letter;
-    public GameObject game;
+    public Text winText;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,14 +17,9 @@ public class ChestScript : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("CupBoy"))
-        {
-            collision.GetComponent<AutomatedMovement>().moveallowed = false;
-            this.GetComponent<Animator>().SetBool("isOpen", true);
-            // winText.GetComponent<Text>().enabled = true; 
-            //winText.text = ("Winner!"+"\n"+"A");
-            letter.SetActive(true);
-            game.SetActive(false);
-        }
+        collision.GetComponent<AutomatedMovement>().moveallowed = false;
+        this.GetComponent<Animator>().SetBool("isOpen" ,true);
+        // winText.GetComponent<Text>().enabled = true; 
+        winText.text = ("Winner!"+"\n"+"A");
     }
 }

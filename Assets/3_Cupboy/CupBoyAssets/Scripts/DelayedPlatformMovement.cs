@@ -32,9 +32,10 @@ public class DelayedPlatformMovement : MonoBehaviour {
         float distance = pos.magnitude;
         float dif = Mathf.Abs(prevDistance - distance);
        // Debug.Log(dif);
-        if (dif > 0.02f)//distance != prevDistance)
+        if (dif > 0.004f)//distance != prevDistance)
         {
-            speed = platformSpeed ;
+            speed = platformSpeed;
+            Debug.Log("yay");
         }
         else
         {
@@ -50,7 +51,11 @@ public class DelayedPlatformMovement : MonoBehaviour {
 
     }
 
- 
+    private void Update()
+    {
+
+        Move();
+    }
     private void Move()
     {
         childTransform.localPosition = Vector3.MoveTowards(childTransform.localPosition, nexPos, speed * Time.deltaTime);

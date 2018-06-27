@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LibPDBinding;
-
 
 
 public class AudioVisualization : MonoBehaviour
@@ -16,11 +14,7 @@ public class AudioVisualization : MonoBehaviour
     public ParticleEffect_Type _ParticleEffectType = ParticleEffect_Type.none;
     //two AudioClips who interpolate between eachother
     public AudioClip[] clips;
-    [Space]
-    public GameObject voiceOver;
-    [Space]
     public Material paticleMat;
-    public float particleRate;
 
     [Space]
     public bool rotation;
@@ -104,51 +98,23 @@ public class AudioVisualization : MonoBehaviour
     private float[] bChannel3;
     private float[] bChannel4;
     private float[] bSamples;
-    //AudioClipZ
-    private float[] zChannel1;
-    private float[] zChannel2;
-    private float[] zChannel3;
-    private float[] zChannel4;
-    private float[] zSamples;
 
     private bool startInterpolation = false;
 
-    private int clipCount = 1;
+    private int clipCount = 0;
     private int counterA = 0;
     private int counterB = 0;
-    private int counterZ = 0;
     private float interpolationA = 1;
     private float interpolationB = 0;
-    private float interpolationToZ = 100;
 
-    private AudioSource voiceOverSource;
-    public AudioClip[] voiceOverClips;
+    private float waitTime = 10f;
+    private float timer;
 
-    private fromPdScript pd;
-
-    private float gameTime = 0f;
-    private bool halfProcent = false;
-    private bool hiddenSecretRevealed = false;
-    private bool gameOver = false;
-
-    private float waitTimeInterpolationsZyklus = 7f;
-    private float timerInterpolationsZyklus;
-    private float waitTimeVoiceOver20 = 20f;
-    private float timerVoiceOver;
-    private float oldCorrect = 0;
 
 
 
     private void Awake()
     {
-        GameObject pdReader = GameObject.Find("percentFromPd");
-        pd = pdReader.GetComponent<fromPdScript>();
-
-        voiceOverSource = voiceOver.GetComponent<AudioSource>();
-        voiceOverClips = Resources.LoadAll<AudioClip>("Gruppe1/VoiceOver");
-        print(voiceOverClips.Length);
-        ChangeVoiceOver(0);
-
         StartCoroutine(RereadAudioClips());
         audioReaderObjectMic = GameObject.Find("ChannelMic");
         audioSourceMic = audioReaderObjectMic.GetComponent<AudioSource>();
@@ -196,14 +162,10 @@ public class AudioVisualization : MonoBehaviour
                     pos = new Vector3((Mathf.Sin((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, (Mathf.Cos((i2 / audioReader.audioSamples.Length) * Mathf.PI)) * objectOffSet, transform.position.z);
                     particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(-Camera.main.transform.forward), parent_Visualization).GetComponent<ParticleSystem>();
                     particles[i].name = "Particle: " + i;
-                    if (i >= 377)
-                    {
-                        particles[i].gameObject.SetActive(false);
-                    }
                     var mainP = particles[i].main;
                     mainP.startSize = 2;
                     var emission = particles[i].emission;
-                    emission.rateOverTime = particleRate;
+                    emission.rateOverTime = 100;
                     if (duplicateInverted)
                     {
                         inverted_particles[i] = Instantiate(ps_Visualization, pos, Quaternion.LookRotation(Camera.main.transform.forward), parent_Visualization).GetComponent<ParticleSystem>();
@@ -224,12 +186,6 @@ public class AudioVisualization : MonoBehaviour
 
     }
 
-    private void ChangeVoiceOver(int i)
-    {
-        voiceOverSource.clip = voiceOverClips[i];
-        voiceOverSource.Play();
-        timerVoiceOver = 0;
-    }
 
     public void InterpolationBetweenAandB()
     {
@@ -248,21 +204,8 @@ public class AudioVisualization : MonoBehaviour
 
     private IEnumerator RereadAudioClips()
     {
-        Debug.Log("####################################################################");
-        Debug.Log("File: " + clips[0].name);
-        //AudioClipA
-        zSamples = new float[clips[0].samples * clips[0].channels];
-        zChannel1 = new float[clips[0].samples];
-        zChannel2 = new float[clips[0].samples];
-        zChannel3 = new float[clips[0].samples];
-        zChannel4 = new float[clips[0].samples];
-        Debug.Log("Mystery Audio Channels: " + clips[0].channels);
-        Debug.Log("Mystery Audio Samples: " + clips[0].samples);
-        clips[0].GetData(zSamples, 0);
-        Debug.Log("Mystery Audio Samples all channels: " + zSamples.Length);
 
-        Debug.Log("####################################################################");
-        Debug.Log("Starting Clip: " + clips[clipCount].name);
+        Debug.Log(clipCount);
         //AudioClipA
         aSamples = new float[clips[clipCount].samples * clips[clipCount].channels];
         aChannel1 = new float[clips[clipCount].samples];
@@ -278,8 +221,7 @@ public class AudioVisualization : MonoBehaviour
         {
             clipCount = 0;
         }
-        Debug.Log("--------------------------------------------------------------------");
-        Debug.Log("Following Clip: " + clips[clipCount+1].name);
+
         //AudioClipB
         bSamples = new float[clips[clipCount + 1].samples * clips[clipCount + 1].channels];
         bChannel1 = new float[clips[clipCount + 1].samples];
@@ -296,56 +238,12 @@ public class AudioVisualization : MonoBehaviour
 
     private void Update()
     {
-        //prozentTest == pd.correct;
-
-        gameTime += Time.deltaTime;
-        //Interpolation Timer
-        timerInterpolationsZyklus += Time.deltaTime;
-        if (timerInterpolationsZyklus > waitTimeInterpolationsZyklus)
+        timer += Time.deltaTime;
+        if (timer > waitTime)
         {
             startInterpolation = true;
+            timer = 0f;
         }
-        //VoiceOver Timer
-        if (!voiceOverSource.isPlaying)
-        {
-            timerVoiceOver += Time.deltaTime;
-            //if (timerVoiceOver > waitTimeVoiceOver20 && pd.correct < 20 )
-            if (timerVoiceOver > waitTimeVoiceOver20 && pd.correct < 20)     
-            {
-                Debug.Log(waitTimeVoiceOver20 + " sekunden unter 20%");
-                ChangeVoiceOver(1);
-                pd.correct = 30;
-            }
-            else if (timerVoiceOver > waitTimeVoiceOver20 && (pd.correct >= 20 && pd.correct < 40))
-            {
-                Debug.Log(waitTimeVoiceOver20 + " sekunden unter 40%");
-                ChangeVoiceOver(2);
-                pd.correct = 50;
-            }
-            //### ab hier muss eigentlich die waitTime
-            else if (pd.correct >= 50 && pd.correct < 100 && !halfProcent)
-            {
-                Debug.Log("50% erreicht");
-                ChangeVoiceOver(3);
-                halfProcent = true;
-            }
-            else if (pd.correct >= 100 && !hiddenSecretRevealed)
-            {
-                Debug.Log("100% erreicht");
-                ChangeVoiceOver(4);
-                hiddenSecretRevealed = true;
-            }
-        }
-        // Game Ends after 3 Minutes = 180 Secounds
-        if(gameTime >= 180 && !gameOver)
-        {
-            Debug.Log("Zeit ist um");
-            ChangeVoiceOver(5);
-            gameOver = true;
-            //SceneManager usw
-        }
-
-
 
 
 #pragma warning disable CS0618 // Typ oder Element ist veraltet
@@ -379,21 +277,8 @@ public class AudioVisualization : MonoBehaviour
             bChannel4[i] = bSamples[(counterB + i) * 4 + 3];
         }
 
-        if (counterZ >= clips[0].samples)
-        {
-            counterZ = 0;
-        }
-        for (int i = 0; i < 512; i++)
-        {
-            zChannel1[i] = zSamples[(counterZ + i) * 4];
-            zChannel2[i] = zSamples[(counterZ + i) * 4 + 1];
-            zChannel3[i] = zSamples[(counterZ + i) * 4 + 2];
-            zChannel4[i] = zSamples[(counterZ + i) * 4 + 3];
-        }
-
         counterA += 512;
         counterB += 512;
-        counterZ += 512;
 
 
         //#pragma warning disable CS0618 // Typ oder Element ist veraltet
@@ -436,6 +321,7 @@ public class AudioVisualization : MonoBehaviour
             case ParticleEffect_Type.startSpeed:
                 for (int i = 0; i < audioReader.audioSamples.Length; i++)
                 {
+                    float count = i;
                     if (aChannel1[i] * audioMultiplier > audioMax) { aChannel1[i] = audioMax / audioMultiplier; }
                     if (aChannel1[i] > audioSensibility)
                     {
@@ -445,11 +331,9 @@ public class AudioVisualization : MonoBehaviour
                         //#Übergabe A zu B und dann soll weiter laufen auf B und nächstes mal inverse B zu A damit nicht der Laufende Cyklus gebrochen wird. 
                         if (startInterpolation)
                         {
-                            particles[i].transform.position = new Vector3(
-                                                                          ((((aChannel1[i] + micChannel1[i]) * interpolationA) * 100) + (((bChannel1[i] + micChannel1[i]) * interpolationB) * 100) * ((interpolationToZ - pd.correct) / 100)) + (zChannel1[i] * pd.correct / 100 * 100),
-                                                                          ((((aChannel2[i] + micChannel2[i]) * interpolationA) * 100) + (((bChannel2[i] + micChannel2[i]) * interpolationB) * 100) * ((interpolationToZ - pd.correct) / 100)) + (zChannel2[i] * pd.correct / 100 * 100),
-                                                                          (((aChannel3[i] + ((micChannel1[i] + micChannel2[i])) * interpolationA) * 100) + (((bChannel3[i] + ((micChannel1[i] + micChannel2[i])) * interpolationB) * 100)) * ((interpolationToZ - pd.correct) / 100)) + (zChannel3[i] * pd.correct / 100 * 100)
-                                                                         );
+                            particles[i].transform.position = new Vector3(((aChannel1[i] * interpolationA) * 100) + ((bChannel1[i] * interpolationB) * 100),
+                                                                          ((aChannel2[i] * interpolationA) * 100) + ((bChannel2[i] * interpolationB) * 100),
+                                                                          ((aChannel3[i] * interpolationA) * 100) + ((bChannel3[i] * interpolationB) * 100));
                             if (interpolationA < 0)
                             {
                                 clipCount++;
@@ -457,18 +341,14 @@ public class AudioVisualization : MonoBehaviour
                                 startInterpolation = false;
                                 interpolationA = 1;
                                 interpolationB = 0;
-                                timerInterpolationsZyklus = 0f;
 
                             }
-                            interpolationA -= Time.deltaTime / 2000;
-                            interpolationB += Time.deltaTime / 2000;
+                            interpolationA -= Time.deltaTime / 1000;
+                            interpolationB += Time.deltaTime / 1000;
                         }
                         else
                         {
-                            particles[i].transform.position = new Vector3((((aChannel1[i] + micChannel1[i]) * ((interpolationToZ - pd.correct) / 100)) * 100) + (zChannel1[i] * pd.correct / 100 * 100), 
-                                                                          (((aChannel2[i] + micChannel2[i]) * ((interpolationToZ - pd.correct) / 100)) * 100) + (zChannel2[i] * pd.correct / 100 * 100), 
-                                                                          (((aChannel3[i] + (micChannel1[i] + micChannel2[i])) * ((interpolationToZ - pd.correct) / 100)) * 100) + (zChannel3[i] * pd.correct / 100 * 100)
-                                                                         );
+                            particles[i].transform.position = new Vector3(aChannel1[i] * 100, aChannel2[i] * 100, aChannel3[i] * 100);
                         }
 
                     }
@@ -559,11 +439,6 @@ public class AudioVisualization : MonoBehaviour
         }
         if (color)
         {
-            if ((pd.correct % 10) == 0)
-            {
-                oldCorrect = pd.correct;
-            }
-
             for (int i = 0; i < particles.Length; i++)
             {
                 //float k = audioReader.audioSamples[i] * mulColorAmmount / maxColorAmmount;
@@ -571,14 +446,7 @@ public class AudioVisualization : MonoBehaviour
                 //Debug.Log(k);
                 var main = particles[i].main;
                 //main.startColor = Color.Lerp(minColor, maxColor, k);
-                if (pd.correct != oldCorrect)
-                {
-                    main.startColor = new Color(0,255,0);
-                }
-                else if (pd.correct == oldCorrect)
-                {
-                    main.startColor = particleColorGradient.Evaluate(Random.Range(-0.1f, k));
-                }
+                main.startColor = particleColorGradient.Evaluate(Random.Range(-0.1f, k));
 
                 if (duplicateInverted)
                 {
