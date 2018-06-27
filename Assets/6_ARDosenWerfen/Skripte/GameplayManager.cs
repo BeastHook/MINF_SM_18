@@ -58,7 +58,7 @@ public class GameplayManager : MonoBehaviour {
 
 
 
-        if (SceneManager.GetActiveScene().name == "Testscene")
+        if (SceneManager.GetActiveScene().name == "6_ARDosenWerfen")
         {
             CreateLevel();
         }
@@ -112,11 +112,11 @@ public class GameplayManager : MonoBehaviour {
 
            if (waitTime >= 4.0)
            {
-               ChangeScene("Testscene");
+               ChangeScene("6_ARDosenWerfen");
                currentLevel = 0;
                ScoreManager.score = 0;
                waitTime = 0;
-               showCurrentLevel = 0;
+               showCurrentLevel = 1;
            }
         
         }
