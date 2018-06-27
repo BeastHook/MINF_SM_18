@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class upplatfromCollision : MonoBehaviour {
-    public GameObject platform;
-    public GameObject player;
+public class GameTipAudio : MonoBehaviour {
+
+   public AudioSource audioS;
+    private bool alreadyPlayed = false;
 	// Use this for initialization
 	void Start () {
-       
-
-
+		
 	}
 	
 	// Update is called once per frame
@@ -18,8 +17,9 @@ public class upplatfromCollision : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        platform.GetComponent<Upplatfrom>().move = true;
-        player.GetComponent<AutomatedMovement>().moveallowed = false;
+        if (collision.gameObject.tag.Equals("CupBoy")&&!alreadyPlayed) {
+            audioS.Play();
+            alreadyPlayed = true;
+        }
     }
 }
