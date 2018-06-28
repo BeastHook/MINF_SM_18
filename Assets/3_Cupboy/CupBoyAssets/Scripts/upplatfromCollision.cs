@@ -18,7 +18,7 @@ public class upplatfromCollision : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit");
+        
         platform.GetComponent<Upplatfrom>().move = true;
         player.GetComponent<AutomatedMovement>().moveallowed = false;
     }

@@ -96,7 +96,7 @@ public class AutomatedMovement : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(15f);
         moveallowed=true;
         
     }

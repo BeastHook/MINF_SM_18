@@ -159,11 +159,12 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.HAW.MINFSM20182
+    Standalone: com.oculus.UnitySample
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 0
-  AndroidPreferredInstallLocation: 1
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
@@ -264,6 +265,12 @@ PlayerSettings:
     m_Enabled: 1
     m_Devices:
     - Vuforia
+  - m_BuildTarget: Standalone
+    m_Enabled: 1
+    m_Devices:
+    - Vuforia
+    - Oculus
+    - OpenVR
   m_BuildTargetEnableVuforiaSettings:
   - m_BuildTarget: Android
     m_Enabled: 1

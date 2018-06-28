@@ -44,14 +44,22 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+<<<<<<< HEAD
     - ForestWalkMarker
+=======
+    - AR_Dosenwerfen
+>>>>>>> d87f203ea96d5ae0df3ab2f280becbb7812ae624
     - PuzzleD_1
     - 1V1DB
     - MINF
     - VuforiaMars_Images
     - VuforiaMars_VuMark
     dataSetsToActivate:
+<<<<<<< HEAD
     - ForestWalkMarker
+=======
+    - AR_Dosenwerfen
+>>>>>>> d87f203ea96d5ae0df3ab2f280becbb7812ae624
     - PuzzleD_1
     - VuforiaMars_Images
     - 1V1DB
