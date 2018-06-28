@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
@@ -13,6 +14,8 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
     public GameObject Player;
     public AudioSource source;
     public AudioClip feuer;
+    public GameObject explo;
+    
 
 
     public void OnButtonPressed(VirtualButtonBehaviour vb)
@@ -33,6 +36,7 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
         vbBtnObj = GameObject.Find("VirtualButton");
         vbBtnObj.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
         
+        
 
     }
 
@@ -49,7 +53,10 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
             Debug.Log("Attack");
             source.clip = feuer;
             source.Play();
+            explo.SetActive(true);
+            StartCoroutine(Explosion());
             Enemy.GetComponent<EnemyController>().getDamaged(25);
+            Player.GetComponent<AnimControl>().Attack01();
             timerstart = false;
             timer = 0.0f;
             Enemy.GetComponent<EnemyController>().playerturn = false;
@@ -58,5 +65,9 @@ public class Attack : MonoBehaviour, IVirtualButtonEventHandler {
 
     }
 
-
+    private IEnumerator Explosion()
+    {
+        yield return new WaitForSeconds(2);
+        explo.SetActive(false);
+    }
 }

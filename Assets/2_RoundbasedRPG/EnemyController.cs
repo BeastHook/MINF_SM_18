@@ -25,6 +25,9 @@ public class EnemyController : MonoBehaviour {
     public AudioClip verloren;
     public Boolean gameEnd = false;
     public GameObject chest;
+    public GameObject flame;
+    
+    
 
 
 
@@ -101,6 +104,8 @@ public class EnemyController : MonoBehaviour {
                 source.clip = feuertreffer;
                 source.Play();
                 this.gameObject.GetComponent<playerControl>().FlyFlameAttack();
+                flame.SetActive(true);
+                StartCoroutine(Fire());
                 player.GetComponent<PlayerController>().getDamaged(50);
                 player.GetComponent<PlayerController>().playerState = 0;
             }
@@ -109,6 +114,8 @@ public class EnemyController : MonoBehaviour {
                 source.clip = feuerschild;
                 source.Play();
                 this.gameObject.GetComponent<playerControl>().FlyFlameAttack();
+                flame.SetActive(true);
+                StartCoroutine(Fire());
                 player.GetComponent<PlayerController>().playerState = 0;
             }
         }
@@ -155,7 +162,13 @@ public class EnemyController : MonoBehaviour {
 
 
     }
-   
+
+    private IEnumerator Fire()
+    {
+        yield return new WaitForSeconds(3);
+        flame.SetActive(false);
+
+    }
 
     public void getDamaged(int damage)
     {
