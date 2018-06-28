@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="CardMarker_004" size="0.100000 0.100000" />
+    <ImageTarget name="CardMarker_003" size="0.100000 0.100000" />
+    <ImageTarget name="CardMarker_002" size="0.100000 0.100000" />
+    <ImageTarget name="CardMarker_001" size="0.100000 0.100000" />
+    <ImageTarget name="KeyHoleMarker" size="0.200000 0.200000" />
+    <ImageTarget name="BoxMarker_04" size="0.200000 0.200000" />
+    <ImageTarget name="BoxMarker_03" size="0.200000 0.200000" />
+    <ImageTarget name="BoxMarker_02" size="0.200000 0.200000" />
+    <ImageTarget name="BoxMarker_01" size="0.200000 0.200000" />
+  </Tracking>
+</QCARConfig>
