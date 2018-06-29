@@ -367,7 +367,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.324799, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -420,7 +420,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 0e4ca6be00000000000000bf000000000000803f0000000000000000000000000e4ca6be000000000000003f000000000000803f00000000000000000000803f0e4ca63e00000000000000bf000000000000803f000000000000803f000000000e4ca63e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -780,15 +780,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: '--- EMPTY ---'
+  mTrackableName: Home
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: '--- EMPTY ---'
+  mDataSetPath: Vuforia/NewNewTarget.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 1.5387622
   mImageTargetType: 0
-  mWidth: 76.9341
-  mHeight: 76.9341
+  mWidth: 50
+  mHeight: 76.93811
 --- !u!4 &757536515
 Transform:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ Transform:
   m_GameObject: {fileID: 757536509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -185.7, y: 0, z: 0}
-  m_LocalScale: {x: 76.9341, y: 76.9341, z: 76.9341}
+  m_LocalScale: {x: 76.93811, y: 76.93811, z: 76.93811}
   m_Children:
   - {fileID: 1028866138}
   m_Father: {fileID: 0}
@@ -834,7 +834,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.3249365, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -887,7 +887,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 145ea6be00000000000000bf00000000ffff7f3f000000000000000000000000145ea6be000000000000003f00000000ffff7f3f00000000000000000000803f145ea63e00000000000000bf00000000ffff7f3f000000000000803f00000000145ea63e000000000000003f00000000ffff7f3f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1047,15 +1047,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: '--- EMPTY ---'
+  mTrackableName: Goob
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: QCAR/--- EMPTY ---.xml
+  mDataSetPath: Vuforia/NewNewTarget.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 1.5387622
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 50
+  mHeight: 76.93811
 --- !u!4 &810263520
 Transform:
   m_ObjectHideFlags: 0
@@ -1064,7 +1064,7 @@ Transform:
   m_GameObject: {fileID: 810263514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 100.000015, y: 0, z: 173}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 76.93811, y: 76.93811, z: 76.93811}
   m_Children:
   - {fileID: 2129600532}
   m_Father: {fileID: 0}
@@ -1091,7 +1091,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: '--- EMPTY ---Material'
+  m_Name: GoobMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1104,7 +1104,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ae4f26ac897761e44ba30d1b54b1a3e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1212,15 +1212,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: '--- EMPTY ---'
+  mTrackableName: Turret2
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: '--- EMPTY ---'
+  mDataSetPath: Vuforia/NewNewTarget.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 1.5394136
   mImageTargetType: 0
-  mWidth: 76.9341
-  mHeight: 76.9341
+  mWidth: 50
+  mHeight: 76.97068
 --- !u!4 &1118403233
 Transform:
   m_ObjectHideFlags: 0
@@ -1229,7 +1229,7 @@ Transform:
   m_GameObject: {fileID: 1118403227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 127.600006, y: 0, z: 0}
-  m_LocalScale: {x: 76.9341, y: 76.9341, z: 76.9341}
+  m_LocalScale: {x: 76.97068, y: 76.97068, z: 76.97068}
   m_Children:
   - {fileID: 806918880}
   m_Father: {fileID: 0}
@@ -1351,7 +1351,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.3249365, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1404,7 +1404,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 145ea6be00000000000000bf00000000ffff7f3f000000000000000000000000145ea6be000000000000003f00000000ffff7f3f00000000000000000000803f145ea63e00000000000000bf00000000ffff7f3f000000000000803f00000000145ea63e000000000000003f00000000ffff7f3f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1470,7 +1470,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: '--- EMPTY ---Material'
+  m_Name: HomeMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1483,7 +1483,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 317de19daab75c442b79c5f8bcf19180, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1495,7 +1495,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: '--- EMPTY ---Material'
+  m_Name: Turret2Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1508,7 +1508,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3a651a410f3756f409250d49686d27b4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
