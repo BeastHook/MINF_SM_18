@@ -130,8 +130,9 @@ public class AudioVisualization : MonoBehaviour
     private bool halfProcent = false;
     private bool hiddenSecretRevealed = false;
     private bool gameOver = false;
+    private bool init = false;
 
-    private float waitTimeInterpolationsZyklus = 7f;
+    private float waitTimeInterpolationsZyklus = 20f;
     private float timerInterpolationsZyklus;
     private float waitTimeVoiceOver20 = 20f;
     private float timerVoiceOver;
@@ -248,18 +249,23 @@ public class AudioVisualization : MonoBehaviour
 
     private IEnumerator RereadAudioClips()
     {
-        Debug.Log("####################################################################");
-        Debug.Log("File: " + clips[0].name);
-        //AudioClipA
-        zSamples = new float[clips[0].samples * clips[0].channels];
-        zChannel1 = new float[clips[0].samples];
-        zChannel2 = new float[clips[0].samples];
-        zChannel3 = new float[clips[0].samples];
-        zChannel4 = new float[clips[0].samples];
-        Debug.Log("Mystery Audio Channels: " + clips[0].channels);
-        Debug.Log("Mystery Audio Samples: " + clips[0].samples);
-        clips[0].GetData(zSamples, 0);
-        Debug.Log("Mystery Audio Samples all channels: " + zSamples.Length);
+        if (!init)
+        {
+            Debug.Log("####################################################################");
+            Debug.Log("File: " + clips[0].name);
+            //AudioClipA
+            zSamples = new float[clips[0].samples * clips[0].channels];
+            zChannel1 = new float[clips[0].samples];
+            zChannel2 = new float[clips[0].samples];
+            zChannel3 = new float[clips[0].samples];
+            zChannel4 = new float[clips[0].samples];
+            Debug.Log("Mystery Audio Channels: " + clips[0].channels);
+            Debug.Log("Mystery Audio Samples: " + clips[0].samples);
+            clips[0].GetData(zSamples, 0);
+            Debug.Log("Mystery Audio Samples all channels: " + zSamples.Length);
+            init = true;
+        }
+
 
         Debug.Log("####################################################################");
         Debug.Log("Starting Clip: " + clips[clipCount].name);

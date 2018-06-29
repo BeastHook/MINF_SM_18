@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: 
+    vuforiaLicenseKey: AW2/ER3/////AAABmQfDcIMAsEK6vrLcsecaj7Rc63AG+z1HC9D+6VdIEZK7gdxCUuVJUodJYbEYS30h+MwxzP3dZFCYoPqyJYbwwvziiVaNhT9vWq0y9sfMZA2iNIc+GrN8NHqcy1sGELw6kM2HBU1uwBv0balQOfs9KeXNpN6jHGSGlEEMdrizY3KEwfy2k8EFzKhuNXXQoo9fOqC8kno1Keupb5DK8CkYGGyxjTgDJM2gK1eMcteP2Z6/nT9AHc6ULBiewtBCbSY+7DYzfEXew2Sbc5sFlpaOcHrTMRDKPtTLia+3EJzJwqw896zQFA/RthlJi4r7m+TnZB96u/AD5bX5PnbcIWJlGNgttKP6Al1SSVDzn/EOTb46
     ufoLicenseKey: QWNFVDNRNy8vLy8vQUFBQUtKT3hOU2FjNDBKWmdtbjJCZEQrcWY4aWhuN0lzNVYvNUtsQ0E4R3NkckIxZUVJL1JPVzZOUVl6dDlaR3NMRGdqQ1VOQStIdm0zelR5MW8rZldMak5mSksyUWxwYzkzcGVBMHV6ZHJhN3c5WVljaytocER1ajJoOWRzZGJzU0hGUmQ3cW5NdXR0Mk1NdERiN0xpMm5SU3BwbkNic3pTRGVsSzVGUDMrOG04UFQvcFRDRFd3UVYra3N1Z3FhbW9GNm9iUkFUOFRCeXJ3OW01UFUxR2tpblF3cUdyOWVTNk1iYmxWc25jWCtQeGVkUTVjZ3llOHhpS25YbW10OHg1UjRrYlBrYzR2Ynh3azdhZHNuZzl6ZWNwSGVQS2daSSt6eXRHZStvY3l3clNkOVZXd0QyTENXYzJxSHZmdk55cDdFelROYmFMQXA1ZVU0Rk0rcWtqdkpKYnJLVzRCcG9qYXRIT0FiOXcvMjloNTk=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
@@ -44,11 +44,31 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - TinyToolTime
+    - PuzzleD_1
+    - MosaikMultis
+    - MINF
+    - Minf-Test
+    - GearBoxMarkers
+    - GearBoxImageTargets
+    - ForestWalkMarker
+    - Cupboy
+    - AR_Dosenwerfen
+    - 1V1DB
     - VuforiaMars_Images
-    - VuforiaMars_VuMark
     dataSetsToActivate:
+    - TinyToolTime
+    - PuzzleD_1
+    - MosaikMultis
+    - MINF
+    - Minf-Test
+    - GearBoxMarkers
+    - GearBoxImageTargets
+    - ForestWalkMarker
+    - Cupboy
+    - AR_Dosenwerfen
+    - 1V1DB
     - VuforiaMars_Images
-    - VuforiaMars_VuMark
   videoBackground:
     clippingMode: 0
     numDivisions: 2
