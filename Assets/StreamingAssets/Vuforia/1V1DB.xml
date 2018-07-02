@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="ALT_Shield" size="0.150000 0.188764" />
+    <ImageTarget name="ALT_IceWall" size="0.150000 0.197581" />
+    <ImageTarget name="ALT_Fireball" size="0.150000 0.187288" />
+    <ImageTarget name="New_IceWall" size="0.150000 0.197581" />
+    <ImageTarget name="New_Shield" size="0.150000 0.188764" />
+    <ImageTarget name="New_Fireball" size="0.150000 0.196328" />
     <ImageTarget name="IceWall_Marker" size="0.150000 0.198058" />
     <ImageTarget name="Shield_Marker" size="0.150000 0.190194" />
     <ImageTarget name="Fireball_Marker" size="0.150000 0.190194" />

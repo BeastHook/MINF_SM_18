@@ -44,6 +44,7 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - 1V1DB
     - TinyToolTime
     - PuzzleD_1
     - MosaikMultis
@@ -54,9 +55,9 @@ MonoBehaviour:
     - ForestWalkMarker
     - Cupboy
     - AR_Dosenwerfen
-    - 1V1DB
     - VuforiaMars_Images
     dataSetsToActivate:
+    - 1V1DB
     - TinyToolTime
     - PuzzleD_1
     - MosaikMultis
@@ -67,7 +68,6 @@ MonoBehaviour:
     - ForestWalkMarker
     - Cupboy
     - AR_Dosenwerfen
-    - 1V1DB
     - VuforiaMars_Images
   videoBackground:
     clippingMode: 0
