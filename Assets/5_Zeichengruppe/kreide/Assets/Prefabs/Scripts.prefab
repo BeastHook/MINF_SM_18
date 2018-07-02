@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1813745059064370}
+  m_IsPrefabParent: 1
+--- !u!1 &1813745059064370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4953162755469204}
+  - component: {fileID: 114417851697691200}
+  - component: {fileID: 114928678946421248}
+  - component: {fileID: 114780778163146588}
+  m_Layer: 0
+  m_Name: Scripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4953162755469204
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813745059064370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6104036, y: 0.06284216, z: 0.007873535}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114417851697691200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813745059064370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2db29d0fb3ebec46ba533f704ffc8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse: 1
+  m_LineRenderer: {fileID: 0}
+  m_AddCollider: 0
+  m_EdgeCollider2D: {fileID: 0}
+  m_Points: []
+  pointer: {fileID: 0}
+  toInst: {fileID: 1824217082801852, guid: 61d4ec937d2f7f842a5f25e2c38c7de5, type: 2}
+  visualizer: {fileID: 0}
+  hintergrund: {fileID: 0}
+  drawing: {fileID: 0}
+  tester: {fileID: 0}
+--- !u!114 &114780778163146588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813745059064370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e78c9985eb2fe34ebf020e43adb1c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setDebugTo: 0
+--- !u!114 &114928678946421248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813745059064370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f421e9be748ba4d9061f473bef8f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openChestSprite: {fileID: 21300000, guid: 11789707ce25065429181ae951a84514, type: 3}
+  closedChestSprite: {fileID: 21300000, guid: ef64d62669c73c64f8cd06bb52f0c73f, type: 3}
+  showTreasureSpriteDuration: 2.5
+  slideToLeftValue: 0.0036
+  debug: 0
