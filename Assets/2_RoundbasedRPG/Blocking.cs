@@ -12,6 +12,8 @@ public class Blocking : MonoBehaviour, IVirtualButtonEventHandler
 
     public GameObject Enemy;
     public GameObject Player;
+    public AudioSource source;
+    public AudioClip block;
 
 
     public void OnButtonPressed(VirtualButtonBehaviour vb)
@@ -43,9 +45,11 @@ public class Blocking : MonoBehaviour, IVirtualButtonEventHandler
 
         }
 
-        if (timer >= 5.0f)
+        if (timer >= 2.0f)
         {
             Debug.Log("Blocking");
+            source.clip = block;
+            source.Play();
             Player.GetComponent<PlayerController>().playerState = 2;
             timerstart = false;
             timer = 0.0f;
