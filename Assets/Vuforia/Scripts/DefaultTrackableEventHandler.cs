@@ -14,6 +14,9 @@ using Vuforia;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
+	public delegate void SceneTracking(bool trackingFound, TrackableBehaviour trackable);
+	public static event SceneTracking OnSceneTracking;
+
     #region PROTECTED_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
