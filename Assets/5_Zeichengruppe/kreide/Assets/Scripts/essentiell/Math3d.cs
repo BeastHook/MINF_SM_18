@@ -707,6 +707,8 @@ public class Math3d : MonoBehaviour {
     //-firstRotation is the first quaternion of the array to be averaged
     //-addAmount holds the total amount of quaternions which are currently added
     //This function returns the current average quaternion
+
+    /*
     public static void AverageQuaternion(ref Vector4 cumulative, Quaternion newRotation, Quaternion firstRotation, int addAmount){
         float w = 0.0f;
         float x = 0.0f;
@@ -732,7 +734,7 @@ public class Math3d : MonoBehaviour {
         
         //note: if speed is an issue, you can skip the normalization step
         //return NormalizeQuaternion(x, y, z, w);
-    }
+    }*/
     
     public static Quaternion NormalizeQuaternion(float x, float y, float z, float w){
         float lengthD = 1.0f / (w*w + x*x + y*y + z*z);
