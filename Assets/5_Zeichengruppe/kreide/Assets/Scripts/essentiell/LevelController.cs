@@ -18,7 +18,7 @@ public class LevelController : MonoBehaviour
     private SpriteRenderer chestColliderWithSprite;
     public Sprite openChestSprite;
     public Sprite closedChestSprite;
-    public float showTreasureSpriteDuration = 20f;
+    public float showTreasureSpriteDuration = 5.5f;
 
     // MoveSight variables
     private GameObject[] moveFunctionTrigger;

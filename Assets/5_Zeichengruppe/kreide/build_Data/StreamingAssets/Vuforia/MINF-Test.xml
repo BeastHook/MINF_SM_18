@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Share-PDF" size="1.000000 1.202532" />
+    <ImageTarget name="IMG_20180605_112902" size="1020.000000 1200.000000" />
+  </Tracking>
+</QCARConfig>
