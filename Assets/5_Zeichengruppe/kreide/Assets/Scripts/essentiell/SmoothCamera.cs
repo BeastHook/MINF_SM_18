@@ -29,7 +29,7 @@ public class SmoothCamera : MonoBehaviour {
 
 		Vector4 avgr = Vector4.zero;
 		foreach (Quaternion singleRotation in rotations) {
-			Math3d.AverageQuaternion(ref avgr, singleRotation, rotations.Peek(), rotations.Count);
+			//Math3d.AverageQuaternion(ref avgr, singleRotation, rotations.Peek(), rotations.Count);
 		}
 
 		Vector3 avgp = Vector3.zero;

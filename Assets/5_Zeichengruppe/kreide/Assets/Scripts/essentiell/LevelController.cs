@@ -12,12 +12,13 @@ public class LevelController : MonoBehaviour
 
     private GameObject drawnElementsHolder;
     private GameObject player;
-
+    private AudioSource source;
+    private bool isPlaying = false;
     // Chest
     private SpriteRenderer chestColliderWithSprite;
     public Sprite openChestSprite;
     public Sprite closedChestSprite;
-    public float showTreasureSpriteDuration = 2.5f;
+    public float showTreasureSpriteDuration = 20f;
 
     // MoveSight variables
     private GameObject[] moveFunctionTrigger;
@@ -33,7 +34,7 @@ public class LevelController : MonoBehaviour
 
     //Distanz um die das Level verschoben werden soll
     private float slideToLeftValue = 0.3f;
-	private float lastJump = 0.6f;
+    private float lastJump = 0.6f;
 
     public bool debug = false;
 
@@ -42,6 +43,7 @@ public class LevelController : MonoBehaviour
 
         chestColliderWithSprite = GameObject.FindWithTag("Treasure").GetComponent<SpriteRenderer>();
         drawnElementsHolder = GameObject.FindWithTag("Drawing");
+        source = chestColliderWithSprite.GetComponent<AudioSource>();
 
         player = GameObject.FindWithTag("Player");
         menuElements = GameObject.FindGameObjectsWithTag("Menu");
@@ -61,13 +63,21 @@ public class LevelController : MonoBehaviour
     void Update()
     {
 
-        //if (player.GetComponent<NewCharacterMovement>().hitCollidedWith)
-        if(true)
+        if (player.GetComponent<NewCharacterMovement>().hitCollidedWith)
         {
             // Treasure hit
             if (player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.tag == "Treasure")
             {
-                Debug.Log("Hmmm");
+              
+                if (!isPlaying)
+                {
+                    isPlaying = true;
+                    source.Play();
+                    Debug.Log("Playing");
+                } else
+                {
+                    Debug.Log("Sound playing");
+                }
 
                 chestColliderWithSprite.sprite = openChestSprite;
                 showTreasureSpriteDuration -= Time.deltaTime;
@@ -82,6 +92,7 @@ public class LevelController : MonoBehaviour
                     restartGame();
                 }
             }
+
             if (player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.tag == "MoveSight")
             {
                 if (debug)
@@ -90,23 +101,26 @@ public class LevelController : MonoBehaviour
                 }
 
                 moveSightHitCounter++;
-				lastMovedMovementTrigger = player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.name;
+                lastMovedMovementTrigger = player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.name;
                 //position wo player auf dem obstacle steht speichern, damit man dorthin zurück kann
                 lastObstaclePos = player.transform.position;
-				if (lastMovedMovementTrigger == "mft_6") {
-					//figur verschieben
-					player.transform.position -= new Vector3 (lastJump, 0.0f, 0.0f);
-					//level verschieben
-					elementsToMove.transform.position -= new Vector3 (lastJump, 0.0f, 0.0f);
-				} else {
-					//figur verschieben
-					player.transform.position -= new Vector3 (slideToLeftValue, 0.0f, 0.0f);
-					//level verschieben
-					elementsToMove.transform.position -= new Vector3 (slideToLeftValue, 0.0f, 0.0f);
-				}
+                if (lastMovedMovementTrigger == "mft_6")
+                {
+                    //figur verschieben
+                    player.transform.position -= new Vector3(lastJump, 0.0f, 0.0f);
+                    //level verschieben
+                    elementsToMove.transform.position -= new Vector3(lastJump, 0.0f, 0.0f);
+                }
+                else
+                {
+                    //figur verschieben
+                    player.transform.position -= new Vector3(slideToLeftValue, 0.0f, 0.0f);
+                    //level verschieben
+                    elementsToMove.transform.position -= new Vector3(slideToLeftValue, 0.0f, 0.0f);
+                }
                 //hochzählen auf welchem Auslöser man zuletzt stand, damit man dorthin zurück kann bei resetDrawings
                 //diesen MoveSight ausschalten
-				GameObject.Find(lastMovedMovementTrigger).SetActive(false);
+                GameObject.Find(lastMovedMovementTrigger).SetActive(false);
             }
 
             if (player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.tag == "border")
@@ -139,10 +153,11 @@ public class LevelController : MonoBehaviour
         {
             Debug.Log("Destroy Drawings!");
         }
-		if (drawnElementsHolder != null) {
-			Destroy (drawnElementsHolder);
-			Instantiate (drawnElementsHolder, new Vector3 (0f, 0f, 0f), Quaternion.identity);
-		}
+        if (drawnElementsHolder != null)
+        {
+            Destroy(drawnElementsHolder);
+            Instantiate(drawnElementsHolder, new Vector3(0f, 0f, 0f), Quaternion.identity);
+        }
     }
 
 
@@ -220,4 +235,5 @@ public class LevelController : MonoBehaviour
             r.SetActive(value);
         }
     }
+
 }
