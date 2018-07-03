@@ -63,10 +63,10 @@ public class LevelController : MonoBehaviour
     void Update()
     {
 
-        if (player.GetComponent<NewCharacterMovement>().hitCollidedWith)
+        if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith)
         {
             // Treasure hit
-            if (player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.tag == "Treasure")
+            if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.tag == "Treasure")
             {
               
                 if (!isPlaying)
@@ -93,7 +93,7 @@ public class LevelController : MonoBehaviour
                 }
             }
 
-            if (player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.tag == "MoveSight")
+            if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.tag == "MoveSight")
             {
                 if (debug)
                 {
@@ -101,7 +101,7 @@ public class LevelController : MonoBehaviour
                 }
 
                 moveSightHitCounter++;
-                lastMovedMovementTrigger = player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.name;
+                lastMovedMovementTrigger = player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.name;
                 //position wo player auf dem obstacle steht speichern, damit man dorthin zurück kann
                 lastObstaclePos = player.transform.position;
                 if (lastMovedMovementTrigger == "mft_6")
@@ -123,7 +123,7 @@ public class LevelController : MonoBehaviour
                 GameObject.Find(lastMovedMovementTrigger).SetActive(false);
             }
 
-            if (player.GetComponent<NewCharacterMovement>().hitCollidedWith.collider.tag == "border")
+            if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.tag == "border")
             {
                 if (debug)
                 {

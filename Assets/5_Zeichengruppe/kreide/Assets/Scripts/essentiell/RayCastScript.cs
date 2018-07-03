@@ -127,11 +127,11 @@ public class RayCastScript : MonoBehaviour
             }
             else
             {
-                if (Input.GetButtonDown("fire1"))
+                if (Input.GetButtonDown("Fire1"))
                 {
                     timer = Time.time;
                 }
-                else if (Input.GetButton("fire1"))
+                else if (Input.GetButton("Fire1"))
                 {
                     if (Time.time - timer > holdDur)
                     {
