@@ -1,22 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ButtonVR : MonoBehaviour {
+public class StartTheGame : MonoBehaviour {
+
 
     public GameObject scripts;
-
-    void Start()
-    {
-        Button btn = this.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
-    }
-
-    void TaskOnClick()
-    {
-        buttonPressed();
-    }
 
     void Update()
     {
@@ -33,5 +22,3 @@ public class ButtonVR : MonoBehaviour {
         scripts.GetComponent<LevelController>().toggleGUI(false);
     }
 }
-
-

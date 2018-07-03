@@ -11,6 +11,10 @@ public class NewCharacterMovement : MonoBehaviour
     public float moveGroundSpeed;
     public float distanceMultiplicator;
 
+
+    public float minGroundNormalY = 0.003f;
+
+
     // Raycast length
     private float distanceToTheRight = 0.04f;
     public float distanceToWall = 0.01f;
@@ -153,6 +157,10 @@ public class NewCharacterMovement : MonoBehaviour
 
         Debug.DrawLine(startPos, posDown2, Color.blue); // Down
 
+      
+        //Debug.DrawLine(startPos, posDown2, Color.blue); // Down
+        //Debug.DrawLine(startPos, posDown2, Color.blue); // Down
+
         //Debug.DrawLine(posToCheck, posDown2, Color.blue); // Down
         // Debug.DrawRay(posToCheck, posDown2, Color.red);
         //Debug.DrawRay(posToCheck, Vector2.down, Color.yellow); // Down
@@ -197,6 +205,19 @@ public class NewCharacterMovement : MonoBehaviour
             { // dont forget to add tag to brush ???
                 isWalking = true;
 
+
+                Vector2 currentNormal = line.normal;
+
+                Debug.DrawLine(currentPos, currentNormal, Color.yellow); // Down
+                Debug.DrawLine(currentPos, new Vector2(currentNormal.x, minGroundNormalY), Color.green); // Down
+                Debug.Log(currentNormal.y + "   " + minGroundNormalY);
+
+                if (currentNormal.y > minGroundNormalY)
+                {
+                    Debug.Log("Yo");
+                }
+
+                /*
                 Vector2 posAngleUp = currentPos;
                 posAngleUp.x = posAngleUp.x + 0.02f;
                 posAngleUp.y = posAngleUp.y - 0.06f;
@@ -208,10 +229,10 @@ public class NewCharacterMovement : MonoBehaviour
                 posAngleDown.y = posAngleDown.y - 0.02f;
 
                 Debug.DrawLine(currentPos, posAngleDown, Color.cyan); // Angle
-
+                */
                 //Physics.SphereCastAll
 
-                RaycastHit2D[] angleHits = Physics2D.LinecastAll(currentPos, posAngleUp);
+                RaycastHit2D[] angleHits = new RaycastHit2D[20];
 
                 foreach (RaycastHit2D angle in angleHits)
                 {
