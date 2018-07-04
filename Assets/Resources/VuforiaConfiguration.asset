@@ -44,6 +44,7 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - RPG
     - InitialTargets
     - PuzzleLok
     - VuforiaMars_VuMark
@@ -59,8 +60,8 @@ MonoBehaviour:
     - ForestWalkMarker
     - Cupboy
     - AR_Dosenwerfen
-    - 1V1DB
     dataSetsToActivate:
+    - RPG
     - InitialTargets
     - PuzzleLok
     - VuforiaMars_VuMark
@@ -76,7 +77,6 @@ MonoBehaviour:
     - ForestWalkMarker
     - Cupboy
     - AR_Dosenwerfen
-    - 1V1DB
   videoBackground:
     clippingMode: 0
     numDivisions: 2
