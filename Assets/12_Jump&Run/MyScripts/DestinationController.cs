@@ -11,6 +11,7 @@ public class DestinationController : MonoBehaviour {
     public GameObject letter;
     bool animateLetter=false;
     float height;
+    public MyPlayerController player;
     
 
     // Use this for initialization
@@ -32,8 +33,12 @@ public class DestinationController : MonoBehaviour {
                 height += 0.1f * Time.deltaTime;
                 letter.transform.localPosition = new Vector3(letter.transform.localPosition.x, height, letter.transform.localPosition.z);
             }
-        
 
+            else
+            {
+                player.EndApplication();
+
+            }
            
           
 
