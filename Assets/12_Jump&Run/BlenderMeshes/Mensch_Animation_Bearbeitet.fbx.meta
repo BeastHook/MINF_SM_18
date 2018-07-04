@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: a487d9d6151c3a842aa1bdae7dd486d3
+timeCreated: 1530635530
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bauch
+    100002: Brustkorb
+    100004: Camera
+    100006: Ellenbogen.L
+    100008: Ellenbogen.L_end
+    100010: Ellenbogen.R
+    100012: Ellenbogen.R_end
+    100014: Finger.L
+    100016: Finger.L_end
+    100018: Finger.R
+    100020: Finger.R_end
+    100022: "Fu\xDF.L"
+    100024: "Fu\xDF.R"
+    100026: "F\xFC\xDF-IK.L"
+    100028: "F\xFC\xDF-IK.L_end"
+    100030: "F\xFC\xDF-IK.R"
+    100032: "F\xFC\xDF-IK.R_end"
+    100034: Hals
+    100036: Hand-IK.L
+    100038: Hand-IK.L_end
+    100040: Hand-IK.R
+    100042: Hand-IK.R_end
+    100044: Hand.L
+    100046: Hand.R
+    100048: "H\xFCfte"
+    100050: Knie.L
+    100052: Knie.L_end
+    100054: Knie.R
+    100056: Knie.R_end
+    100058: Kopf
+    100060: Kopf_end
+    100062: Lamp
+    100064: Lamp.001
+    100066: Mensch
+    100068: //RootNode
+    100070: Mensch_Rig
+    100072: Oberarm.L
+    100074: Oberarm.R
+    100076: Oberschenkel.L
+    100078: Oberschenkel.R
+    100080: Schulter
+    100082: Schulter.002
+    100084: SteuerungKnochen
+    100086: Unterarm.L
+    100088: Unterarm.R
+    100090: Unterschenkel.L
+    100092: Unterschenkel.R
+    100094: Zeh.L
+    100096: Zeh.L_end
+    100098: Zeh.R
+    100100: Zeh.R_end
+    400000: Bauch
+    400002: Brustkorb
+    400004: Camera
+    400006: Ellenbogen.L
+    400008: Ellenbogen.L_end
+    400010: Ellenbogen.R
+    400012: Ellenbogen.R_end
+    400014: Finger.L
+    400016: Finger.L_end
+    400018: Finger.R
+    400020: Finger.R_end
+    400022: "Fu\xDF.L"
+    400024: "Fu\xDF.R"
+    400026: "F\xFC\xDF-IK.L"
+    400028: "F\xFC\xDF-IK.L_end"
+    400030: "F\xFC\xDF-IK.R"
+    400032: "F\xFC\xDF-IK.R_end"
+    400034: Hals
+    400036: Hand-IK.L
+    400038: Hand-IK.L_end
+    400040: Hand-IK.R
+    400042: Hand-IK.R_end
+    400044: Hand.L
+    400046: Hand.R
+    400048: "H\xFCfte"
+    400050: Knie.L
+    400052: Knie.L_end
+    400054: Knie.R
+    400056: Knie.R_end
+    400058: Kopf
+    400060: Kopf_end
+    400062: Lamp
+    400064: Lamp.001
+    400066: Mensch
+    400068: //RootNode
+    400070: Mensch_Rig
+    400072: Oberarm.L
+    400074: Oberarm.R
+    400076: Oberschenkel.L
+    400078: Oberschenkel.R
+    400080: Schulter
+    400082: Schulter.002
+    400084: SteuerungKnochen
+    400086: Unterarm.L
+    400088: Unterarm.R
+    400090: Unterschenkel.L
+    400092: Unterschenkel.R
+    400094: Zeh.L
+    400096: Zeh.L_end
+    400098: Zeh.R
+    400100: Zeh.R_end
+    2000000: Camera
+    2100000: Haut
+    2100002: "M\xFCtze"
+    2100004: Shirt
+    2100006: Material
+    2100008: Hose
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Mensch
+    7400000: Mensch_Rig|Gehen
+    7400002: Mensch_Rig|Links_Ducken
+    7400004: Mensch_Rig|Links_Sprung_Ansprung
+    7400006: Mensch_Rig|Links_Sprung_Fallen
+    7400008: Mensch_Rig|Links_Sprung_Luft
+    7400010: Mensch|Gehen
+    9500000: //RootNode
+    10800000: Lamp
+    10800002: Lamp.001
+    13700000: Mensch
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

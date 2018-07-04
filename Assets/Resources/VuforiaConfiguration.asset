@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Name: VuforiaConfiguration
+  m_EditorClassIdentifier: 
+  vuforia:
+    vuforiaLicenseKey: AZT3plT/////AAAAmaU3uF2tJUcXqfRmtd3Q09R8TkGR9/BpIKNxH/qPzYZ8rqdcDyJJ0kKQP5dxTufmJhpSKKaKZjlH54KRDwtbMSg6qmHcxdzna0EIOUCqlm8drv5sCI8ODNzypBaqq5+7xkol695QCcn6cgR/G9DkxM0BKTpuOoUFkWKA4LReqfOwwqPgKkszcg+jaf4OWJsz8jVcY5E9Z4Ix3XpCDiJOCyQlnj5vhSeeEneMkBAZc7fioQAJ7pbhKIGt4cBPC4mNfrQbAJSdXhYym7tzilXRiUgEVBoj6Mlx9xMF7stuFyJkpjtAhObUkmzfmw9Jt/aLm7LqQO5ix3YCTzPWQQLKLX03DeONITQpsVPdtxT+X8Mv
+    ufoLicenseKey: QVFMS1o0Yi8vLy8vQUFBQUtOQ3FKU1lTb0VpUHRUcmwxWCtoU0lzaTQ2TEpoVzdFdFYrYlduL2xBK29RT0NLZ3FHMmlzRTIwR0FlbjBXMW1uOGFXN2psNG9GdDB1S3pXcHJ5b0tkdzYxMU40MktReDhkZ2JqTUo4K0JuY1pISFVxRDNId0Z3RU1pUTExczFUa25QdmlnMStzb09lakhxdHQ1Q2JjR0t2N3BRY0xGVlhTbTJZcVZCLy9hQW53VlYybjdoeEtTWGY5ZGFBeGFCbGFQWE91R0huNkVlQVd5MERXdnpkSmQ5VXRYS1Rhd3NoWmpyRTEzcnRvWVQvemg5OXYreFJ0dGNaSjhwaGFMbXlKbHVkaXlrdU02UW9wS210ZktwTCs0YWRZUmxVeDhYUzhoQVZoOEtDU3FpSEFiekRTSjFZZHRFZ1ZnSU1iWFF3ZXQxUXlGS0FYWkNIb2t0YTNXME5xVFNmRVNSem9ua01GcGNYVTVycG1jS3g=
+    delayedInitialization: 0
+    cameraDeviceModeSetting: -1
+    maxSimultaneousImageTargets: 6
+    maxSimultaneousObjectTargets: 1
+    useDelayedLoadingObjectTargets: 1
+    cameraDirection: 0
+    mirrorVideoBackground: 0
+  digitalEyewear:
+    cameraOffset: 0.06
+    distortionRenderingLayer: 31
+    eyewearType: 2
+    stereoFramework: 0
+    seeThroughConfiguration: 0
+    viewerName: Cardboard v1
+    viewerManufacturer: Google
+    useCustomViewer: 0
+    customViewer:
+      Version: 0
+      Name: 
+      Manufacturer: 
+      ButtonType: 0
+      ScreenToLensDistance: 0
+      InterLensDistance: 0
+      TrayAlignment: 0
+      LensCenterToTrayDistance: 0
+      DistortionCoefficients: {x: 0, y: 0}
+      FieldOfView: {x: 0, y: 0, z: 0, w: 0}
+      ContainsMagnet: 0
+  databaseLoad:
+    dataSetsToLoad:
+    - InitialTargets
+    - PuzzleLok
+    - VuforiaMars_VuMark
+    - VuforiaMars_Object_OT
+    - VuforiaMars_ModelTarget
+    - VuforiaMars_Images
+    - TinyToolTime
+    - NewNewTarget
+    - MosaikMultis
+    - MINF
+    - Minf-Test
+    - GearBoxImageTargets
+    - ForestWalkMarker
+    - Cupboy
+    - AR_Dosenwerfen
+    - 1V1DB
+    dataSetsToActivate:
+    - InitialTargets
+    - PuzzleLok
+    - VuforiaMars_VuMark
+    - VuforiaMars_Object_OT
+    - VuforiaMars_ModelTarget
+    - VuforiaMars_Images
+    - TinyToolTime
+    - NewNewTarget
+    - MosaikMultis
+    - MINF
+    - Minf-Test
+    - GearBoxImageTargets
+    - ForestWalkMarker
+    - Cupboy
+    - AR_Dosenwerfen
+    - 1V1DB
+  videoBackground:
+    clippingMode: 0
+    numDivisions: 2
+    videoBackgroundShader: {fileID: 15311, guid: 0000000000000000f000000000000000,
+      type: 0}
+    matteShader: {fileID: 15310, guid: 0000000000000000f000000000000000, type: 0}
+    videoBackgroundEnabled: 1
+  deviceTracker:
+    autoInitTracker: 0
+    autoStartTracker: 0
+    trackingMode: 0
+    posePrediction: 0
+    modelCorrectionMode: 0
+    modelTransformEnabled: 0
+    modelTransform: {x: 0, y: 0.1, z: -0.1}
+  smartTerrain:
+    autoInitTracker: 0
+    autoStartTracker: 0
+  webcam:
+    deviceNameSetInEditor: 
+    flipHorizontally: 0
+    turnOffWebCam: 0
+    renderTextureLayer: 30
