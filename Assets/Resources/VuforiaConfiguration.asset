@@ -16,7 +16,7 @@ MonoBehaviour:
     ufoLicenseKey: QVFMS1o0Yi8vLy8vQUFBQUtOQ3FKU1lTb0VpUHRUcmwxWCtoU0lzaTQ2TEpoVzdFdFYrYlduL2xBK29RT0NLZ3FHMmlzRTIwR0FlbjBXMW1uOGFXN2psNG9GdDB1S3pXcHJ5b0tkdzYxMU40MktReDhkZ2JqTUo4K0JuY1pISFVxRDNId0Z3RU1pUTExczFUa25QdmlnMStzb09lakhxdHQ1Q2JjR0t2N3BRY0xGVlhTbTJZcVZCLy9hQW53VlYybjdoeEtTWGY5ZGFBeGFCbGFQWE91R0huNkVlQVd5MERXdnpkSmQ5VXRYS1Rhd3NoWmpyRTEzcnRvWVQvemg5OXYreFJ0dGNaSjhwaGFMbXlKbHVkaXlrdU02UW9wS210ZktwTCs0YWRZUmxVeDhYUzhoQVZoOEtDU3FpSEFiekRTSjFZZHRFZ1ZnSU1iWFF3ZXQxUXlGS0FYWkNIb2t0YTNXME5xVFNmRVNSem9ua01GcGNYVTVycG1jS3g=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 6
+    maxSimultaneousImageTargets: 11
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 1
     cameraDirection: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - Dots
     - RPG
     - InitialTargets
     - PuzzleLok
@@ -61,6 +62,7 @@ MonoBehaviour:
     - Cupboy
     - AR_Dosenwerfen
     dataSetsToActivate:
+    - Dots
     - RPG
     - InitialTargets
     - PuzzleLok
