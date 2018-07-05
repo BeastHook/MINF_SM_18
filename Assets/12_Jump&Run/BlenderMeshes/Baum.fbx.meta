@@ -90,6 +90,7 @@ ModelImporter:
     2300040: Icosphere.019
     2300042: Icosphere.020
     2300044: Icosphere.021
+    2300046: //RootNode
     3300000: Cube
     3300002: Icosphere
     3300004: Icosphere.001
@@ -113,6 +114,7 @@ ModelImporter:
     3300040: Icosphere.019
     3300042: Icosphere.020
     3300044: Icosphere.021
+    3300046: //RootNode
     4300000: Cube
     4300002: Icosphere.021
     4300004: Icosphere.020

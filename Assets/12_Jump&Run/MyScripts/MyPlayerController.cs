@@ -31,6 +31,7 @@ public class MyPlayerController : MonoBehaviour
     bool gameIsRunning = false;
     bool gameRestarting = false;
     bool levelTracked = false;
+    bool endOfGame = false;
    
 
 
@@ -363,9 +364,10 @@ public class MyPlayerController : MonoBehaviour
             break;
         }
     }
-    void EndApplication()
+     public void EndApplication()
     {
         print("Beende Application");
+        endOfGame = true;
     }
 
 
