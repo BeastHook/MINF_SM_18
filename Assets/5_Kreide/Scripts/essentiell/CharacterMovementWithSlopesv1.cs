@@ -19,8 +19,8 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
 
 
-    protected const float minMoveDistance = 0.001f;
-    protected const float shellRadius = 0.007f;
+    protected const float minMoveDistance = 0.01f;
+    protected const float shellRadius = 0.06f;
 
     // Adujustable Raycast Modifier
     public float moveSpeedMultiplicator;
@@ -28,7 +28,7 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
     public float distanceMultiplicator;
 
     // Raycast length
-    private float distanceToTheRight = 0.04f;
+    private float distanceToTheRight = 0.3f;
     public float distanceToWall = 0.01f;
     public float distanceToFloor = 0.5f;
     private float lineDifference;
@@ -113,8 +113,9 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
         if (grounded && isWalking)
         {
             m_Anim.SetFloat("Speed", 0.5f);
-            targetVelocity.x += 0.05f;
-        }else
+            targetVelocity.x += moveGroundSpeed;
+        }
+        else
         {
             m_Anim.SetFloat("Speed", 0);
         }
@@ -154,11 +155,13 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
                 hitBufferList.Add(hitBuffer[i]);
             }
 
+            
+
             for (int i = 0; i < hitBufferList.Count; i++)
             {
-                if(hitBufferList[i].collider.tag == "obstacle")
+                if (hitBufferList[i].collider.tag == "obstacle")
                 {
-                    isWalking = true;
+                    //isWalking = true;
                 }
 
                 Vector2 currentNormal = hitBufferList[i].normal;
@@ -221,8 +224,39 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
             }
         }
 
+        // Achtung
+
+        RaycastHit2D[] lines;
+        Vector2 posDown2;
+        startingPos = currentPos;
+        startingPos.x = currentPos.x + distanceToTheRight * distanceMultiplicator;
+        posDown2 = currentPos;
+        posDown2.y = posDown2.y - distanceToFloor;
+
+        //Debug.DrawLine(startingPos, posDown, Color.blue); // Down
+        Debug.DrawRay(startingPos, Vector3.down, Color.cyan); // Down
+
+        // Checks if the player is grounded
+        //lines = Physics2D.LinecastAll(startingPos, posDown2);
+        lines = Physics2D.RaycastAll(startingPos, Vector3.down, 0.1f);
+
+        isWalking = false;
+
+        foreach (RaycastHit2D line in lines)
+        {
+            hitCollidedWith = line;
+            //Debug.Log("Down hits: " + line.transform.gameObject.name + "\n\tTag: " + line.collider.tag);
+
+            if (line.collider.tag == "obstacle")
+            {
+                isWalking = true;
+            }
+        }
+
+
+        // Achtung
+
         rBody.position = rBody.position + move.normalized * distance;
-        Debug.Log(rBody.position);
     }
 
     // Checks if the Player can move by checking for a collider, sets isWalking to either true or false
@@ -275,7 +309,7 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
 
             }
         }
-        
+
         startingPos.y += 0.009f;
 
         Vector2 wallDistance = startingPos + new Vector2(distanceToWall, 0);

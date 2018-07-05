@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Ellyn
 public class LevelController : MonoBehaviour
@@ -19,12 +20,13 @@ public class LevelController : MonoBehaviour
     public Sprite openChestSprite;
     public Sprite closedChestSprite;
     public float showTreasureSpriteDuration = 5.5f;
+    private float tempSpriteDuration;
 
     // MoveSight variables
     private GameObject[] moveFunctionTrigger;
     private GameObject elementsToMove;
-    private Vector3 posPlayer;
-    private Vector3 posLevel;
+    private Vector3 originalPlayerPosition;
+    private Vector3 originalLevelPosition;
 
     private Vector3 lastObstaclePos;
 
@@ -41,40 +43,44 @@ public class LevelController : MonoBehaviour
     void Start()
     {
 
+        tempSpriteDuration = showTreasureSpriteDuration;
         chestColliderWithSprite = GameObject.FindWithTag("Treasure").GetComponent<SpriteRenderer>();
         drawnElementsHolder = GameObject.FindWithTag("Drawing");
         source = chestColliderWithSprite.GetComponent<AudioSource>();
 
         player = GameObject.FindWithTag("Player");
         menuElements = GameObject.FindGameObjectsWithTag("Menu");
-        resetButton = GameObject.FindGameObjectsWithTag("Reset");
+        //resetButton = GameObject.FindGameObjectsWithTag("Reset");
         elementsToMove = GameObject.FindGameObjectWithTag("Level");
         moveFunctionTrigger = GameObject.FindGameObjectsWithTag("MoveSight");
 
         //ursprüngliche Position der Figur und der Levelelemente sichern
-        posPlayer = player.transform.position;
-        posLevel = elementsToMove.transform.position;
+        originalPlayerPosition = player.transform.position;
+        originalLevelPosition = elementsToMove.transform.position;
 
         //Startmenu öffnen
-        toggleGUI(true);
+        //toggleGUI(true);
 
     }
 
     void Update()
     {
+        RaycastHit2D temp = player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith;
 
-        if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith)
+        Debug.Log(temp);
+
+        if (temp)
         {
             // Treasure hit
-            if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.tag == "Treasure")
+            if (temp.collider.tag == "Treasure")
             {
-              
                 if (!isPlaying)
                 {
                     isPlaying = true;
                     source.Play();
                     Debug.Log("Playing");
-                } else
+                }
+                else
                 {
                     Debug.Log("Sound playing");
                 }
@@ -93,7 +99,7 @@ public class LevelController : MonoBehaviour
                 }
             }
 
-            if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.tag == "MoveSight")
+            if (temp.collider.tag == "MoveSight")
             {
                 if (debug)
                 {
@@ -103,13 +109,11 @@ public class LevelController : MonoBehaviour
                 moveSightHitCounter++;
                 lastMovedMovementTrigger = player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.name;
                 //position wo player auf dem obstacle steht speichern, damit man dorthin zurück kann
-                lastObstaclePos = player.transform.position;
+                //lastObstaclePos = player.transform.position;
                 if (lastMovedMovementTrigger == "mft_6")
                 {
-                    //figur verschieben
-                    player.transform.position -= new Vector3(lastJump, 0.0f, 0.0f);
-                    //level verschieben
-                    elementsToMove.transform.position -= new Vector3(lastJump, 0.0f, 0.0f);
+                    player.transform.position -= new Vector3(lastJump, 0.0f, 0.0f); //figur verschieben
+                    elementsToMove.transform.position -= new Vector3(lastJump, 0.0f, 0.0f); //level verschieben
                 }
                 else
                 {
@@ -121,16 +125,18 @@ public class LevelController : MonoBehaviour
                 //hochzählen auf welchem Auslöser man zuletzt stand, damit man dorthin zurück kann bei resetDrawings
                 //diesen MoveSight ausschalten
                 GameObject.Find(lastMovedMovementTrigger).SetActive(false);
+
+                lastObstaclePos = player.transform.position;
             }
 
-            if (player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.tag == "border")
+            if (temp.collider.tag == "border")
             {
                 if (debug)
                 {
                     Debug.Log("Border! Starte Szene neu.");
                 }
 
-                restartGame();
+                //restartGame();
             }
         }
     }
@@ -174,7 +180,7 @@ public class LevelController : MonoBehaviour
         }
         else
         {
-            player.transform.position = posPlayer;
+            player.transform.position = originalPlayerPosition;
         }
     }
 
@@ -204,18 +210,23 @@ public class LevelController : MonoBehaviour
     //setzt die Levelelemente und die Figur wieder auf ihre Anfangsposition
     public void restartGame()
     {
-        DeleteDrawings();
-        //level & Figur zurück an Anfangsposition (3 mal zurück)
-        player.transform.position = posPlayer;
-        elementsToMove.transform.position = posLevel;
-        //sprite für treasure zurücksetzen
-        chestColliderWithSprite.sprite = closedChestSprite;
-        //moveFunctionTrigger wieder aktivieren
-        foreach (GameObject trigger in moveFunctionTrigger)
+
+        //Application.LoadLevel(Application.loadedLevel);
+        isPlaying = false;
+        showTreasureSpriteDuration = tempSpriteDuration;
+
+        DeleteDrawings(); //level & Figur zurück an Anfangsposition (3 mal zurück)
+        player.transform.position = originalPlayerPosition;
+        elementsToMove.transform.position = originalLevelPosition;
+        chestColliderWithSprite.sprite = closedChestSprite;  //sprite für treasure zurücksetzen
+
+
+        foreach (GameObject trigger in moveFunctionTrigger) //moveFunctionTrigger wieder aktivieren
         {
             trigger.SetActive(true);
         }
-        toggleGUI(true);
+
+        //toggleGUI(true);
 
     }
 

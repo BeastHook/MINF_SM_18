@@ -3,7 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - goober
+  - Interact
+  - ChaseZoneTrigger
+  - MoveSight
+  - Level
+  - obstacle
+  - Drawing
+  - Treasure
+  - GroundCheck
+  - background
+  - border
+  - ball
+  - can
+  - Schild
+  - ground
+  - blocker
+  - bullet
+  - home
+  - Bullet
+  - Menu
   layers:
   - Default
   - TransparentFX
@@ -40,4 +60,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: HG
+    uniqueID: 4051679273
+    locked: 0
+  - name: NG
+    uniqueID: 3378286469
+    locked: 0
+  - name: Line
+    uniqueID: 4045578007
     locked: 0

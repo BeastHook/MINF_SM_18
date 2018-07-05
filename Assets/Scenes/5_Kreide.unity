@@ -157,6 +157,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 212555782871434404, guid: 1232d2e54ec5b0c4585a7294ecebe712,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -249389289
+      objectReference: {fileID: 0}
+    - target: {fileID: 212555782871434404, guid: 1232d2e54ec5b0c4585a7294ecebe712,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212825708968811308, guid: 1232d2e54ec5b0c4585a7294ecebe712,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -249389289
+      objectReference: {fileID: 0}
+    - target: {fileID: 212825708968811308, guid: 1232d2e54ec5b0c4585a7294ecebe712,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1232d2e54ec5b0c4585a7294ecebe712, type: 2}
   m_IsPrefabParent: 0
@@ -717,7 +737,7 @@ Prefab:
     - target: {fileID: 212468607388496752, guid: 96f0b137bed663e4b943e81148fc7126,
         type: 2}
       propertyPath: m_SortingLayerID
-      value: -859055209
+      value: -249389289
       objectReference: {fileID: 0}
     - target: {fileID: 212468607388496752, guid: 96f0b137bed663e4b943e81148fc7126,
         type: 2}
@@ -996,15 +1016,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Astronaut
+  mTrackableName: Markerv1
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/VuforiaMars_Images.xml
+  mDataSetPath: Vuforia/Kreidespiel.xml
   mExtendedTracking: 1
-  mAspectRatio: 1.7272727
+  mAspectRatio: 0.7048381
   mImageTargetType: 0
-  mWidth: 0.57894737
-  mHeight: 1
+  mWidth: 2.7569942
+  mHeight: 1.9432346
 --- !u!4 &879907018
 Transform:
   m_ObjectHideFlags: 0
@@ -1012,8 +1032,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 879907012}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.602, y: 0.279, z: 0.247}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.45, y: 1.24, z: 0.25}
+  m_LocalScale: {x: 2.7569942, y: 2.7569942, z: 2.7569942}
   m_Children:
   - {fileID: 987254015}
   m_Father: {fileID: 0}
@@ -1323,7 +1343,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1403,7 +1423,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1444,7 +1464,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.28947368, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35241905}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1497,7 +1517,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: e53594be00000000000000bf000000000000803f000000000000000000000000e53594be000000000000003f000000000000803f00000000000000000000803fe535943e00000000000000bf000000000000803f000000000000803f00000000e535943e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf000000004570b4be000000000000803f000000000000000000000000000000bf000000004570b43e000000000000803f00000000000000000000803f0000003f000000004570b4be000000000000803f000000000000803f000000000000003f000000004570b43e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -2172,8 +2192,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -859055209
-  m_SortingLayer: 0
+  m_SortingLayerID: -916680827
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31a7e9572592f404196c792df1c621d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2387,15 +2407,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4580039130242380, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.31000006
+      value: -0.16757382
       objectReference: {fileID: 0}
     - target: {fileID: 4580039130242380, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.29000002
+      value: 0.10627522
       objectReference: {fileID: 0}
     - target: {fileID: 4580039130242380, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.48
+      value: 0.18824854
       objectReference: {fileID: 0}
     - target: {fileID: 4580039130242380, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2417,6 +2437,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1879165817919490, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
+      propertyPath: m_Name
+      value: Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876000748082228, guid: 361c543e7dd641340853a779dd1268a8,
+        type: 2}
+      propertyPath: moveGroundSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037580529256298, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037580529256298, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876000748082228, guid: 361c543e7dd641340853a779dd1268a8,
+        type: 2}
+      propertyPath: distanceToWall
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114876000748082228, guid: 361c543e7dd641340853a779dd1268a8,
+        type: 2}
+      propertyPath: moveSpeedMultiplicator
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580039130242380, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.06242199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580039130242380, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.031211091
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 361c543e7dd641340853a779dd1268a8, type: 2}
   m_IsPrefabParent: 0
@@ -2426,7 +2481,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: AstronautMaterial
+  m_Name: Markerv1Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2439,7 +2494,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 77fb44a366db5cb41b8c06649271f8e6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1c77689b32c44dccb48525a790712225, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []

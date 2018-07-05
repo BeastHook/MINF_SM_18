@@ -27,7 +27,7 @@ public class RayCastScript : MonoBehaviour
     public GameObject hintergrund;
     //public GameObject figur;
 
-	public GameObject drawing;
+    public GameObject drawing;
     public GameObject tester;
 
     public static bool buttonPressed = false;
@@ -74,7 +74,7 @@ public class RayCastScript : MonoBehaviour
         hits = Physics.RaycastAll(pointer.transform.position, pointer.transform.forward); // pointer.transform.up
         bool backgroundHit = false;
 
-        foreach(RaycastHit hit in hits)
+        foreach (RaycastHit hit in hits)
         {
 
             Debug.Log("Hit: " + hit.collider.name);
@@ -93,8 +93,8 @@ public class RayCastScript : MonoBehaviour
                 //if (Input.GetMouseButton(0))
                 if (Input.GetButton("Fire1"))
                 {
-                    GameObject point =  Instantiate(toInst, hit.point, new Quaternion()) as GameObject;
-					point.transform.SetParent (drawing.transform);
+                    GameObject point = Instantiate(toInst, hit.point, new Quaternion()) as GameObject;
+                    point.transform.SetParent(drawing.transform);
                 }
             }
         }
@@ -116,8 +116,8 @@ public class RayCastScript : MonoBehaviour
                         timer = float.PositiveInfinity;
                         Debug.Log("Reset wurde gecalled!!");
                         ////// HIER DIE RESET ANBINDEN!!!!
-						GetComponent<LevelController>().ResetButtonPressed();
-					
+                        GetComponent<LevelController>().ResetButtonPressed();
+
                     }
                 }
                 else
@@ -149,7 +149,7 @@ public class RayCastScript : MonoBehaviour
             }
         }
 
-        }
+    }
 
     /* Mit 2D RayCaster!!
      
@@ -211,4 +211,3 @@ public class RayCastScript : MonoBehaviour
     }
 
 }
- 
