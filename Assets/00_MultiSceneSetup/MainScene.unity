@@ -492,7 +492,7 @@ MonoBehaviour:
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 217279faa80b364428cb37ace11a5e1e, type: 3}
       m_SceneName: 1_SoundVision
-    _maximumPlaytime: 120
+    _maximumPlaytime: 500
     _accordingTrackable: {fileID: 267543227}
     _descriptionCanvas: {fileID: 1923013721}
     _name: Dots
@@ -502,7 +502,7 @@ MonoBehaviour:
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: b318b71e0f49651499954a2cada8b416, type: 3}
       m_SceneName: 2_Roundbased RPG
-    _maximumPlaytime: 120
+    _maximumPlaytime: 10
     _accordingTrackable: {fileID: 1747173135}
     _descriptionCanvas: {fileID: 94376693}
     _name: Roundbased RPG
@@ -540,8 +540,8 @@ MonoBehaviour:
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: {fileID: 0}
   - _scene:
-      m_SceneAsset: {fileID: 102900000, guid: 0f3ce57ed57dcc54788fa4dcbb25aeb1, type: 3}
-      m_SceneName: Testscene
+      m_SceneAsset: {fileID: 102900000, guid: 98e4a38355562f64fa2582c57eff973e, type: 3}
+      m_SceneName: 6_ARDosenWerfen
     _maximumPlaytime: 120
     _accordingTrackable: {fileID: 1468965157}
     _descriptionCanvas: {fileID: 1209506731}
@@ -572,7 +572,7 @@ MonoBehaviour:
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: a03486749140ec84d8570b17f5dda869, type: 3}
       m_SceneName: 9_PuzzleLokomotive
-    _maximumPlaytime: 120
+    _maximumPlaytime: 180
     _accordingTrackable: {fileID: 1298431144}
     _descriptionCanvas: {fileID: 305237482}
     _name: PuzzleLok
@@ -592,7 +592,7 @@ MonoBehaviour:
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 4282648b9c56de742899583dc4d42e74, type: 3}
       m_SceneName: 11_PuzzleStatur
-    _maximumPlaytime: 120
+    _maximumPlaytime: 5000
     _accordingTrackable: {fileID: 764290678}
     _descriptionCanvas: {fileID: 1588130269}
     _name: Puzzle Statur

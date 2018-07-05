@@ -24,8 +24,8 @@ EditorBuildSettings:
     path: Assets/Scenes/5_Kreide.unity
     guid: f87f507ebfec8334ca9cbb101e24ed37
   - enabled: 1
-    path: Assets/6_ARDosenWerfen/Scenes/Testscene.unity
-    guid: 0f3ce57ed57dcc54788fa4dcbb25aeb1
+    path: Assets/Scenes/6_ARDosenWerfen.unity
+    guid: 98e4a38355562f64fa2582c57eff973e
   - enabled: 1
     path: Assets/Scenes/7_TinyToolTime.unity
     guid: 77742ba489153574bb97cf7b5453ee69

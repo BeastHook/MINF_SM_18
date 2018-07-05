@@ -230,8 +230,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 467117961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.79800004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.22222221, z: 0}
+  m_LocalScale: {x: 0.005555555, y: 0.005555555, z: 0.005555555}
   m_Children: []
   m_Father: {fileID: 1472806823}
   m_RootOrder: 0
@@ -1406,15 +1406,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Fissure
+  mTrackableName: markerA0_klein2
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/VuforiaMars_Images.xml
+  mDataSetPath: Vuforia/Dots.xml
   mExtendedTracking: 1
-  mAspectRatio: 1.7272727
+  mAspectRatio: 1.413844
   mImageTargetType: 0
-  mWidth: 57.894737
-  mHeight: 100
+  mWidth: 127.31249
+  mHeight: 180
 --- !u!4 &1472806823
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,8 +1422,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1472806817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -79.8, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 0, y: -40, z: 0}
+  m_LocalScale: {x: 180, y: 180, z: 180}
   m_Children:
   - {fileID: 435648277}
   m_Father: {fileID: 0}
@@ -1527,7 +1527,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FissureMaterial
+  m_Name: markerA0_klein2Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1540,7 +1540,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a35a2d04e4ca5f643a173fb3a98d5fd1, type: 3}
+        m_Texture: {fileID: 2800000, guid: d499511f8192437c92d5e45ca6333581, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1563,7 +1563,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.28947368, y: 0, z: 0.5}
+      m_Extent: {x: 0.3536458, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1616,7 +1616,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: e53594be00000000000000bf000000000000803f000000000000000000000000e53594be000000000000003f000000000000803f00000000000000000000803fe535943e00000000000000bf000000000000803f000000000000803f00000000e535943e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 1011b5be00000000000000bf000000000000803f0000000000000000000000001011b5be000000000000003f000000000000803f00000000000000000000803f1011b53e00000000000000bf000000000000803f000000000000803f000000001011b53e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
