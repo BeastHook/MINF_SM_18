@@ -13,7 +13,7 @@ public class PlayerMovementTiny : MonoBehaviour {
     public bool rotate = false;
 
     private Renderer rend;
-    public float speedReduction;
+    private float speedReduction;
 
     private float rotationAngle;
 
