@@ -9,7 +9,7 @@ public class PlayerAnimation : MonoBehaviour
     public int levelGet;
     public ParticleSystem waterParticle;
     public ParticleSystem chestParticle;
-    public GameObject chest;
+    public GameObject chestClosed;
     public int walkDamage = 0;
     public GameObject secondPlayer;
     public GameObject water;
@@ -124,7 +124,7 @@ public class PlayerAnimation : MonoBehaviour
     //Chest ########
     public void HideChest()
     {
-        chest.SetActive(false);
+        chestClosed.SetActive(false);
     }
     public void StartChestParticle()
     {
@@ -142,7 +142,7 @@ public class PlayerAnimation : MonoBehaviour
     }
 
 
-    //########### Show & Hide TOOLS ################# (Child) 1 - axe; 2 - bucket; 3 - tramp; 
+    //########### Show & Hide TOOLS ################# (Child) 1 - axe; 2 - bucket; 3 - tramp; 4 -chest
     public void ShowAnimatedTool(AnimationEvent aniEvent)
     {
         gameObject.transform.GetChild(aniEvent.intParameter).gameObject.SetActive(true);

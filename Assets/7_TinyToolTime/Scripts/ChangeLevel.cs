@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class ChangeLevel : MonoBehaviour {
 
-    public float levelSpeed = 1f;
     public GameObject levelOne;
     public GameObject levelTwo;
     public GameObject levelThree;
     public bool nextLevel = true;   
     public int actualLevel = 1;
-    public float levelChangeTimer = 2;
 
     private float testTimer = 0;
     private GameObject levelOld;
@@ -24,7 +22,7 @@ public class ChangeLevel : MonoBehaviour {
     {
         SwitchLevel(levelOne, levelTwo);
     }
-
+/*
     void Update()
     {
 
@@ -33,7 +31,7 @@ public class ChangeLevel : MonoBehaviour {
             StartLevelChange();
         }
     }
-
+*/
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) {

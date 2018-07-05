@@ -8,7 +8,7 @@ public class HelpWindow : MonoBehaviour {
     private GameObject player;
     private PlayerAnimation playerAnim;
     private int level;
-    public ParticleSystem burst;
+    public ParticleSystem burstGone;
 
 
 
@@ -25,7 +25,7 @@ public class HelpWindow : MonoBehaviour {
         actualTool = toolInt;
         print("GetTool Name: " + actualTool);
         playerAnim.PlayAnimation(actualTool+level*3); //0 = erstes tool, 1 = zweites toll, 3 = drittes tool / 0 = erstes level usw...
-        burst.Play(true);
+        burstGone.Play(true);
         gameObject.SetActive(false);
     }
 
