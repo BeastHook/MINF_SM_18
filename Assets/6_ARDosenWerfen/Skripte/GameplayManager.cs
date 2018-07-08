@@ -39,6 +39,8 @@ public class GameplayManager : MonoBehaviour {
     private GameObject[] dots;
 
 
+    private GameObject arCamera;
+
 
     private void Awake() 
         {
@@ -49,16 +51,13 @@ public class GameplayManager : MonoBehaviour {
         chestAnim.GetComponent<Animator>();
         priceAnim.GetComponent<Animator>();
 
-        //  DontDestroyOnLoad(this.gameObject);
+        // Enable Fadenkreuz und Ballspawn in der Main ARCamera der MultiScene
+        arCamera = GameObject.Find("ARCamera");
+        arCamera.transform.GetChild(0).gameObject.SetActive(true);
+        arCamera.transform.GetChild(1).gameObject.SetActive(true);
 
-        // Nachdem alles geladen wurde in der Szene Preload, gelangt man ins Hauptmenü
-        // Skip hauptmenü
-        //  ChangeScene("TestScene");
-        // isGameCompleted = false;
-
-
-
-        if (SceneManager.GetActiveScene().name == "6_ARDosenWerfen")
+        // "MainScene" für das HauptProjekt, ansosnten 6_ARDosenwerfen 
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
             CreateLevel();
         }
@@ -81,10 +80,11 @@ public class GameplayManager : MonoBehaviour {
         {
             //GEWONNEN          
             Victory();
-
             //Shoot verhindern
             Shoot.allowedToShoot = false;
-            
+            // Fadenkreuz und Ballspawn wird deaktiviert in der Main ARCamera -> Spieler geht weiter zur nächsten Experience
+            arCamera.transform.GetChild(0).gameObject.SetActive(false);
+            arCamera.transform.GetChild(1).gameObject.SetActive(false);
 
 
             /*  
@@ -112,7 +112,7 @@ public class GameplayManager : MonoBehaviour {
 
            if (waitTime >= 4.0)
            {
-               ChangeScene("6_ARDosenWerfen");
+               ChangeScene("MainScene");
                currentLevel = 0;
                ScoreManager.score = 0;
                waitTime = 0;
@@ -194,7 +194,7 @@ public class GameplayManager : MonoBehaviour {
         }
 
 
-        // we gotta figure out how many cans there is
+  
         GameObject[] a = GameObject.FindGameObjectsWithTag("can");
         allCans = new List<GameObject>();
 
