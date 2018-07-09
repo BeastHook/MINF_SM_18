@@ -1,8 +1,7 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
-namespace Objects
+namespace _4_Kugellabyrinth._Kevin.Objects
 {
 	public class MovingPlatform : VuMono
 	{
@@ -18,6 +17,11 @@ namespace Objects
 		{
 			base.Awake();
 			
+			Initialize();
+		}
+
+		private void Initialize()
+		{
 			_startPoint = _cachedTransform.localPosition;
 
 			_movementSequence = DOTween.Sequence();

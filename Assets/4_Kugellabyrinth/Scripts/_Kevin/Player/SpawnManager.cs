@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace _4_Kugellabyrinth._Kevin.Player
 {
 	public class SpawnManager : MonoBehaviour
 	{

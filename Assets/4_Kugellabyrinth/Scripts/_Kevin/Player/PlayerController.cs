@@ -1,9 +1,9 @@
-﻿using DG.Tweening;
-using UnityEngine;
+﻿using UnityEngine;
+using Vuforia;
 
-namespace Player
+namespace _4_Kugellabyrinth._Kevin.Player
 {
-	public class PlayerControllerLab : MonoBehaviour {
+	public class PlayerController : VuMono {
 
 		[SerializeField] private float _speed = 1.0f;
 		[SerializeField, Range(0.05f, 2.0f)] private float _heightOnRespawn = 1.5f;
@@ -14,8 +14,10 @@ namespace Player
 		private bool _isChasable;
 		public bool IsChasable => _isChasable;
 
-		private void Awake()
+		protected override void Awake()
 		{
+			base.Awake();
+
 			gameObject.SetActive(false);
 
 			_rigidBody = GetComponentInChildren<Rigidbody>();
@@ -23,17 +25,23 @@ namespace Player
 			_isChasable = false;
 
 			SpawnManager.OnRespawn += Respawn;
-			DefaultTrackableEventHandler.OnTrackingEvent += OnTracking;
 		}
 
 		private void OnDestroy()
 		{
 			SpawnManager.OnRespawn -= Respawn;
-			DefaultTrackableEventHandler.OnTrackingEvent -= OnTracking;
 		}
 
-		private void OnTracking(bool trackingfound)
+		private void Update()
 		{
+			if(_cachedTransform.localPosition.y < -5f)
+				SpawnManager.Instance.Respawn();
+		}
+
+		protected override void OnTracking(bool trackingfound, TrackableBehaviour trackable)
+		{
+			if(!trackable.name.Equals(_cachedTransform.root.name)) return;
+
 			Toggle(trackingfound);
 		}
 

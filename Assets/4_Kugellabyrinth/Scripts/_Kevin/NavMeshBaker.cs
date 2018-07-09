@@ -1,26 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NavMeshBaker : VuMono
+namespace _4_Kugellabyrinth._Kevin
 {
-	[SerializeField] [Range(0f, 10f)] private float _navMeshUpdateInterval = 1.0f;
-	[SerializeField] private List<NavMeshSurface> _navMeshSurfaces;
-
-	private float _waitTime;
-
-	private void Update()
+	public class NavMeshBaker : VuMono
 	{
-		_waitTime += Time.deltaTime;
+		[SerializeField] [Range(0f, 10f)] private float _navMeshUpdateInterval = 1.0f;
+		[SerializeField] private List<NavMeshSurface> _navMeshSurfaces;
 
-		if (_waitTime < _navMeshUpdateInterval) return;
+		private float _waitTime;
 
-		foreach (NavMeshSurface surface in _navMeshSurfaces)
+		private void Update()
 		{
-			surface.BuildNavMesh();
-		}
+			_waitTime += Time.deltaTime;
 
-		_waitTime = 0f;
+			if (_waitTime < _navMeshUpdateInterval) return;
+
+			foreach (NavMeshSurface surface in _navMeshSurfaces)
+			{
+				surface.BuildNavMesh();
+			}
+
+			_waitTime = 0f;
+		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Traps
+namespace _4_Kugellabyrinth._Kevin.Traps
 {
 	public class WindTrap : Trap
 	{

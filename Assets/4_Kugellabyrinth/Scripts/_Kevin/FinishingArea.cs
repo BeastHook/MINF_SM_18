@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FinishingArea : MonoBehaviour {
+namespace _4_Kugellabyrinth._Kevin
+{
+	public class FinishingArea : MonoBehaviour {
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Player"))
+		private void OnTriggerEnter(Collider other)
 		{
-			GameManager.Instance.LevelDone();
+			if (other.CompareTag("Player"))
+			{
+				GameManager.Instance.LevelDone();
+			}
 		}
 	}
 }
