@@ -80,6 +80,7 @@ namespace _4_Kugellabyrinth._Kevin
 			else
 				Instance = this;
 
+			Door.IsOpen = false;
 			Physics.gravity = _customPhysicsVector;
 		}
 
@@ -105,6 +106,16 @@ namespace _4_Kugellabyrinth._Kevin
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
+			}
+		}
+
+		private void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.L))
+			{
+				_firstLevelDone = true;
+				Door.IsOpen = true;
+				LevelDone();
 			}
 		}
 

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MinigameCanvas : MonoBehaviour
 {
-	[SerializeField] private Text _minigameName;
-	[SerializeField] private Text _descriptionText;
+	[SerializeField] private TextMeshPro _minigameName;
+	[SerializeField] private TextMeshPro _descriptionText;
 	[SerializeField] private Text _startsInText;
 	[SerializeField] private Image _gameImage;
 	[SerializeField] private GameObject _winObject;

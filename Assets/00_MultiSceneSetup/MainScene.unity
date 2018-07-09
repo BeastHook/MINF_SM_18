@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -326,6 +326,36 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
@@ -1194,6 +1224,36 @@ Prefab:
     - target: {fileID: 1876221187522088, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
@@ -2218,6 +2278,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
   m_IsPrefabParent: 0
@@ -2357,7 +2447,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ar_marker10Material
+  m_Name: ar_marker7Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2370,7 +2460,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ed435a84b7a240879c8b9844916e8205, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0784c9448b9e4f14bca83b093f5a0bf8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -2609,6 +2699,36 @@ Prefab:
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
   m_IsPrefabParent: 0
@@ -2738,6 +2858,36 @@ Prefab:
     - target: {fileID: 1876221187522088, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
@@ -2986,6 +3136,36 @@ Prefab:
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
   m_IsPrefabParent: 0
@@ -3232,6 +3412,36 @@ Prefab:
     - target: {fileID: 1876221187522088, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
@@ -3545,6 +3755,36 @@ Prefab:
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
   m_IsPrefabParent: 0
@@ -3791,6 +4031,36 @@ Prefab:
     - target: {fileID: 1876221187522088, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
@@ -4516,6 +4786,36 @@ Prefab:
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
   m_IsPrefabParent: 0
@@ -4671,6 +4971,36 @@ Prefab:
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
   m_IsPrefabParent: 0
@@ -4811,6 +5141,36 @@ Prefab:
     - target: {fileID: 1876221187522088, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
       propertyPath: m_Name
       value: MinigameDescriptionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 33080760411349174, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431439322531426, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939273839763984, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33048705652940718, guid: 723c34af3df18d042af0b3ba1a379ea0,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
