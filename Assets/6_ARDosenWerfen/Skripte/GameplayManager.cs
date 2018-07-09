@@ -89,6 +89,7 @@ public class GameplayManager : MonoBehaviour {
            {
                //Ursprünglich: erneutes laden der MainScene
                //TODO 10.07.2018 unload der Scene 6_ARDosenwerfen -> Damit Spieler Marker erneut scannen kann zum Neustart des Spiels.
+               //TODO - Unload Minigame
                ChangeScene("MainScene");
 
                currentLevel = 0;
