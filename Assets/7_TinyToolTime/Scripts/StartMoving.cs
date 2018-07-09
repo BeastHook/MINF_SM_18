@@ -33,10 +33,12 @@ public class StartMoving : MonoBehaviour, ITrackableEventHandler
                 player.SetCanWalk(true);
                 walkFirstTime = true;
             }
-            
+            Time.timeScale = 1;
+
         }
         else
         {
+            Time.timeScale = 0;
             // when target is lost
 //            Debug.Log("Not tracked");
         }
