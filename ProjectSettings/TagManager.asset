@@ -24,6 +24,16 @@ TagManager:
   - home
   - Bullet
   - Menu
+  - gunsight
+  - rechts5
+  - rechts2
+  - rechts3
+  - oben4
+  - rechts4
+  - oben6
+  - oben5
+  - passt
+  - passt2
   layers:
   - Default
   - TransparentFX

@@ -23,13 +23,17 @@ public class count : MonoBehaviour {
     public bool played = false;
     public AudioClip audioClip;
 
-    
     void Start () {
         RENOMME.SetActive(false);
         tresure_box.SetActive(false);
-        source = gameObject.GetComponent<AudioSource>();   
-}
+        source = gameObject.GetComponent<AudioSource>();
+    }
 
+    IEnumerator SceneFinish()
+    {
+        yield return new WaitForSeconds(10);
+        MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+    }
 
     void Update()
     {
@@ -110,13 +114,12 @@ public class count : MonoBehaviour {
         tresure_box.SetActive(true);
         Vector3 trans = new Vector3(0.884f, 0.91f, -1.095f);
         tresure_box.transform.localPosition = trans;
+        StartCoroutine(SceneFinish());
     }
     void musicPlay()
     {
         source.PlayOneShot(audioClip);
         played = true;
     }
-	    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
-	}
 }
 
