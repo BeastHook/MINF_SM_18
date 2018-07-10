@@ -106,7 +106,8 @@ public class count : MonoBehaviour {
         Pferdekopf.SetActive(false);
         RENOMME.SetActive(true);
 
-    }
+	    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+	}
     void boxOpen()
     {
         anim.GetComponent<Animation>().Play();
