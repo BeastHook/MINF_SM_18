@@ -44,6 +44,7 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - Kreide
     - ARMarbleMaze
     - Dots
     - RPG
@@ -63,6 +64,7 @@ MonoBehaviour:
     - Cupboy
     - AR_Dosenwerfen
     dataSetsToActivate:
+    - Kreide
     - ARMarbleMaze
     - Dots
     - RPG
