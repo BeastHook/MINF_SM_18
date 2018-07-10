@@ -1,13 +1,14 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Vuforia;
 using _4_Kugellabyrinth._Kevin.Player;
 using Random = UnityEngine.Random;
 
 namespace _4_Kugellabyrinth._Kevin.Traps
 {
-	public class Mummy : VuMono {
-
+	public class Mummy : VuMono
+	{
 		private enum MummyBrain
 		{
 			Idle,
@@ -35,6 +36,13 @@ namespace _4_Kugellabyrinth._Kevin.Traps
 
 			_brain = MummyBrain.RandomWalk;
 			_currentWaypointIndex = 0;
+		}
+
+		protected override void OnTracking(bool trackingfound, TrackableBehaviour trackable)
+		{
+			base.OnTracking(trackingfound, trackable);
+
+			_isActive = trackingfound;
 		}
 
 		private void Update()
@@ -70,7 +78,6 @@ namespace _4_Kugellabyrinth._Kevin.Traps
 
 			_currentWaypointIndex = randomIndex;
 			return _waypoints[randomIndex];
-
 		}
 
 		private void GetNextState()

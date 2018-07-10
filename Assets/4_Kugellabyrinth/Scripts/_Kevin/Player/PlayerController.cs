@@ -4,8 +4,7 @@ using Vuforia;
 namespace _4_Kugellabyrinth._Kevin.Player
 {
 	public class PlayerController : VuMono {
-
-		[SerializeField] private float _speed = 1.0f;
+		
 		[SerializeField, Range(0.05f, 2.0f)] private float _heightOnRespawn = 1.5f;
 
 		private Rigidbody _rigidBody;
