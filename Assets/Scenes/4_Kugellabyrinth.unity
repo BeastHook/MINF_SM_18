@@ -5213,7 +5213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6007dadac38f6499a639c521ce81f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
   _heightOnRespawn: 0.2
 --- !u!54 &130646839
 Rigidbody:
@@ -13470,15 +13469,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: MarkerLevel1
+  mTrackableName: MarkerLevel1_New
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/ARMarbleMaze.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.964824
+  mAspectRatio: 0.950739
   mImageTargetType: 0
   mWidth: 6
-  mHeight: 5.7889442
+  mHeight: 5.7044344
 --- !u!4 &195921468
 Transform:
   m_ObjectHideFlags: 0
@@ -33590,7 +33589,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 00329841c3ed45ca80d10fb7ff8e38d9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4f94804987f34150aa7a14fa7b65ceef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -60748,7 +60747,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MarkerLevel1Material
+  m_Name: MarkerLevel1_NewMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -60761,7 +60760,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e504eb9b45ca4a469f9c7a439586392e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 57ebc4ac32694547a7e36683d36f3988, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -84286,7 +84285,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.482412}
+      m_Extent: {x: 0.5, y: 0, z: 0.4753695}
   m_Shapes:
     vertices: []
     shapes: []
@@ -84339,7 +84338,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000b5fef6be000000000000803f000000000000000000000000000000bf00000000b5fef63e000000000000803f00000000000000000000803f0000003f00000000b5fef6be000000000000803f000000000000803f000000000000003f00000000b5fef63e000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000a263f3be000000000000803f000000000000000000000000000000bf00000000a263f33e000000000000803f00000000000000000000803f0000003f00000000a263f3be000000000000803f000000000000803f000000000000003f00000000a263f33e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
