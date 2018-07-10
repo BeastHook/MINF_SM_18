@@ -17,9 +17,14 @@ public class HomeBehaviour : MonoBehaviour, ITrackableEventHandler
     private bool flagLoaded = false;
     private bool homeLoaded = false;
 
+    private GameObject gameCounter;
+    private GameCounter gc;
+
     // Use this for initialization
     void Start() {
 
+        gameCounter = GameObject.Find("GameCounter");
+        gc = gameCounter.GetComponent<GameCounter>();
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
         {
@@ -61,13 +66,13 @@ public class HomeBehaviour : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             //Start Spawning when target is tracked
-            Debug.Log("Spawn Goober");
-            Invoke("Spawn", 0f);
+            //(Debug.Log("Spawn Goober");
+            // Invoke("Spawn", 0f);
         }
         else
         {
             // Stop Spawning when target is lost
-            CancelInvoke("Spawn");
+            // CancelInvoke("Spawn");
         }
 
         // Update is called once per frame
@@ -76,10 +81,9 @@ public class HomeBehaviour : MonoBehaviour, ITrackableEventHandler
 
     void Update()
     {
-         if (tb.done)
+         if (gc.done)
          {
-                Debug.Log("geht nicht");
-                Invoke("Flag", 0f);
+            Flag();
          }
     }
 }

@@ -12,10 +12,17 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
     private Move move;
     public GameObject turret;
     private TowerBehaviour tb;
+    private GameObject gameCounter;
+    private GameCounter gc;
+
+    private bool isTrackingLost = false;
+
 
     // Use this for initialization
     void Start()
     {
+        gameCounter = GameObject.Find("GameCounter");
+        gc = gameCounter.GetComponent<GameCounter>();
 
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
@@ -28,11 +35,11 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
     IEnumerator Spawn()
     {
 
-        while (!tb.done)
+        while (!gc.done)
         {
-            GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
-            newGoober.transform.parent = parent.transform;
-            yield return new WaitForSeconds(0.3f);
+           GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
+           newGoober.transform.parent = this.parent.transform;
+           yield return new WaitForSeconds(0.3f);
         }
 
     }
@@ -46,11 +53,16 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
 
-            GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
-            newGoober.transform.parent = parent.transform;
-
+            //GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
+            //newGoober.transform.parent = parent.transform;
+            isTrackingLost = false;
             StartCoroutine("Spawn");
 
+        }
+
+        else
+        {
+            StopCoroutine("Spawn");
         }
     }
 }
