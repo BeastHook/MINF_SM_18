@@ -6,8 +6,6 @@ public class Trigger5 : MonoBehaviour
 
 {
 
-
-    //public Transform Group4;
     public GameObject KörperFlügel;
     public GameObject Pferdehinterbeine;
 
@@ -18,42 +16,22 @@ public class Trigger5 : MonoBehaviour
     public AudioClip audioC;
     public bool played = false;
 
-    public Vector3 original;
-    public Vector3 original2;
-
     void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
 
     }
-    void Awake()
-    {
-        original = KörperFlügel.transform.position;
-        original2 = Pferdehinterbeine.transform.position;
-    }
-    void Update()
-    {
-        /*   hposition = Pferdehinterbeine.transform.position;
-           Debug.Log("Pferdehinterbeine" + hposition);
-           mposition = KörperFlügel.transform.position;
-           Debug.Log("KörperFlügel" + mposition); */
-    }
+   
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("oben4") && (!played))
         {
-            Debug.Log("True");
-            Position();
-            source.PlayOneShot(audioC);
-            played = true;
-
-            //  Mitte.transform.SetParent(Group4, false);
-            KörperFlügel.transform.parent = Pferdehinterbeine.transform;
-            Plane2.transform.parent = Plane4.transform;
-            Pferdehinterbeine.gameObject.tag = "passt";
-            KörperFlügel.gameObject.tag = "passt";
+            playMusic();
+            parentingObjects();
             Position();
 
+
+            //Set LocalPositions in new Parents
             Vector3 test2 = new Vector3(0.0003999353f, -0.0002206423f, -0.00020004514f);
             KörperFlügel.transform.localPosition = test2;
             KörperFlügel.transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -74,4 +52,17 @@ public class Trigger5 : MonoBehaviour
         Plane2.transform.localPosition = trans3;
         Plane2.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
-}
+    void playMusic()
+    {
+        source.PlayOneShot(audioC);
+        played = true;
+    }
+    void parentingObjects()
+    {
+        KörperFlügel.transform.parent = Pferdehinterbeine.transform;
+        Plane2.transform.parent = Plane4.transform;
+        Pferdehinterbeine.gameObject.tag = "passt";
+        KörperFlügel.gameObject.tag = "passt";
+      
+    }
+    }

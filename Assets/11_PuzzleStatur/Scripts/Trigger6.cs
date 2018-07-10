@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Trigger6 : MonoBehaviour
 {
-
-
-    
-
-   // public Transform Group4;
+ 
     public GameObject Kopf;
     public GameObject Mitte;
 
@@ -19,34 +15,21 @@ public class Trigger6 : MonoBehaviour
     public GameObject Plane3;
     public GameObject Plane5;
 
-    public Vector3 original;
-    public Vector3 original2;
 
     void Start()
     {
        source=gameObject.GetComponent<AudioSource>();
     }
-    void Awake()
-    {
-    //    original = Mitte.transform.position;
-    //    original2 = Kopf.transform.position;
-    }
+   
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("oben5")&&(!played))
         {
-            Debug.Log("True");
-            Position();
-            source.PlayOneShot(audioC);
-            played = true;
-
-            //  Mitte.transform.SetParent(Group4, false);
-            Mitte.transform.parent = Kopf.transform;
-            Plane5.transform.parent = Plane3.transform;
-            Kopf.gameObject.tag = "passt2";
-            Mitte.gameObject.tag = "passt";
+            playMusic();
+            parentingObjects();
             Position();
 
+            //Set LocalPositions in new Parents
             Vector3 test2 = new Vector3(-0.0006037506f, -0.001650604f, -3.024578e-05f);
             Mitte.transform.localPosition = test2;
             Mitte.transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -66,5 +49,20 @@ public class Trigger6 : MonoBehaviour
         Plane5.transform.localPosition = trans3;
         Plane5.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
-}
+    void playMusic()
+    {
+        source.PlayOneShot(audioC);
+        played = true;
+    }
+
+    void parentingObjects()
+    {
+
+        Mitte.transform.parent = Kopf.transform;
+        Plane5.transform.parent = Plane3.transform;
+        Kopf.gameObject.tag = "passt2";
+        Mitte.gameObject.tag = "passt";
+        
+    }
+    }
 
