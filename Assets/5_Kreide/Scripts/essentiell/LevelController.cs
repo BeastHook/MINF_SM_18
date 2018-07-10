@@ -226,9 +226,10 @@ public class LevelController : MonoBehaviour
             trigger.SetActive(true);
         }
 
-        //toggleGUI(true);
+		//toggleGUI(true);
 
-    }
+		MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+	}
 
     //zeigt das menu
     public void toggleMenu(bool value)

@@ -116,5 +116,7 @@ public class count : MonoBehaviour {
         source.PlayOneShot(audioClip);
         played = true;
     }
+	    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+	}
 }
 

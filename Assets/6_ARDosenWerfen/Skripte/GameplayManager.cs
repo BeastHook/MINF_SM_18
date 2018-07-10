@@ -88,11 +88,10 @@ public class GameplayManager : MonoBehaviour {
            if (waitTime >= 4.0)
            {
                //Ursprünglich: erneutes laden der MainScene
-               //TODO 10.07.2018 unload der Scene 6_ARDosenwerfen -> Damit Spieler Marker erneut scannen kann zum Neustart des Spiels.
-               //TODO - Unload Minigame
-               ChangeScene("MainScene");
+               //ChangeScene("MainScene");
+	           MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
 
-               currentLevel = 0;
+				currentLevel = 0;
                ScoreManager.score = 0;
                waitTime = 0;
                showCurrentLevel = 1;
