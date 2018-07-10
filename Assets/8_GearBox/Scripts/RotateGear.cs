@@ -157,7 +157,8 @@ public class RotateGear : MonoBehaviour, ITrackableEventHandler {
     public void OpenChest()
     {
         anim.SetBool("CanOpen", true);
-    }
+	    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+	}
 
     // Update is called once per frame
     void Update () {
