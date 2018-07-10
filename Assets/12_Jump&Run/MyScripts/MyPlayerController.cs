@@ -21,7 +21,7 @@ public class MyPlayerController : MonoBehaviour
 
     //groundcheck variables
     public Transform groundCheck;
-    bool grounded;
+    public bool grounded;
 
     //movement variables
     public float moveSpeed = -3;
@@ -141,7 +141,7 @@ public class MyPlayerController : MonoBehaviour
         }
 
         //Bodenkontaktabfrage
-        if (Physics.Raycast(groundCheck.position, new Vector3(0, -1, 0), 1f))
+        if (Physics.Raycast(groundCheck.position, new Vector3(0, -0.025f, 0), 1f))
         {
             grounded = true;
             anim.SetBool("grounded", true);
@@ -196,8 +196,9 @@ public class MyPlayerController : MonoBehaviour
 
             if (markerNumber == 2)
             {
-                if (!isSliding)
+                if (!isSliding&&grounded)
                 {
+                    grounded = false;
                     rigid.AddForce(new Vector3(0, jumpforce, 0));
                     anim.SetTrigger("Jump");
                 }
