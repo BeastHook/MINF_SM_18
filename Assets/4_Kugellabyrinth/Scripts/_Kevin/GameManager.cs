@@ -135,9 +135,12 @@ namespace _4_Kugellabyrinth._Kevin
 				if (!Door.IsOpen) return;
 				_goalParticles.SetActive(false);
 
-				Rigidbody rigidbodyPlayer = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
-				rigidbodyPlayer.velocity = Vector3.zero;
-				rigidbodyPlayer.useGravity = false;
+				Rigidbody rigidbodyPlayer = GameObject.FindWithTag("Player")?.GetComponent<Rigidbody>();
+				if (rigidbodyPlayer)
+				{
+					rigidbodyPlayer.velocity = Vector3.zero;
+					rigidbodyPlayer.useGravity = false;
+				}
 
 				_state = Gamestate.Finished;
 				OnStateChanged();
@@ -153,8 +156,8 @@ namespace _4_Kugellabyrinth._Kevin
 			yield return new WaitForSeconds(SFXManager.Instance.ChestOpenSound.length);
 			SFXManager.Instance.PlaySFX(SFXManager.Instance.WinSound);
 
-			yield return new WaitForSeconds(3f);
-			SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+			GameObject.Find("Level2").SetActive(false);
+			MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
 			Debug.Log("Game Done.");
 		}
 

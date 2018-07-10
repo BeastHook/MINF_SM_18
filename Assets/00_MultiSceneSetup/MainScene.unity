@@ -517,7 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameStartsInTime: 3
   _maximumDistanceToTrackable: 30
-  _afterLevelWaitTime: 0
+  _afterLevelWaitTime: 6
   _minigames:
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 217279faa80b364428cb37ace11a5e1e, type: 3}
@@ -550,7 +550,7 @@ MonoBehaviour:
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: {fileID: 0}
   - _scene:
-      m_SceneAsset: {fileID: 102900000, guid: b11c2c3c7e6d7bf47b7f080be5411d49, type: 3}
+      m_SceneAsset: {fileID: 102900000, guid: cdc1dc3053190674c81460d4f4e2790e, type: 3}
       m_SceneName: 4_Kugellabyrinth
     _maximumPlaytime: 120
     _accordingTrackable: {fileID: 24870189}
@@ -639,8 +639,6 @@ MonoBehaviour:
     _description: Gruppe 12
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: {fileID: 0}
-  _vuforiaCamera: {fileID: 928890030}
-  mainCamera: {fileID: 928890026}
 --- !u!4 &158682166
 Transform:
   m_ObjectHideFlags: 0

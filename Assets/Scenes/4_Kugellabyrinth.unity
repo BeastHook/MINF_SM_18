@@ -20405,7 +20405,7 @@ MonoBehaviour:
     value: {x: 0, y: 0, z: 0}
     space: 1
   rotateDegreesPerSecond:
-    value: {x: 0, y: 45, z: 0}
+    value: {x: 0, y: 0, z: 45}
     space: 0
   ignoreTimescale: 0
 --- !u!95 &429167764

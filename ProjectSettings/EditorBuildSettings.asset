@@ -19,7 +19,7 @@ EditorBuildSettings:
     guid: 8a5692584b8be9041aa1b579e0d6453e
   - enabled: 1
     path: Assets/Scenes/4_Kugellabyrinth.unity
-    guid: b11c2c3c7e6d7bf47b7f080be5411d49
+    guid: cdc1dc3053190674c81460d4f4e2790e
   - enabled: 1
     path: Assets/Scenes/5_Kreide.unity
     guid: f87f507ebfec8334ca9cbb101e24ed37
