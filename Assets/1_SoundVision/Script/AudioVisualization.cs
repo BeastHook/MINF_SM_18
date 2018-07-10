@@ -21,6 +21,7 @@ public class AudioVisualization : MonoBehaviour
     [Space]
     public Material paticleMat;
     public float particleRate;
+    public float micScale;
 
     [Space]
     public bool rotation;
@@ -309,7 +310,6 @@ public class AudioVisualization : MonoBehaviour
         if (!voiceOverSource.isPlaying)
         {
             timerVoiceOver += Time.deltaTime;
-            //if (timerVoiceOver > waitTimeVoiceOver20 && pd.correct < 20 )
             if (timerVoiceOver > waitTimeVoiceOver20 && pd.correct < 20)     
             {
                 Debug.Log(waitTimeVoiceOver20 + " sekunden unter 20%");
@@ -320,13 +320,13 @@ public class AudioVisualization : MonoBehaviour
                 Debug.Log(waitTimeVoiceOver20 + " sekunden unter 40%");
                 ChangeVoiceOver(2);
             }
-            //### ab hier muss eigentlich die waitTime
             else if (pd.correct >= 50 && pd.correct < 100 && !halfProcent)
             {
                 Debug.Log("50% erreicht");
                 ChangeVoiceOver(3);
                 halfProcent = true;
             }
+            //TODO-Minigame & Interpolation zu Z
             else if (pd.correct >= 100 && !hiddenSecretRevealed)
             {
                 Debug.Log("100% erreicht");
@@ -337,20 +337,22 @@ public class AudioVisualization : MonoBehaviour
         // Game Ends after 3 Minutes = 180 Secounds
         if(gameTime >= 180 && !gameOver)
         {
-            if(pd.correct <= 70)
+            if(pd.correct < 70)
             {
-                Debug.Log("Zeit ist um");
+                //TODO-Minigame
+                Debug.Log("< color = red >Zeit ist um</color>");
                 ChangeVoiceOver(5);
                 gameOver = true;
             }
             else
             {
-                Debug.Log("100% erreicht");
+                //TODO-Minigame & Interpolation zu Z
+                Debug.Log("< color = red >100% erreicht</color>");
                 ChangeVoiceOver(4);
                 pd.correct = 100;
+                gameOver = true;
                 hiddenSecretRevealed = true;
             }
-            //SceneManager usw
         }
 
 
@@ -447,10 +449,15 @@ public class AudioVisualization : MonoBehaviour
                     if (aChannel1[i] * audioMultiplier > audioMax) { aChannel1[i] = audioMax / audioMultiplier; }
                     if (aChannel1[i] > audioSensibility)
                     {
+                        micChannel1[i] /= micScale;
+                        micChannel2[i] /= micScale;
+                   
                         var main = particles[i].main;
                         main.startSpeed = Mathf.Lerp(main.startSpeed.constant, aChannel1[i] * audioMultiplier, audioSmooth);
                         //übergabe der channel data an die Position
                         //#Übergabe A zu B und dann soll weiter laufen auf B und nächstes mal inverse B zu A damit nicht der Laufende Cyklus gebrochen wird. 
+
+                        //TODO-Interpolation Z raus und ab 100 % Interpolation zu Z bzw ab 180 Sekunden und Correct >= 70 !
                         if (startInterpolation)
                         {
                             particles[i].transform.position = new Vector3(
@@ -567,7 +574,8 @@ public class AudioVisualization : MonoBehaviour
         }
         if (color)
         {
-            if ((pd.correct % 10) == 0)
+            //TODO richtige Prozentsteps sollte letzter build 
+            if ((pd.correct % 2.0408f) == 0f)
             {
                 oldCorrect = pd.correct;
             }

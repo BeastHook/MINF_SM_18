@@ -230,11 +230,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 467117961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.22222221, z: 0}
-  m_LocalScale: {x: 0.005555555, y: 0.005555555, z: 0.005555555}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1472806823}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &467117961
 GameObject:
@@ -271,19 +271,20 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: fd14f9854ee9da74bb292f1ad04f43a2, type: 3}
   - {fileID: 8300000, guid: 5aae1751919f3bf4391ae38e739d9824, type: 3}
-  - {fileID: 8300000, guid: ae8cdcf1d02ebfe40940e02fe1515e33, type: 3}
-  - {fileID: 8300000, guid: 92514fe4bc10fb940b806858f1accd40, type: 3}
-  - {fileID: 8300000, guid: 620df8a43abf8214a8245907f7143f3e, type: 3}
-  - {fileID: 8300000, guid: ae8cdcf1d02ebfe40940e02fe1515e33, type: 3}
-  - {fileID: 8300000, guid: e2a560cbad8d71445b5f443eeb12b379, type: 3}
-  - {fileID: 8300000, guid: 43494b9691782aa4fa2abe007fa05286, type: 3}
   - {fileID: 8300000, guid: 0d23c666754f1b94aba0d59484d50bfe, type: 3}
+  - {fileID: 8300000, guid: d634d936cf87d09438b20944184741d6, type: 3}
+  - {fileID: 8300000, guid: 37ba1e50d2a40204c8c0c6643265f9fe, type: 3}
+  - {fileID: 8300000, guid: 14b60f1a2e303f241b06ce9e1540241a, type: 3}
+  - {fileID: 8300000, guid: 972f94079fc95334a9092b9c3b475401, type: 3}
   - {fileID: 8300000, guid: d65590495f938814fafd3f5042d5e388, type: 3}
-  - {fileID: 8300000, guid: 858b585299e710b47b7bd4e96f5bf86e, type: 3}
-  - {fileID: 8300000, guid: e5ea4fd2d4f7c1747b1140882e75ad64, type: 3}
+  - {fileID: 8300000, guid: 620df8a43abf8214a8245907f7143f3e, type: 3}
+  - {fileID: 8300000, guid: 4d05dd19966f15a4da6387d91c54828d, type: 3}
+  - {fileID: 8300000, guid: 014eb93b86e39a34e863afc9a05d833e, type: 3}
+  - {fileID: 8300000, guid: 5285b480f4e696a42bca48bbfff7a986, type: 3}
   voiceOver: {fileID: 56968533}
   paticleMat: {fileID: 2100000, guid: 6597e242da8e37e4ca60602811c9c1ef, type: 2}
-  particleRate: 100
+  particleRate: 75
+  micScale: 2
   rotation: 0
   rotateSensitivityRange: {x: 10, y: 30}
   rotateSensitivity: 0
@@ -373,7 +374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &473084689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,8 +1414,8 @@ MonoBehaviour:
   mExtendedTracking: 1
   mAspectRatio: 1.413844
   mImageTargetType: 0
-  mWidth: 127.31249
-  mHeight: 180
+  mWidth: 141.45833
+  mHeight: 200
 --- !u!4 &1472806823
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,10 +1423,9 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1472806817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -40, z: 0}
-  m_LocalScale: {x: 180, y: 180, z: 180}
-  m_Children:
-  - {fileID: 435648277}
+  m_LocalPosition: {x: 0, y: -75, z: 0}
+  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

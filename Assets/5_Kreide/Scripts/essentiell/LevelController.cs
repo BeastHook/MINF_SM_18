@@ -20,7 +20,7 @@ public class LevelController : MonoBehaviour
     private SpriteRenderer chestColliderWithSprite;
     public Sprite openChestSprite;
     public Sprite closedChestSprite;
-    public float showTreasureSpriteDuration = 5.5f;
+    public float showTreasureSpriteDuration = 10f;
     private float tempSpriteDuration;
 
     // MoveSight variables
@@ -94,7 +94,7 @@ public class LevelController : MonoBehaviour
 
                 if (showTreasureSpriteDuration < 0f)
                 {
-                    restartGame();
+                    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
                 }
             }
 
