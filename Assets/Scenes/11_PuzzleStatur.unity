@@ -162,12 +162,8 @@ MonoBehaviour:
   source: {fileID: 0}
   audioC: {fileID: 0}
   played: 0
-  hposition: {x: 0, y: 0, z: 0}
-  mposition: {x: 0, y: 0, z: 0}
   Plane5: {fileID: 1122393031}
   Plane6: {fileID: 789845113}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!23 &139449135
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -362,7 +358,7 @@ GameObject:
   - component: {fileID: 240192472}
   m_Layer: 0
   m_Name: Targets
-  m_TagString: pass2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,10 +406,10 @@ MonoBehaviour:
   anim: {fileID: 1587402796}
   animationclip: {fileID: 7400000, guid: ea6da4a0ebadb704691a6fa2d03f817b, type: 3}
   isPlaying: 0
+  myValue: {x: 0, y: 0, z: 0, w: 0}
   source: {fileID: 1877927670}
   played: 0
   audioClip: {fileID: 8300000, guid: 138a39295c03c254792abd4d4f69ba53, type: 3}
-  myValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &240192471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -437,7 +433,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -1224,8 +1220,6 @@ MonoBehaviour:
   source: {fileID: 1877927670}
   audioC: {fileID: 8300000, guid: 32a02b5e107db45e39c57eccf2ec4bf4, type: 3}
   played: 0
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!54 &756793434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1825,12 +1819,8 @@ MonoBehaviour:
   source: {fileID: 0}
   audioC: {fileID: 8300000, guid: 32a02b5e107db45e39c57eccf2ec4bf4, type: 3}
   played: 0
-  hposition: {x: 0, y: 0, z: 0}
-  mposition: {x: 0, y: 0, z: 0}
   Plane5: {fileID: 1122393031}
   Plane6: {fileID: 789845113}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!54 &871245069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2274,8 +2264,6 @@ MonoBehaviour:
   played: 0
   Plane3: {fileID: 1382511491}
   Plane2: {fileID: 1433284550}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!23 &967646924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2380,8 +2368,6 @@ MonoBehaviour:
   source: {fileID: 0}
   audioC: {fileID: 8300000, guid: 32a02b5e107db45e39c57eccf2ec4bf4, type: 3}
   played: 0
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!54 &999891507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2818,8 +2804,6 @@ MonoBehaviour:
   source: {fileID: 0}
   audioC: {fileID: 8300000, guid: 32a02b5e107db45e39c57eccf2ec4bf4, type: 3}
   played: 0
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!54 &1168845523
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3073,10 +3057,6 @@ MonoBehaviour:
   played: 0
   Plane4: {fileID: 149424960}
   Plane5: {fileID: 1122393031}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
-  hposition: {x: 0, y: 0, z: 0}
-  mposition: {x: 0, y: 0, z: 0}
 --- !u!54 &1337070324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3586,13 +3566,6 @@ MonoBehaviour:
   played: 0
   Plane1: {fileID: 1114241556}
   Plane6: {fileID: 789845113}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
-  test: {x: 0, y: 0, z: 0}
-  testR: {x: 0, y: 0, z: 0, w: 0}
-  target6: {fileID: 0}
-  obj: []
-  obj2: []
 --- !u!54 &1480109879
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3760,8 +3733,6 @@ MonoBehaviour:
   source: {fileID: 0}
   audioC: {fileID: 8300000, guid: 32a02b5e107db45e39c57eccf2ec4bf4, type: 3}
   played: 0
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!23 &1516011067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4089,10 +4060,6 @@ MonoBehaviour:
   played: 0
   Plane4: {fileID: 149424960}
   Plane5: {fileID: 1122393031}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
-  hposition: {x: 0, y: 0, z: 0}
-  mposition: {x: 0, y: 0, z: 0}
 --- !u!23 &1595646304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4296,8 +4263,6 @@ MonoBehaviour:
   played: 0
   Plane3: {fileID: 1382511491}
   Plane2: {fileID: 1433284550}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!54 &1603442948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4650,13 +4615,6 @@ MonoBehaviour:
   played: 0
   Plane1: {fileID: 1114241556}
   Plane6: {fileID: 789845113}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
-  test: {x: 0, y: 0, z: 0}
-  testR: {x: 0, y: 0, z: 0, w: 0}
-  target6: {fileID: 0}
-  obj: []
-  obj2: []
 --- !u!23 &1676357707
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5135,8 +5093,6 @@ MonoBehaviour:
   played: 0
   Plane3: {fileID: 1382511491}
   Plane5: {fileID: 1122393031}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!54 &1903012163
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5704,8 +5660,6 @@ MonoBehaviour:
   played: 0
   Plane3: {fileID: 1382511491}
   Plane5: {fileID: 1122393031}
-  original: {x: 0, y: 0, z: 0}
-  original2: {x: 0, y: 0, z: 0}
 --- !u!23 &2084735102
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -14,8 +14,8 @@ public class TowerBehaviour : MonoBehaviour
 
     private Spawner spawner;
     private Move move;
-    public Text score;
-    private float count;
+    public TextMesh score;
+    public float count;
     public bool done = false;
 
 
@@ -50,10 +50,6 @@ public class TowerBehaviour : MonoBehaviour
             {
                 count++;
             }
-            
-            
-            
-
 
 			goob = null;
 			CancelInvoke("Shoot");

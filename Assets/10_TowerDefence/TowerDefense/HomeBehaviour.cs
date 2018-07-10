@@ -14,6 +14,8 @@ public class HomeBehaviour : MonoBehaviour, ITrackableEventHandler
     public GameObject turret;
 
     private TowerBehaviour tb;
+    private bool flagLoaded = false;
+    private bool homeLoaded = false;
 
     // Use this for initialization
     void Start() {
@@ -30,16 +32,24 @@ public class HomeBehaviour : MonoBehaviour, ITrackableEventHandler
 
     void Spawn()
     {
-        var newTower = Instantiate(tower, this.transform.position, this.transform.rotation);
-        newTower.transform.parent = parent.transform;
-
+        if (!homeLoaded)
+        {
+            var newTower = Instantiate(tower, this.transform.position, this.transform.rotation);
+            newTower.transform.parent = parent.transform;
+            homeLoaded = true;
+        }
 
     }
 
     void Flag()
     {
-        var newFlag = Instantiate(flag, this.transform.position, this.transform.rotation);
-        newFlag.transform.parent = parent.transform;
+        if (!flagLoaded)
+        {
+            var newFlag = Instantiate(flag, this.transform.position, this.transform.rotation);
+            newFlag.transform.parent = parent.transform;
+            flagLoaded = true;
+        }
+
     }
 
     public void OnTrackableStateChanged(
@@ -53,12 +63,6 @@ public class HomeBehaviour : MonoBehaviour, ITrackableEventHandler
             //Start Spawning when target is tracked
             Debug.Log("Spawn Goober");
             Invoke("Spawn", 0f);
-
-            if (tb.done)
-            {
-                Debug.Log("geht nicht");
-                Invoke("Flag", 0f);
-            }
         }
         else
         {
@@ -68,4 +72,14 @@ public class HomeBehaviour : MonoBehaviour, ITrackableEventHandler
 
         // Update is called once per frame
         
-    } }
+    }
+
+    void Update()
+    {
+         if (tb.done)
+         {
+                Debug.Log("geht nicht");
+                Invoke("Flag", 0f);
+         }
+    }
+}

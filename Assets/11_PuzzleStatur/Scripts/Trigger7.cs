@@ -18,49 +18,24 @@ public class Trigger7 : MonoBehaviour {
     public GameObject Plane1;
     public GameObject Plane6;
 
-    public Vector3 original;
-    public Vector3 original2;
-    public Vector3 test;
-    public Quaternion testR;
-
-    public GameObject target6;
-    public Transform[] obj;
-    public Transform[] obj2;
-
     void Start()
     {
         gameObject.GetComponent<AudioSource>();
     
     }
-   void Awake()
-    {
-       
-        /*  original = target1.transform.localPosition;
-          original2 = target6.transform.localPosition;  */
-
-    }
-    void Update()
-    {
-        
-    }
+  
     void OnTriggerEnter(Collider other)
     {
         
 
         if (other.CompareTag("oben6")&& (!played))
         {
-            Debug.Log("True"); ;
-            source.PlayOneShot(audioC);
-            played = true;
-            
-            //  Mitte.transform.SetParent(Group4, false);
-            Vorderbeine.transform.parent = Pferdekopf.transform;
-            Plane6.transform.parent = Plane1.transform;
-            Pferdekopf.gameObject.tag = "passt";
-            Vorderbeine.gameObject.tag = "passt";
-        
+            playMusic();
+            parentingObjects();
             Position();
-             Vector3 test = new Vector3(-0.02970007f, -0.02017949f, -0.101633f);
+
+            //Set LocalPositions in new Parents
+            Vector3 test = new Vector3(-0.02970007f, -0.02017949f, -0.101633f);
              Vorderbeine.transform.localPosition = test;
              Vorderbeine.transform.localRotation = Quaternion.Euler(0, 0, 8.111f);
 
@@ -82,6 +57,20 @@ public class Trigger7 : MonoBehaviour {
             Vector3 trans3 = Vector3.zero;
             Plane6.transform.localPosition = trans3;
             Plane6.transform.localRotation = Quaternion.Euler(0, 0, 0);
-    } 
-}
+    }
+
+    void playMusic()
+    {
+        source.PlayOneShot(audioC);
+        played = true;
+    }
+
+    void parentingObjects()
+    {
+        Vorderbeine.transform.parent = Pferdekopf.transform;
+        Plane6.transform.parent = Plane1.transform;
+        Pferdekopf.gameObject.tag = "passt";
+        Vorderbeine.gameObject.tag = "passt";
+    }
+    }
 

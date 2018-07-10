@@ -369,7 +369,9 @@ public class MyPlayerController : MonoBehaviour
     {
         print("Beende Application");
         endOfGame = true;
-    }
+
+	    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+	}
 
 
 
