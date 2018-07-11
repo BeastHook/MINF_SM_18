@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ public class MultisceneManager : MonoBehaviour
 
 	private Minigame _currentMinigame;
 	private bool _hasAdditionalScene;
+	private StateManager _stateManager;
 
 	private void Awake()
 	{
@@ -32,6 +34,7 @@ public class MultisceneManager : MonoBehaviour
 		SceneManager.sceneLoaded += OnSceneLoaded;
 
 		SetAllDescriptionCanvasses();
+		_stateManager = TrackerManager.Instance.GetStateManager();
 	}
 
 	private void SetAllDescriptionCanvasses()
@@ -62,7 +65,7 @@ public class MultisceneManager : MonoBehaviour
 
 	private void OnSceneLoaded(Scene loadedScene, LoadSceneMode loadMode)
 	{
-		TrackerManager.Instance.GetStateManager().ReassociateTrackables();
+		_stateManager.ReassociateTrackables();
 		if (loadedScene.buildIndex != 0 && loadMode == LoadSceneMode.Additive)
 		{
 			StartCoroutine(LevelTimer(_currentMinigame.MaximumPlaytime));
@@ -137,8 +140,21 @@ public class MultisceneManager : MonoBehaviour
 	public IEnumerator FinishLevel(bool hasWon)
 	{
 		yield return new WaitForSeconds(_afterLevelWaitTime);
+		FindAndDeleteTrackablesFromMinigame();
 		SceneManager.UnloadSceneAsync(_currentMinigame.Scene);
 		_currentMinigame.DescriptionCanvas.UpdateCanvas(hasWon);
+	}
+
+	private void FindAndDeleteTrackablesFromMinigame()
+	{
+		List<Trackable> trackables = new List<Trackable>();
+		FindObjectsOfType<TrackableBehaviour>().Where(t => t.gameObject.scene.buildIndex != 0).ToList().ForEach(t => trackables.Add(t.Trackable));
+
+		foreach (Trackable trackable in trackables)
+		{
+			Debug.LogWarning("Destroying Trackable with Name: " + trackable.Name + " because the current MiniGame is being unloaded.");
+			_stateManager.DestroyTrackableBehavioursForTrackable(trackable);
+		}
 	}
 
 	[Serializable]

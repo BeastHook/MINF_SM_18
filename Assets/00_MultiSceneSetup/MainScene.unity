@@ -552,7 +552,7 @@ MonoBehaviour:
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: cdc1dc3053190674c81460d4f4e2790e, type: 3}
       m_SceneName: 4_Kugellabyrinth
-    _maximumPlaytime: 120
+    _maximumPlaytime: 600
     _accordingTrackable: {fileID: 24870189}
     _descriptionCanvas: {fileID: 1909249477}
     _name: Kugellabyrinth
@@ -2614,7 +2614,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ar_marker7Material
+  m_Name: ar_marker3Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2627,7 +2627,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0784c9448b9e4f14bca83b093f5a0bf8, type: 3}
+        m_Texture: {fileID: 2800000, guid: b9498ffa19c84c48b3e28f71130719cc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []

@@ -113,6 +113,7 @@ namespace _4_Kugellabyrinth._Kevin
 			}
 		}
 
+		//Skip Level
 		private void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.L))
@@ -157,10 +158,9 @@ namespace _4_Kugellabyrinth._Kevin
 			_chestAnimator.transform.parent.gameObject.SetActive(true);
 			_chestAnimator.SetTrigger("PopulateHint");
 			SFXManager.Instance.PlaySFX(SFXManager.Instance.ChestOpenSound);
-			yield return new WaitForSeconds(SFXManager.Instance.ChestOpenSound.length);
+			yield return new WaitForSeconds(SFXManager.Instance.ChestOpenSound.length + 1f);
 			SFXManager.Instance.PlaySFX(SFXManager.Instance.WinSound);
 
-			GameObject.Find("Level2").SetActive(false);
 			VuforiaARController.Instance.SetWorldCenterMode(VuforiaARController.WorldCenterMode.FIRST_TARGET);
 			MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
 			Debug.Log("Game Done.");

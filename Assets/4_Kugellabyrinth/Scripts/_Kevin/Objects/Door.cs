@@ -19,8 +19,9 @@ namespace _4_Kugellabyrinth._Kevin.Objects
 				gameObject.SetActive(false);
 		}
 
-		private void OnDestroy()
+		protected override void OnDestroy()
 		{
+			base.OnDestroy();
 			GameManager.Instance.KeyCollected -= OpenDoor;
 		}
 

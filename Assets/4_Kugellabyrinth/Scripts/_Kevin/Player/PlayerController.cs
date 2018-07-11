@@ -26,8 +26,9 @@ namespace _4_Kugellabyrinth._Kevin.Player
 			SpawnManager.OnRespawn += Respawn;
 		}
 
-		private void OnDestroy()
+		protected override void OnDestroy()
 		{
+			base.OnDestroy();
 			SpawnManager.OnRespawn -= Respawn;
 		}
 

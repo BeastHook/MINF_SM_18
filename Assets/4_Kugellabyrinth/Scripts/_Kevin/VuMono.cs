@@ -16,12 +16,14 @@ namespace _4_Kugellabyrinth._Kevin
 
 		protected virtual void OnTracking(bool trackingfound, TrackableBehaviour trackable)
 		{
+			if (!trackable) return;
+
 			if (!trackable.name.Equals(_cachedTransform.root.name)) return;
 
 			gameObject.SetActive(trackingfound);
 		}
 
-		private void OnDestroy()
+		protected virtual void OnDestroy()
 		{
 			DefaultTrackableEventHandler.OnSceneTracking -= OnTracking;
 		}
