@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
     //Menu
     private GameObject[] menuElements;
     private GameObject[] resetButton;
+    private string lastMovementTrigger;
     //GameObject deleteDrawing;
 
     private GameObject drawnElementsHolder;
@@ -19,7 +20,7 @@ public class LevelController : MonoBehaviour
     private SpriteRenderer chestColliderWithSprite;
     public Sprite openChestSprite;
     public Sprite closedChestSprite;
-    public float showTreasureSpriteDuration = 5.5f;
+    public float showTreasureSpriteDuration = 10f;
     private float tempSpriteDuration;
 
     // MoveSight variables
@@ -30,13 +31,13 @@ public class LevelController : MonoBehaviour
 
     private Vector3 lastObstaclePos;
 
-    private string lastMovedMovementTrigger;
+    private string currentMovementTrigger;
 
     private int moveSightHitCounter = 0;
 
     //Distanz um die das Level verschoben werden soll
-    private float slideToLeftValue = 0.3f;
-    private float lastJump = 0.6f;
+    public float slideToLeftValue = 0.3f;
+    public float lastJump = 0.6f;
 
     public bool debug = false;
 
@@ -67,8 +68,6 @@ public class LevelController : MonoBehaviour
     {
         RaycastHit2D temp = player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith;
 
-        Debug.Log(temp);
-
         if (temp)
         {
             // Treasure hit
@@ -95,38 +94,48 @@ public class LevelController : MonoBehaviour
 
                 if (showTreasureSpriteDuration < 0f)
                 {
-                    restartGame();
+                    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
                 }
             }
 
             if (temp.collider.tag == "MoveSight")
             {
+
+
                 if (debug)
                 {
                     Debug.Log("Movement Trigger berührt. Setze zurück.");
                 }
-
                 moveSightHitCounter++;
-                lastMovedMovementTrigger = player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.name;
+
+                lastMovementTrigger = currentMovementTrigger;
+                currentMovementTrigger = player.GetComponent<CharacterMovementWithSlopesv1>().hitCollidedWith.collider.name;
+                //Debug.Log(lastMovedMovementTrigger);
                 //position wo player auf dem obstacle steht speichern, damit man dorthin zurück kann
                 //lastObstaclePos = player.transform.position;
-                if (lastMovedMovementTrigger == "mft_6")
+                if (!(currentMovementTrigger == lastMovementTrigger))
                 {
-                    player.transform.position -= new Vector3(lastJump, 0.0f, 0.0f); //figur verschieben
-                    elementsToMove.transform.position -= new Vector3(lastJump, 0.0f, 0.0f); //level verschieben
-                }
-                else
-                {
-                    //figur verschieben
-                    player.transform.position -= new Vector3(slideToLeftValue, 0.0f, 0.0f);
-                    //level verschieben
-                    elementsToMove.transform.position -= new Vector3(slideToLeftValue, 0.0f, 0.0f);
-                }
-                //hochzählen auf welchem Auslöser man zuletzt stand, damit man dorthin zurück kann bei resetDrawings
-                //diesen MoveSight ausschalten
-                GameObject.Find(lastMovedMovementTrigger).SetActive(false);
+                    if (currentMovementTrigger == "mft_6")
+                    {
+                        player.transform.position -= new Vector3(lastJump, 0.0f, 0.0f); //figur verschieben
+                        elementsToMove.transform.position -= new Vector3(lastJump, 0.0f, 0.0f); //level verschieben
+                    }
+                    else
+                    {
+                        //figur verschieben
+                        player.transform.position -= new Vector3(slideToLeftValue, 0.0f, 0.0f);
+                        //level verschieben
+                        elementsToMove.transform.position -= new Vector3(slideToLeftValue, 0.0f, 0.0f);
+                    }
+                    //hochzählen auf welchem Auslöser man zuletzt stand, damit man dorthin zurück kann bei resetDrawings
+                    //diesen MoveSight ausschalten
 
-                lastObstaclePos = player.transform.position;
+
+                    Debug.Log("??? : " + currentMovementTrigger);
+                    GameObject.Find(currentMovementTrigger).SetActive(false);
+                    Debug.Log("!!!");
+                    lastObstaclePos = player.transform.position;
+                }
             }
 
             if (temp.collider.tag == "border")
@@ -226,9 +235,10 @@ public class LevelController : MonoBehaviour
             trigger.SetActive(true);
         }
 
-        //toggleGUI(true);
+		//toggleGUI(true);
 
-    }
+		MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+	}
 
     //zeigt das menu
     public void toggleMenu(bool value)

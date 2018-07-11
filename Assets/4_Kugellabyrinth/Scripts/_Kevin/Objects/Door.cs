@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 
-namespace Objects
+namespace _4_Kugellabyrinth._Kevin.Objects
 {
 	public class Door : VuMono
 	{
-
+		public static bool IsOpen = false;
 		private Animator _animator;
 
 		private void Start()
 		{
 			_animator = GetComponent<Animator>();
 			GameManager.Instance.KeyCollected += OpenDoor;
+		}
+
+		private void OnEnable()
+		{
+			if(IsOpen)
+				gameObject.SetActive(false);
 		}
 
 		private void OnDestroy()
@@ -22,6 +28,7 @@ namespace Objects
 		{
 			_animator?.SetBool("Open", true);
 			SFXManager.Instance.PlaySFX(SFXManager.Instance.DoorOpenSound);
+			IsOpen = true;
 		}
 	}
 }

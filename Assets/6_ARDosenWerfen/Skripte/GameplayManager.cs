@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour {
 
- 
- //   private  Rigidbody[] rb = new Rigidbody[100];
-
     private List<GameObject> allCans;
 
     public GameObject[] levelPrefab;
@@ -39,9 +36,11 @@ public class GameplayManager : MonoBehaviour {
     private GameObject[] dots;
 
 
+    private GameObject arCamera;
+
 
     private void Awake() 
-        {
+    {
         Instance = this;
         hasWon = false;
         hasLost = false;
@@ -49,16 +48,13 @@ public class GameplayManager : MonoBehaviour {
         chestAnim.GetComponent<Animator>();
         priceAnim.GetComponent<Animator>();
 
-        //  DontDestroyOnLoad(this.gameObject);
+        // Enable Fadenkreuz und Ballspawn in der Main ARCamera der MultiScene
+        arCamera = GameObject.Find("ARCamera");
+        arCamera.transform.GetChild(0).gameObject.SetActive(true);
+        arCamera.transform.GetChild(1).gameObject.SetActive(true);
 
-        // Nachdem alles geladen wurde in der Szene Preload, gelangt man ins Hauptmenü
-        // Skip hauptmenü
-        //  ChangeScene("TestScene");
-        // isGameCompleted = false;
-
-
-
-        if (SceneManager.GetActiveScene().name == "6_ARDosenWerfen")
+        // "MainScene" für das HauptProjekt, ansosnten 6_ARDosenwerfen 
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
             CreateLevel();
         }
@@ -70,55 +66,36 @@ public class GameplayManager : MonoBehaviour {
             SceneManager.LoadScene(sceneName);
         }
 
-
-
-    
     void FixedUpdate ()
     {
-
-       
+        //GEWONNEN 
         if (hasWon)
-        {
-            //GEWONNEN          
+        {         
             Victory();
-
-            //Shoot verhindern
             Shoot.allowedToShoot = false;
-            
-
-
-            /*  
-           waitTime += Time.deltaTime;
-
-           if (waitTime >= 8.0)
-           {
-
-               ChangeScene("Testscene");
-               currentLevel = 0;
-               ScoreManager.score = 0;
-               waitTime = 0;
-           }
-       */
+            // Fadenkreuz und Ballspawn wird deaktiviert in der Main ARCamera -> Spieler geht weiter zur nächsten Experience
+            arCamera.transform.GetChild(0).gameObject.SetActive(false);
+            arCamera.transform.GetChild(1).gameObject.SetActive(false);
         }
+
         //VERLOREN
         if (hasLost)
         {
-            //Shoot verhindern
             Shoot.allowedToShoot = false;
-           
-
-
             waitTime += Time.deltaTime;
 
+            // Wartezeit
            if (waitTime >= 4.0)
            {
-               ChangeScene("6_ARDosenWerfen");
-               currentLevel = 0;
+               //Ursprünglich: erneutes laden der MainScene
+               //ChangeScene("MainScene");
+	           MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+
+				currentLevel = 0;
                ScoreManager.score = 0;
                waitTime = 0;
                showCurrentLevel = 1;
            }
-        
         }
 
         // Level beendet weil alle bälle aufgebraucht sind
@@ -140,20 +117,6 @@ public class GameplayManager : MonoBehaviour {
 
 
     }
-/*
-    public IEnumerator kinematic(float waitTime, List<GameObject> cans)
-    {
-       
-        yield return new WaitForSeconds(waitTime);
-
-        for (int i = 0; i < cans.Count ; i++)
-            {
-              // TODO: Null if abfrage
-              rb[i] = cans[i].GetComponent<Rigidbody>();
-              rb[i].isKinematic = false;
-            }
-    }
-*/
 
     // GAMEPLAYLOGIK
     // ================     
@@ -166,8 +129,6 @@ public class GameplayManager : MonoBehaviour {
     {
         Shoot.ballAmount = 3;
         Shoot.elapsedTime = 3;
-
-
         // Instantiating level prefab
         if (currentLevel < levelPrefab.Length)
         {
@@ -188,20 +149,13 @@ public class GameplayManager : MonoBehaviour {
                 hasLost = true;
                 FindObjectOfType<AudioManagerDosenwerfen>().Play("gameFailed");
                 Shoot.allowedToShoot = false;
-
             }
-
         }
 
-
-        // we gotta figure out how many cans there is
         GameObject[] a = GameObject.FindGameObjectsWithTag("can");
         allCans = new List<GameObject>();
 
         allCans.AddRange(a);
-
-        //Funktion erstmal auskommentiert 18.05.2018
-       // StartCoroutine(kinematic(5, allCans));
     }
 
 
@@ -213,22 +167,13 @@ public class GameplayManager : MonoBehaviour {
         {
           
             allCans.Remove(cans);
-            
-
+          
             Renderer meshCans= cans.GetComponent<Renderer>();
             meshCans.material.SetColor("_Color", Color.green);
             ScoreManager.AddPoints(10);
-
-            // TODO 1: Score Popup bei validierten Cans
-
-            // TODO 2: PartikelSystem einfügen für getroffene Cans
-
-            // TODO 3: Sound abspielen für validierte cans
-             FindObjectOfType<AudioManagerDosenwerfen>().Play("validate");
+            FindObjectOfType<AudioManagerDosenwerfen>().Play("validate");
 
         }
-
-
     }
 
     public void NextLevel()
@@ -252,25 +197,13 @@ public class GameplayManager : MonoBehaviour {
             GameObject[] ball = GameObject.FindGameObjectsWithTag("ball");
             for (int i = 0; i < ball.Length; i++)
                 DestroyImmediate(ball[i]);
-            /*
-                    if (SceneManager.GetActiveScene().name != "Testscene")
-                    {
-                        GameObject[] c = GameObject.FindGameObjectsWithTag("blocker");
-                        for (int i = 0; i < b.Length; i++)
-                            DestroyImmediate(c[i]);
-                    }
-                    */
 
             schilder = GameObject.FindGameObjectsWithTag("Schild");
             for (int i = 0; i < schilder.Length; i++)
                 DestroyImmediate(schilder[i]);
 
-
             ground = GameObject.FindGameObjectWithTag("ground");
-            DestroyImmediate(ground);
-
-
-            
+            DestroyImmediate(ground);    
         }
         CreateLevel();
     }

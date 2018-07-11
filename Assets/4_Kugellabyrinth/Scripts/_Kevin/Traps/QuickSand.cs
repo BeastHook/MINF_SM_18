@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using DG.Tweening;
-using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Traps
+namespace _4_Kugellabyrinth._Kevin.Traps
 {
 	public class QuickSand : VuMono
 	{
@@ -24,6 +23,8 @@ namespace Traps
 
 		private Transform _landingPoint;
 		private bool _canDrag = true;
+		private float _dragCooldown = 2.5f;
+		private float _nextDragTime;
 
 		protected override void Awake()
 		{
@@ -35,19 +36,27 @@ namespace Traps
 			_landingPoint = GetComponentsInChildren<Transform>()[1];
 		}
 
-		private void DragPlayerIn(PlayerControllerLab player)
+		private void DragPlayerIn(Player.PlayerController player)
 		{
+			player.Toggle(false);
 			SFXManager.Instance.PlaySFX(SFXManager.Instance.QuickSandDragSound);
 			_canDrag = false;
 			player.transform.DOMove(transform.position, _dragInDuration).SetEase(AnimationCurve.Linear(0, 0, 1, 1)).OnComplete(
 				() =>
 				{
-					player.Toggle(false);
 					StartCoroutine(_exit.SpitPlayerOut(player));
 				});
 		}
 
-		public IEnumerator SpitPlayerOut(PlayerControllerLab player)
+		private void Update()
+		{
+			if (_canDrag) return;
+
+			if(_nextDragTime < Time.time)
+				_canDrag = true;
+		}
+
+		public IEnumerator SpitPlayerOut(Player.PlayerController player)
 		{
 			yield return new WaitForSeconds(_waitTimeUntilSpit);
 			_spitParticleSystem.Play();
@@ -64,21 +73,16 @@ namespace Traps
 			}).OnComplete(() =>
 			{
 				player.Toggle(true);
-				StartCoroutine(DragCooldown());
+				_nextDragTime = Time.time + _dragCooldown;
+				_canDrag = false;
 			});
-		}
-
-		private IEnumerator DragCooldown()
-		{
-			yield return new WaitForSeconds(1.5f);
-			_canDrag = true;
 		}
 
 		private void OnTriggerEnter(Collider other)
 		{
 			if (other.CompareTag("Player") && _canDrag)
 			{
-				DragPlayerIn(other.GetComponent<PlayerControllerLab>());
+				DragPlayerIn(other.GetComponent<Player.PlayerController>());
 			}
 		}
 	}

@@ -1,25 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Vuforia;
 
-public class VuMono : MonoBehaviour
+namespace _4_Kugellabyrinth._Kevin
 {
-	protected Transform _cachedTransform;
-	public Transform CachedTransform => _cachedTransform;
-
-	protected virtual void Awake()
+	public class VuMono : MonoBehaviour
 	{
-		_cachedTransform = transform;
-		DefaultTrackableEventHandler.OnTrackingEvent += OnTracking;
-	}
+		protected Transform _cachedTransform;
+		public Transform CachedTransform => _cachedTransform;
 
-	protected virtual void OnTracking(bool trackingfound)
-	{
-		gameObject.SetActive(trackingfound);
-	}
+		protected virtual void Awake()
+		{
+			_cachedTransform = transform;
+			DefaultTrackableEventHandler.OnSceneTracking += OnTracking;
+		}
 
-	private void OnDestroy()
-	{
-		DefaultTrackableEventHandler.OnTrackingEvent -= OnTracking;
+		protected virtual void OnTracking(bool trackingfound, TrackableBehaviour trackable)
+		{
+			if (!trackable.name.Equals(_cachedTransform.root.name)) return;
+
+			gameObject.SetActive(trackingfound);
+		}
+
+		private void OnDestroy()
+		{
+			DefaultTrackableEventHandler.OnSceneTracking -= OnTracking;
+		}
 	}
 }

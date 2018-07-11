@@ -1,25 +1,28 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace Objects
+namespace _4_Kugellabyrinth._Kevin.Objects
 { 
 	public class Button : VuMono
 	{
-		[SerializeField] private Transform _counterPart;
+		[SerializeField] private Transform[] _counterPart;
 		[SerializeField] private Transform _sinkInPosition;
+		[SerializeField] private Transform[] _activatedTargetPosition;
 
-		private Transform _activatedTargetPosition;
+		private bool _pressed;
 
 		protected override void Awake()
 		{
 			base.Awake();
-			_counterPart.gameObject.SetActive(false);
-			_activatedTargetPosition = _counterPart.GetChild(0);
+			foreach (Transform t in _counterPart)
+			{
+				t.gameObject.SetActive(false);
+			}
 		}
 
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other.CompareTag("Player"))
+			if (other.CompareTag("Player") && !_pressed)
 			{
 				Activate();
 			}
@@ -27,12 +30,21 @@ namespace Objects
 
 		private void Activate()
 		{
-			transform.DOMove(_sinkInPosition.position, 0.5f).OnComplete(() =>
+			SFXManager.Instance.PlaySFX(SFXManager.Instance.ButtonPressedSound);
+			if (_sinkInPosition != null)
+				transform.DOLocalMove(_sinkInPosition.localPosition, 0.5f).OnComplete(OnComplete);
+			else
+				OnComplete();
+		}
+
+		private void OnComplete()
+		{
+			for (int i = 0; i < _counterPart.Length; i++)
 			{
-				SFXManager.Instance.PlaySFX(SFXManager.Instance.ButtonPressedSound);
-				_counterPart.gameObject.SetActive(true);
-				_counterPart.DOMove(_activatedTargetPosition.position, 1.5f);
-			});
+				_counterPart[i].gameObject.SetActive(true);
+				_counterPart[i].DOLocalMove(_activatedTargetPosition[i].localPosition, 1.5f);
+				_pressed = true;
+			}
 		}
 	}
 }

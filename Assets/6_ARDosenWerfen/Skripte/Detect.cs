@@ -30,7 +30,7 @@ public class Detect : MonoBehaviour, ITrackableEventHandler
             // SHOW
             GameplayManager.show = true;
             GameplayManager.hide = false;
-            gunsight.SetActive(true);
+          //  gunsight.SetActive(true);
 
         }
         else
@@ -38,7 +38,7 @@ public class Detect : MonoBehaviour, ITrackableEventHandler
             // HIDE
             GameplayManager.show = false;
             GameplayManager.hide = true;
-            gunsight.SetActive(false);
+          //  gunsight.SetActive(false);
 
 
 

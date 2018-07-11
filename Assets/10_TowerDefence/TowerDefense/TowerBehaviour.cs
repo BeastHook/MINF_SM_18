@@ -5,89 +5,114 @@ using Vuforia;
 using UnityEngine.UI;
 
 
-public class TowerBehaviour : MonoBehaviour
-    { 
-
+public class TowerBehaviour : MonoBehaviour, ITrackableEventHandler
+{
+    private TrackableBehaviour mTrackableBehaviour;
     public GameObject bullet;
     
-    public GameObject parent;
+    public GameObject canon;
 
     private Spawner spawner;
     private Move move;
-    public Text score;
-    private float count;
+    public TextMesh score;
+    public float count;
     public bool done = false;
 
+    private GameObject gameCounter;
+    private GameCounter gc;
 
     public Transform spawnPos;
 	GameObject goob;
-   
-	
-	void OnTriggerEnter(Collider obj)
+
+    void Start()
+    {
+        gameCounter = GameObject.Find("GameCounter");
+        gc = gameCounter.GetComponent<GameCounter>();
+
+        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+        if (mTrackableBehaviour)
+        {
+            mTrackableBehaviour.RegisterTrackableEventHandler(this);
+        }
+        //tb = turret.GetComponent<TowerBehaviour>();
+    }
+
+    void OnTriggerStay(Collider obj)
 	{
 		if(obj.gameObject.tag == "goober" && goob == null)
 		{
-			goob = obj.gameObject;
-			InvokeRepeating("Shoot",0,1.0f);
-		}
-	}
+		    goob = obj.gameObject;
+            Debug.Log("OnTriggerEnter " + obj.gameObject.tag);
 
-  
+        }
 
-    void Shoot()
-	{
-		var newBullet = Instantiate(bullet, spawnPos.position, spawnPos.rotation);
-        newBullet.transform.parent = parent.transform;
-        //this.GetComponent<AudioSource>().Play();
-        if (goob.GetComponent<Move>().dead)
-		{
+    }
 
-            if (count == 30)
-            {
-                done = true;
-            }
-            else
-            {
-                count++;
-            }
+    public void OnTrackableStateChanged(
+                                   TrackableBehaviour.Status previousStatus,
+                                   TrackableBehaviour.Status newStatus)
+    {
+        if (newStatus == TrackableBehaviour.Status.DETECTED ||
+            newStatus == TrackableBehaviour.Status.TRACKED ||
+            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+        {
+            StartCoroutine("Shoot");
+            //Debug.Log("start coroutine");
+
+        }
+        else 
+        {
+            StopCoroutine("Shoot");
+        }
+    }
+
+    IEnumerator Shoot()
+    {
+        Debug.Log("shoot ");
+        while (!done)
+        {
+               
+            GameObject newBullet = Instantiate(bullet, spawnPos.position-new Vector3(0,0.1f,0), spawnPos.rotation);
+            //newBullet.transform.parent = parent.transform;  
+
             
-            
-            
+            yield return new WaitForSeconds(1.0f);
+        }
+        
+    }
 
 
-			goob = null;
-			CancelInvoke("Shoot");
-		}
-	}
-
-    
-
-    void OnTriggerExit(Collider obj)
+    /*void OnTriggerExit(Collider obj)
 	{
 		if(obj.gameObject == goob)
 		{
 			goob = null;
-			CancelInvoke("Shoot");
+            isOnTrigger = false;
+            //(CancelInvoke("Shoot");
+            //
 		}
-	}
-	// Use this for initialization
-	void Start () {
+	}*/
 
-       
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.Log(gc.count);
 
-    }
-	
-	// Update is called once per frame
-	void Update () 
-	{
+        if (gc.count >= 30)
+        {
+            done = true;
+            gc.done = true;
+        }
+        /*Debug.Log(goob.GetComponent<Move>().count);
         if (goob != null)
         {
-            this.transform.LookAt(goob.transform.position);
-        }
+            if (goob.GetComponent<Move>().count == 30)
+            {
 
-        score.text = "Score: " + count;
+                
+                
 
-
-
-    }
+            }
+        }*/
+    } 
 }

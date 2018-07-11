@@ -71,6 +71,8 @@ public class EnemyController : MonoBehaviour {
         yield return new WaitForSeconds(7);
         source.clip = verloren;
         source.Play();
+
+	    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(false));
     }
 
     private IEnumerator Win()
@@ -81,7 +83,9 @@ public class EnemyController : MonoBehaviour {
         source.Play();
         yield return new WaitForSeconds(3);
         chest.SetActive(true);
-    }
+
+	    MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+	}
 
     private IEnumerator EnemyAttack()
     {

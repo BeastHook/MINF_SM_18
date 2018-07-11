@@ -6,7 +6,7 @@ using System.Linq;
 
 public class CharacterMovementWithSlopesv1 : MonoBehaviour
 {
-    public float minGroundNormalY = .65f;
+    public float minGroundNormalY = 1.12f;
     public float gravityModifier = 1f;
 
     protected Vector2 targetVelocity;
@@ -19,8 +19,8 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
 
 
-    protected const float minMoveDistance = 0.01f;
-    protected const float shellRadius = 0.06f;
+    protected const float minMoveDistance = 0.004f;
+    protected const float shellRadius = 0.035f;
 
     // Adujustable Raycast Modifier
     public float moveSpeedMultiplicator;
@@ -28,7 +28,7 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
     public float distanceMultiplicator;
 
     // Raycast length
-    private float distanceToTheRight = 0.3f;
+    private float distanceToTheRight = 0.85f;
     public float distanceToWall = 0.01f;
     public float distanceToFloor = 0.5f;
     private float lineDifference;
@@ -197,7 +197,7 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
         startingPos = currentPos;
         startingPos.x = currentPos.x + distanceToTheRight * distanceMultiplicator;
 
-        startingPos.y += 0.009f;
+        startingPos.y += 0.015f;
 
         Vector2 wallDistance = startingPos + new Vector2(distanceToWall, 0);
         Debug.DrawLine(startingPos, wallDistance, Color.red);
@@ -238,13 +238,13 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
 
         // Checks if the player is grounded
         //lines = Physics2D.LinecastAll(startingPos, posDown2);
-        lines = Physics2D.RaycastAll(startingPos, Vector3.down, 0.1f);
+        lines = Physics2D.RaycastAll(startingPos, Vector3.down, distanceToFloor);
 
         isWalking = false;
 
         foreach (RaycastHit2D line in lines)
         {
-            hitCollidedWith = line;
+            //hitCollidedWith = line;
             //Debug.Log("Down hits: " + line.transform.gameObject.name + "\n\tTag: " + line.collider.tag);
 
             if (line.collider.tag == "obstacle")
@@ -310,7 +310,7 @@ public class CharacterMovementWithSlopesv1 : MonoBehaviour
             }
         }
 
-        startingPos.y += 0.009f;
+        startingPos.y += 0.02f;
 
         Vector2 wallDistance = startingPos + new Vector2(distanceToWall, 0);
         Debug.DrawLine(startingPos, wallDistance, Color.red);

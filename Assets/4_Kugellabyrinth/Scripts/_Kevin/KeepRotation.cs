@@ -1,24 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Vuforia;
 
-public class KeepRotation : VuMono
+namespace _4_Kugellabyrinth._Kevin
 {
-	[SerializeField] private TrackableBehaviour _otherTrackable;
-	private Vector3 _offset;
-	private Quaternion _startRotation;
-
-	protected override void Awake()
+	public class KeepRotation : VuMono
 	{
-		base.Awake();
-		_offset = CachedTransform.position - _otherTrackable.gameObject.transform.position;
-		_startRotation = CachedTransform.rotation;
-	}
+		[SerializeField] private TrackableBehaviour _otherTrackable;
+		private Vector3 _offset;
+		private Quaternion _startRotation;
 
-	private void LateUpdate()
-	{
-		CachedTransform.rotation = _startRotation;
-		CachedTransform.position = _otherTrackable.gameObject.transform.position + _offset;
+		protected override void Awake()
+		{
+			base.Awake();
+			_offset = CachedTransform.position - _otherTrackable.gameObject.transform.position;
+			_startRotation = CachedTransform.rotation;
+		}
+
+		private void LateUpdate()
+		{
+			CachedTransform.rotation = _startRotation;
+			CachedTransform.position = _otherTrackable.gameObject.transform.position + _offset;
+		}
 	}
 }

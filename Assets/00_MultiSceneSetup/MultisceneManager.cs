@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -7,18 +8,25 @@ using Vuforia;
 
 public class MultisceneManager : MonoBehaviour
 {
+	public static MultisceneManager Instance;
+
 	[SerializeField] private int _gameStartsInTime = 3;
 	[SerializeField] private float _maximumDistanceToTrackable = 30f;
-	[SerializeField] private int _afterLevelWaitTime;
+	[SerializeField] private int _afterLevelWaitTime = 6;
 	[SerializeField, FormerlySerializedAs("_minfScenes")] private Minigame[] _minigames;
-	[SerializeField] private Camera _vuforiaCamera;
-    public GameObject mainCamera;
 
 	private Minigame _currentMinigame;
 	private bool _hasAdditionalScene;
 
 	private void Awake()
 	{
+		if ((Instance != this) && (Instance != null))
+			Destroy(gameObject);
+		else
+			Instance = this;
+
+		DontDestroyOnLoad(gameObject);
+
 		DefaultTrackableEventHandler.OnSceneTracking += OnSceneTracking;
 		SceneManager.sceneUnloaded += OnSceneUnloaded;
 		SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,8 +50,11 @@ public class MultisceneManager : MonoBehaviour
 			_hasAdditionalScene = false;
 			if (_currentMinigame != null)
 			{
-				_currentMinigame.AccordingTrackable.gameObject.SetActive(true);
-				_currentMinigame.AccordingTrackable.enabled = true;
+				if (_currentMinigame.AccordingTrackable != null)
+				{
+					_currentMinigame.AccordingTrackable.gameObject.SetActive(true);
+					_currentMinigame.AccordingTrackable.enabled = true;
+				}
 			}
 			_currentMinigame = null;
 		}
@@ -51,8 +62,8 @@ public class MultisceneManager : MonoBehaviour
 
 	private void OnSceneLoaded(Scene loadedScene, LoadSceneMode loadMode)
 	{
-        TrackerManager.Instance.GetStateManager().ReassociateTrackables();
-        if (loadedScene.buildIndex != 0 && loadMode == LoadSceneMode.Additive)
+		TrackerManager.Instance.GetStateManager().ReassociateTrackables();
+		if (loadedScene.buildIndex != 0 && loadMode == LoadSceneMode.Additive)
 		{
 			StartCoroutine(LevelTimer(_currentMinigame.MaximumPlaytime));
 		}
@@ -90,8 +101,7 @@ public class MultisceneManager : MonoBehaviour
 	private void LoadMinigame(Minigame minigame)
 	{
 		SceneManager.LoadScene(minigame.Scene, LoadSceneMode.Additive);
-        //mainCamera.SetActive(false);
-        _hasAdditionalScene = true;
+		_hasAdditionalScene = true;
 		_currentMinigame = minigame;
 		_currentMinigame.WasPlayedAlready = true;
 	}
@@ -105,12 +115,10 @@ public class MultisceneManager : MonoBehaviour
 			yield return new WaitForSeconds(1f);
 			currentCountdown--;
 		}
-		//Destroy(_vuforiaCamera.gameObject);
 		minigame.AccordingTrackable.gameObject.SetActive(false);
 		minigame.AccordingTrackable.enabled = false;
 		LoadMinigame(minigame);
-
-    }
+	}
 
 	private IEnumerator LevelTimer(int time)
 	{
@@ -131,8 +139,7 @@ public class MultisceneManager : MonoBehaviour
 		yield return new WaitForSeconds(_afterLevelWaitTime);
 		SceneManager.UnloadSceneAsync(_currentMinigame.Scene);
 		_currentMinigame.DescriptionCanvas.UpdateCanvas(hasWon);
-        //mainCamera.SetActive(true);
-    }
+	}
 
 	[Serializable]
 	public class Minigame

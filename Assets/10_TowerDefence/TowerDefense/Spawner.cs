@@ -11,12 +11,18 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
     public GameObject parent;
     private Move move;
     public GameObject turret;
-
-
     private TowerBehaviour tb;
+    private GameObject gameCounter;
+    private GameCounter gc;
+
+    private bool isTrackingLost = false;
+
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+        gameCounter = GameObject.Find("GameCounter");
+        gc = gameCounter.GetComponent<GameCounter>();
 
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
@@ -25,15 +31,16 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
         }
         tb = turret.GetComponent<TowerBehaviour>();
     }
-	
 
-    
+    IEnumerator Spawn()
+    {
 
-
-	void Spawn()
-	{
-		var newGoober = Instantiate(goob,this.transform.position, this.transform.rotation);
-        newGoober.transform.parent = parent.transform;
+        while (!gc.done)
+        {
+           GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
+           newGoober.transform.parent = this.parent.transform;
+           yield return new WaitForSeconds(0.3f);
+        }
 
     }
 
@@ -46,28 +53,17 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
 
-
-
-            if (tb.done)
-            {
-
-                CancelInvoke("Spawn");
-            }
-            else
-            {
-                InvokeRepeating("Spawn", 0f, 0.7f);
-                
-            }
-
-            //Start Spawning when target is tracked
-
-
+            //GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
+            //newGoober.transform.parent = parent.transform;
+            isTrackingLost = false;
+            StartCoroutine("Spawn");
 
         }
+
         else
         {
-            // Stop Spawning when target is lost
-            CancelInvoke("Spawn");
+            StopCoroutine("Spawn");
         }
     }
 }
+

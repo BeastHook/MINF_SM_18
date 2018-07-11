@@ -76,6 +76,7 @@ public class TargetManager : MonoBehaviour {
 			GetComponent<AudioSource>().Play();
 			// TODO: Buchstabe für das Rätsel ausgeben
 			// TODO: Spiel wieder zurücksetzen
+			MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
 			whiteSmoke.SetActive(true);
 			hasWon = true;
 			chestOpened = true;

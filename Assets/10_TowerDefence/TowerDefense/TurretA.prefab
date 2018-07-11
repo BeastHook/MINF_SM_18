@@ -253,7 +253,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101138171766222}
   m_LocalRotation: {x: 0.000000059604645, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.023846935, y: 0.48619124, z: -0.00034091948}
+  m_LocalPosition: {x: 0, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4588262437761088}
@@ -318,9 +318,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267933996077318}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4163497313462406}
   - {fileID: 4606901545963774}
@@ -328,7 +328,7 @@ Transform:
   - {fileID: 4293390575394958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4370406564504172
 Transform:
   m_ObjectHideFlags: 1
@@ -913,11 +913,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267933996077318}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 30, z: 30}
-  m_Center: {x: -0.007990599, y: 0.25, z: -0.00018626451}
+  m_Size: {x: 30.00002, y: 28.128807, z: 30.00002}
+  m_Center: {x: 15, y: -14, z: -15}
 --- !u!95 &95989914295931534
 Animator:
   serializedVersion: 3
@@ -925,10 +925,10 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267933996077318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 0ba5845e393991c44ba851e1dd2fa657, type: 3}
   m_Controller: {fileID: 9100000, guid: 61eb9e207a12a22449cf13dd3b1e8a50, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -947,4 +947,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1348312260356202, guid: a2036e8676e586742bd023933182234e, type: 2}
+  canon: {fileID: 1101138171766222}
+  score: {fileID: 0}
+  count: 0
+  done: 0
   spawnPos: {fileID: 4163497313462406}

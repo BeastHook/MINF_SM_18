@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1411488249209374}
+  m_IsPrefabParent: 1
+--- !u!1 &1411488249209374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4650576362360206}
+  - component: {fileID: 33141130223626328}
+  - component: {fileID: 23978655113974196}
+  - component: {fileID: 114816389898185478}
+  m_Layer: 0
+  m_Name: MINFArrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4650576362360206
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1411488249209374}
+  m_LocalRotation: {x: 0.38833472, y: 0.38833472, z: -0.59092826, w: 0.59092826}
+  m_LocalPosition: {x: 0.7700004, y: 2.1414533, z: 8.258295}
+  m_LocalScale: {x: 100, y: 100, z: 34}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23978655113974196
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1411488249209374}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 154cd44c94c50944cb24739a1a89e381, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33141130223626328
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1411488249209374}
+  m_Mesh: {fileID: 4300000, guid: 154cd44c94c50944cb24739a1a89e381, type: 3}
+--- !u!114 &114816389898185478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1411488249209374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c995f91ba044716479d7fcbcd7091e6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zPosCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 1
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 69
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _yPosCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0.9772493
+      outSlope: 0.9772493
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.4940338
+      value: 0.43531525
+      inSlope: 0.07487416
+      outSlope: 0.13363355
+      tangentMode: 1
+    - serializedVersion: 2
+      time: 0.9902263
+      value: -0.0014328957
+      inSlope: -0.88019896
+      outSlope: -5.500559
+      tangentMode: 69
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _rotCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.28789726
+      value: -0.20635206
+      inSlope: 1.0000169
+      outSlope: 1.0000169
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5497029
+      value: 0.2980413
+      inSlope: 0
+      outSlope: 0.9795949
+      tangentMode: 1
+    - serializedVersion: 2
+      time: 0.81584656
+      value: 0.66467774
+      inSlope: 0.8795447
+      outSlope: 1.6619083
+      tangentMode: 1
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1.1449716
+      outSlope: 0
+      tangentMode: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0

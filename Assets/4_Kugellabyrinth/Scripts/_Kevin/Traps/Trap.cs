@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections;
-using Objects;
 using UnityEngine;
-using Player;
+using _4_Kugellabyrinth._Kevin.Player;
 
-namespace Traps
+namespace _4_Kugellabyrinth._Kevin.Traps
 {
 	public class Trap : VuMono
 	{
