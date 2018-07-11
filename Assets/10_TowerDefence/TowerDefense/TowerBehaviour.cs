@@ -75,6 +75,7 @@ public class TowerBehaviour : MonoBehaviour, ITrackableEventHandler
         {
             done = true;
             gc.done = true;
-        }
+	        MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+		}
     } 
 }
