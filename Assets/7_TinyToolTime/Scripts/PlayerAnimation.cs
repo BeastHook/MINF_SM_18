@@ -211,7 +211,8 @@ public class PlayerAnimation : MonoBehaviour
     private void QuitGame()
     {
         //TODO - Unload Minigame
-       
+        MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+
     }
 
 }
