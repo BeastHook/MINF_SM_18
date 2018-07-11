@@ -22,7 +22,9 @@ public class Move : MonoBehaviour {
         if(col.gameObject.tag == "bullet")
         {
             Hit();
-            gc.count++;
+            if (gc.count < 30)
+                gc.count++;
+
             Destroy(col.gameObject); //.SetActive(false);
             
             

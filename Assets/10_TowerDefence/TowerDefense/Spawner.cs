@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
         {
            GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
            newGoober.transform.parent = this.parent.transform;
-           yield return new WaitForSeconds(0.3f);
+           yield return new WaitForSeconds(0.5f);
         }
     }
 

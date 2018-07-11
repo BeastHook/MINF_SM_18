@@ -17,6 +17,6 @@ public class BulletMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.Translate(-1.0f,-0.1f,0);
+		this.transform.Translate(-1.0f,-0.005f,0);
 	}
 }
