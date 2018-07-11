@@ -15,8 +15,6 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
     private GameObject gameCounter;
     private GameCounter gc;
 
-    private bool isTrackingLost = false;
-
 
     // Use this for initialization
     void Start()
@@ -41,7 +39,6 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
            newGoober.transform.parent = this.parent.transform;
            yield return new WaitForSeconds(0.3f);
         }
-
     }
 
     public void OnTrackableStateChanged(
@@ -53,9 +50,6 @@ public class Spawner : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
 
-            //GameObject newGoober = Instantiate(goob, this.transform.position, this.transform.rotation);
-            //newGoober.transform.parent = parent.transform;
-            isTrackingLost = false;
             StartCoroutine("Spawn");
 
         }

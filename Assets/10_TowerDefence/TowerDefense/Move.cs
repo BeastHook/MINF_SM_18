@@ -12,7 +12,7 @@ public class Move : MonoBehaviour {
 
     public GameObject gameCounter;
 
-    private GameCounter gm;
+    private GameCounter gc;
    
     
     //private float count;
@@ -22,13 +22,15 @@ public class Move : MonoBehaviour {
         if(col.gameObject.tag == "bullet")
         {
             Hit();
+            gc.count++;
             Destroy(col.gameObject); //.SetActive(false);
-            gm.count++;
+            
             
         }
         else if(col.gameObject.tag == "home")
         {
-            Destroy(this.gameObject,1);
+            Destroy(this.gameObject);
+            Debug.Log("GOOB HOME");
             this.GetComponent<AudioSource>().Play();
         }
     }
@@ -47,7 +49,7 @@ public class Move : MonoBehaviour {
 	void Start () {
         anim = GetComponent<Animator>();
         gameCounter = GameObject.Find("GameCounter");
-        gm = gameCounter.GetComponent<GameCounter>();
+        gc = gameCounter.GetComponent<GameCounter>();
         
     }
 	
@@ -60,8 +62,10 @@ public class Move : MonoBehaviour {
             
         }
 
-            GameObject home = GameObject.FindWithTag("home");
-        if(home != null)
+        // not really effecitve but i don't change it
+        GameObject home = GameObject.FindWithTag("home");
+
+        if (home != null)
     	{
     		Vector3 direction = home.transform.position - this.transform.position;
         	this.transform.rotation = Quaternion.Slerp(this.transform.rotation, 

@@ -722,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 1526437967394254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 4649122421528384}
   - {fileID: 4999581722359930}
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dead: 0
-  count: 0
+  gameCounter: {fileID: 0}
 --- !u!136 &136459594376798858
 CapsuleCollider:
   m_ObjectHideFlags: 1

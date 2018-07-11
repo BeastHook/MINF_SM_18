@@ -34,18 +34,6 @@ public class TowerBehaviour : MonoBehaviour, ITrackableEventHandler
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
-        //tb = turret.GetComponent<TowerBehaviour>();
-    }
-
-    void OnTriggerStay(Collider obj)
-	{
-		if(obj.gameObject.tag == "goober" && goob == null)
-		{
-		    goob = obj.gameObject;
-            Debug.Log("OnTriggerEnter " + obj.gameObject.tag);
-
-        }
-
     }
 
     public void OnTrackableStateChanged(
@@ -68,30 +56,15 @@ public class TowerBehaviour : MonoBehaviour, ITrackableEventHandler
 
     IEnumerator Shoot()
     {
-        Debug.Log("shoot ");
         while (!done)
-        {
-               
-            GameObject newBullet = Instantiate(bullet, spawnPos.position-new Vector3(0,0.1f,0), spawnPos.rotation);
-            //newBullet.transform.parent = parent.transform;  
-
-            
+        {      
+            GameObject newBullet = Instantiate(bullet, spawnPos.position, spawnPos.rotation);
+            // crashed, when marker is lost !!!!!
+            //    newBullet.transform.parent = canon.transform;  
             yield return new WaitForSeconds(1.0f);
         }
-        
     }
 
-
-    /*void OnTriggerExit(Collider obj)
-	{
-		if(obj.gameObject == goob)
-		{
-			goob = null;
-            isOnTrigger = false;
-            //(CancelInvoke("Shoot");
-            //
-		}
-	}*/
 
     // Update is called once per frame
     void Update()
@@ -103,16 +76,5 @@ public class TowerBehaviour : MonoBehaviour, ITrackableEventHandler
             done = true;
             gc.done = true;
         }
-        /*Debug.Log(goob.GetComponent<Move>().count);
-        if (goob != null)
-        {
-            if (goob.GetComponent<Move>().count == 30)
-            {
-
-                
-                
-
-            }
-        }*/
     } 
 }
