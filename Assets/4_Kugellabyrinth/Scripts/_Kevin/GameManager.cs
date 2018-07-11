@@ -23,7 +23,7 @@ namespace _4_Kugellabyrinth._Kevin
 		public delegate void KeyAction();
 		public KeyAction KeyCollected;
 
-		[SerializeField] private Vector3 _customPhysicsVector = new Vector3(0, 0, 9.81f);
+		[SerializeField] private Vector3 _customPhysicsVector = new Vector3(0, -9.81f, 0);
 		[SerializeField] private GameObject _turnBoardArrow;
 		[SerializeField] private Animator _chestAnimator;
 		[SerializeField] private PlayableDirector _director;
@@ -31,6 +31,7 @@ namespace _4_Kugellabyrinth._Kevin
 		[SerializeField] private GameObject _warningMessage;
 		[SerializeField] private LevelData _levelData;
 		[SerializeField] private GameObject _goalParticles;
+		[SerializeField] private TrackableBehaviour _gravityOrigin;
 
 		private Gamestate _state = Gamestate.Idle;
 		public Gamestate State => _state;
@@ -82,6 +83,9 @@ namespace _4_Kugellabyrinth._Kevin
 
 			Door.IsOpen = false;
 			Physics.gravity = _customPhysicsVector;
+			_turnBoardArrow = GameObject.Find("ARCamera").GetComponentInChildren<TurnBoardArrow>(true).gameObject;
+			VuforiaARController.Instance.SetWorldCenterMode(VuforiaARController.WorldCenterMode.SPECIFIC_TARGET);
+			VuforiaARController.Instance.SetWorldCenter(_gravityOrigin);
 		}
 
 		private void Start()
@@ -157,6 +161,7 @@ namespace _4_Kugellabyrinth._Kevin
 			SFXManager.Instance.PlaySFX(SFXManager.Instance.WinSound);
 
 			GameObject.Find("Level2").SetActive(false);
+			VuforiaARController.Instance.SetWorldCenterMode(VuforiaARController.WorldCenterMode.FIRST_TARGET);
 			MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
 			Debug.Log("Game Done.");
 		}

@@ -13,6 +13,7 @@ public class GazeTracker : MonoBehaviour
 	private void Awake()
 	{
 		_currentTrackingTime = 0.0f;
+		DontDestroyOnLoad(gameObject);
 	}
 
 	private void Update ()

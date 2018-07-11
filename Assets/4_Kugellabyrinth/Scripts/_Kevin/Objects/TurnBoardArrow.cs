@@ -28,18 +28,18 @@ namespace _4_Kugellabyrinth._Kevin.Objects
 
 		private IEnumerator Movement()
 		{
-			transform.DOMoveZ(_startPosition.z + 25, 1.5f)
+			transform.DOLocalMoveZ(_startPosition.x + 35, 2.5f)
 				.SetEase(_zPosCurve)
 				.OnStart(() =>
-				{
-					transform.DOMoveY(_startPosition.y + 10, 1.5f).SetEase(_yPosCurve);
-					transform.DORotate(new Vector3(_startRotation.x + 85, _startRotation.y, _startRotation.z), 1.25f).SetEase(_rotCurve);
-				})
+				         {
+					         transform.DOLocalMoveY(_startPosition.y + 10, 2.5f).SetEase(_yPosCurve);
+					         transform.DOLocalRotate(new Vector3(_startRotation.x, _startRotation.y, _startRotation.z), 2.25f).SetEase(_rotCurve);
+				         })
 				.OnComplete(() =>
-				{
-					transform.position = _startPosition;
-					transform.eulerAngles = _startRotation;
-				});
+				            {
+					            transform.position = _startPosition;
+					            transform.eulerAngles = _startRotation;
+				            });
 			yield return null;
 		}
 	}

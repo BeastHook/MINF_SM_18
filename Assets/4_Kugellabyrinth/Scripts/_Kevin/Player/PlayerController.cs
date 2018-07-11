@@ -59,7 +59,7 @@ namespace _4_Kugellabyrinth._Kevin.Player
 			_isChasable = false;
 			_rigidBody.velocity = Vector3.zero;
 			transform.position = spawnpoint.position;
-			transform.position += Vector3.back * _heightOnRespawn;
+			transform.position += Vector3.up * _heightOnRespawn;
 			SFXManager.Instance.PlaySFX(SFXManager.Instance.RespawnSound);
 		}
 
