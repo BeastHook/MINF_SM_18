@@ -36,6 +36,7 @@ public class PlayerAnimation : MonoBehaviour
         rend = gameObject.transform.GetChild(0).GetComponent<Renderer>();
         audioM = GetComponent<SoundManager>();
         flipLocalScale = transform.localScale.x;
+        
     }
 
 
@@ -130,6 +131,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         chestParticle.Play();
         e.SetActive(true);
+        Invoke("QuitGame", 10);
     }
 
     //########## Tree #############
@@ -203,10 +205,15 @@ public class PlayerAnimation : MonoBehaviour
     //############## Easter egg ##################
     public void ActivateEasterEgg() {
         print("EasterEgg");
-        anim.SetBool("EasterEgg",true);
+        anim.SetBool("EasterEgg",true);       
     }
 
+    private void QuitGame()
+    {
+        //TODO - Unload Minigame
+        MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
 
+    }
 
 }
     

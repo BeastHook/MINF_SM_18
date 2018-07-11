@@ -9,13 +9,12 @@ public class PlayerMovementTiny : MonoBehaviour {
     public float speed = 0.2f;
 
     private PlayerAnimation anim;
-    private bool directionRight; //?????????
     public bool rotate = false;
-
-    private Renderer rend;
     private float speedReduction;
 
     private float rotationAngle;
+    public GameObject switchPlayer;
+    public GameObject switchPlayer2;
 
     private void Start()
     {
@@ -23,8 +22,8 @@ public class PlayerMovementTiny : MonoBehaviour {
 
         speedReduction = (speed * 0.15f); //Reduce the speed with damage
         rotationAngle = 270;
-       
-    }
+        
+    }   
 
     // Update is called once per frame
     void Update () {
@@ -40,18 +39,16 @@ public class PlayerMovementTiny : MonoBehaviour {
 
     void PlayerMove() {
 
-                transform.Translate(Vector3.forward * Time.deltaTime * speed);
+           transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
     private void OnTriggerEnter(Collider col) 
     {
         if (col.gameObject.CompareTag("Obstacle")) //collide the first time?
-        {
-            
+        {           
             SetCanWalk(false); //Stop when reached the TrapTrigger
             anim.SetObstacle(col.gameObject);
             print("Collider with Obstacle");
-
         }
 
         else if (col.gameObject.CompareTag("NextLevel")) //LevelEnd, Change Direction
@@ -63,18 +60,16 @@ public class PlayerMovementTiny : MonoBehaviour {
         {
             GameOver();
         }
-
     }
 
     private void GameOver()
     {              
         canWalk = false;
         anim.GameOver();
+        
     }
 
     public void FinnishLevel() {
-        directionRight = !directionRight; //?????????????
- //       SetCanWalk(false);
         canWalk = false;
         anim.PlayAnimation(11);
 
@@ -90,14 +85,10 @@ public class PlayerMovementTiny : MonoBehaviour {
             yield return null;
         }
 
-        // transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 180, 0), Time.time * 0.1f);
-        //       float rotato = transform.rotation.y + 180;
-        //       transform.rotation = Quaternion.Euler(0, rotato, 0);
-        //       float rotato = transform.rotation.y + 180;
-
-        transform.rotation = Quaternion.Euler(0, rotationAngle, 0);
         rotationAngle -= 180;
-
+        // rotatePlayer.transform.SetPositionAndRotation(newPosPlayer.transform.position, newPosPlayer.transform.rotation); //setPosition Player 2
+        gameObject.transform.SetPositionAndRotation(transform.position, switchPlayer.transform.rotation); //soll die Position übernehmen nach der Drehung
+        switchPlayer = switchPlayer2;
     }
 
     public void CanWalk() //###### Called by Event in Victory ###########
@@ -107,13 +98,13 @@ public class PlayerMovementTiny : MonoBehaviour {
 
     public void RotatePlayer()
     {
-        
-        StartCoroutine(RotateMe(Vector3.up * 180, 0.8f)); //Rotate the Player
-
+        StartCoroutine(RotateMe(Vector3.up * 180, 0.8f)); //Rotate the Player           
     }
 
     internal void ReduceSpeed()
     {
-        speed -= speedReduction;
+        speed -= speedReduction;       
     }
+
+ 
 }
