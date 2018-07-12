@@ -532,7 +532,8 @@ MonoBehaviour:
     _name: Dots
     _description: 
     _sprite: {fileID: 21300000, guid: 998cea18486081645851616f43abe4d9, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1281926996186664, guid: f3b43fb464f84144eb92313621dee5e2, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: b318b71e0f49651499954a2cada8b416, type: 3}
       m_SceneName: 2_Roundbased RPG
@@ -542,7 +543,8 @@ MonoBehaviour:
     _name: Roundbased RPG
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1060594660281730, guid: 846105d2f5842374998ca15e670815d9, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 8a5692584b8be9041aa1b579e0d6453e, type: 3}
       m_SceneName: 3_Cupboy
@@ -552,7 +554,9 @@ MonoBehaviour:
     _name: Cupboy
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1249386869436400, guid: a01a048c5bed6b64d94a21522fe3f9ee, type: 2}
+    - {fileID: 1324180302596476, guid: 79025a73c3aef02469815628a92b1da7, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: cdc1dc3053190674c81460d4f4e2790e, type: 3}
       m_SceneName: 4_Kugellabyrinth
@@ -574,7 +578,9 @@ MonoBehaviour:
     _name: Kreide
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1367480004021132, guid: 5224f1fc2747d06409e9b694637570c2, type: 2}
+    - {fileID: 1127617421117980, guid: 064c66d98c7b68944a196a5373913ef0, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 98e4a38355562f64fa2582c57eff973e, type: 3}
       m_SceneName: 6_ARDosenWerfen
@@ -594,7 +600,8 @@ MonoBehaviour:
     _name: TinyToolTime
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1971483330708624, guid: 20a6b524c4298b249b8f29741c78e936, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: f8a126f7881ec4b4a82bae36c17bb21d, type: 3}
       m_SceneName: 8_GearBox
@@ -604,7 +611,8 @@ MonoBehaviour:
     _name: GearBox
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1367480004021132, guid: 5224f1fc2747d06409e9b694637570c2, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: a03486749140ec84d8570b17f5dda869, type: 3}
       m_SceneName: 9_PuzzleLokomotive
@@ -614,7 +622,8 @@ MonoBehaviour:
     _name: PuzzleLok
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1999040878472516, guid: 1d853a4dea167d74795ea873edc1fa04, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: cb6b4839311560841bf3e4881a33d05d, type: 3}
       m_SceneName: 10_TowerDefence
@@ -624,7 +633,8 @@ MonoBehaviour:
     _name: TowerDefence
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1708906990673170, guid: 6ee0a7292df3104459289bfe4bdbde33, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 4282648b9c56de742899583dc4d42e74, type: 3}
       m_SceneName: 11_PuzzleStatur
@@ -634,7 +644,10 @@ MonoBehaviour:
     _name: Puzzle Statur
     _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
-    _solutionLetters: []
+    _solutionLetters:
+    - {fileID: 1951272729340412, guid: 613cdef458e4755479d23bda669de6c3, type: 2}
+    - {fileID: 1951272729340412, guid: 613cdef458e4755479d23bda669de6c3, type: 2}
+    - {fileID: 1951272729340412, guid: 613cdef458e4755479d23bda669de6c3, type: 2}
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 5478f9f482ec8ac4baf1c4062f9fec1b, type: 3}
       m_SceneName: 12_Jump&Run
