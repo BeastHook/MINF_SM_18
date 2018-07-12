@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="04_Kugellabyrinth" size="0.297000 0.209966" />
     <ImageTarget name="02_RPG" size="0.297000 0.211775" />
     <ImageTarget name="10_TowerDefense" size="0.297000 0.211775" />
     <ImageTarget name="11_PuzzlePferd" size="0.297000 0.211752" />
@@ -8,7 +9,6 @@
     <ImageTarget name="09_P3zzleD" size="0.297000 0.211692" />
     <ImageTarget name="01_dots" size="0.297000 0.211734" />
     <ImageTarget name="03_CupBoy" size="0.297000 0.166881" />
-    <ImageTarget name="04_Kugellabyrinth" size="0.297000 0.211752" />
     <ImageTarget name="06_dosenwerfen" size="0.297000 0.166881" />
     <ImageTarget name="12_Forest_Run" size="0.297000 0.211752" />
     <ImageTarget name="07_tinytooltime" size="0.297000 0.209980" />
