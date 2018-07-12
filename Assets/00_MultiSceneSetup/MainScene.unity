@@ -166,7 +166,7 @@ MonoBehaviour:
   mAspectRatio: 0.7069562
   mImageTargetType: 0
   mWidth: 0.297
-  mHeight: 0.211752
+  mHeight: 0.20996599
 --- !u!33 &24870190
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 267543227}
     _descriptionCanvas: {fileID: 1923013721}
     _name: Dots
-    _description: Gruppe 1
+    _description: 
     _sprite: {fileID: 21300000, guid: 998cea18486081645851616f43abe4d9, type: 3}
     _solutionLetters: []
   - _scene:
@@ -540,7 +540,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 1747173135}
     _descriptionCanvas: {fileID: 94376693}
     _name: Roundbased RPG
-    _description: Gruppe 2
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -550,7 +550,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 613820974}
     _descriptionCanvas: {fileID: 1304612531}
     _name: Cupboy
-    _description: Gruppe 3
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -560,7 +560,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 24870189}
     _descriptionCanvas: {fileID: 1909249477}
     _name: Kugellabyrinth
-    _description: Gruppe 4
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters:
     - {fileID: 1708906990673170, guid: 6ee0a7292df3104459289bfe4bdbde33, type: 2}
@@ -572,7 +572,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 1178097694}
     _descriptionCanvas: {fileID: 1448542608}
     _name: Kreide
-    _description: Gruppe 5
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -582,17 +582,17 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 1468965157}
     _descriptionCanvas: {fileID: 1209506731}
     _name: AR Dosenwerfen
-    _description: Gruppe 6
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 77742ba489153574bb97cf7b5453ee69, type: 3}
       m_SceneName: 7_TinyToolTime
-    _maximumPlaytime: 120
+    _maximumPlaytime: 210
     _accordingTrackable: {fileID: 141871479}
     _descriptionCanvas: {fileID: 1778460501}
     _name: TinyToolTime
-    _description: Gruppe 7
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -602,7 +602,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 1557023171}
     _descriptionCanvas: {fileID: 1941845720}
     _name: GearBox
-    _description: Gruppe 8
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -612,7 +612,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 1298431144}
     _descriptionCanvas: {fileID: 305237482}
     _name: PuzzleLok
-    _description: Gruppe 9
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -622,7 +622,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 167947454}
     _descriptionCanvas: {fileID: 1239252289}
     _name: TowerDefence
-    _description: Gruppe 10
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -632,7 +632,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 764290678}
     _descriptionCanvas: {fileID: 1588130269}
     _name: Puzzle Statur
-    _description: Gruppe 11
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
   - _scene:
@@ -642,7 +642,7 @@ MonoBehaviour:
     _accordingTrackable: {fileID: 0}
     _descriptionCanvas: {fileID: 0}
     _name: Jump&Run
-    _description: Gruppe 12
+    _description: 
     _sprite: {fileID: 21300000, guid: 7a7511fe981f9054fa769616584cfcef, type: 3}
     _solutionLetters: []
 --- !u!4 &158682166
@@ -2505,6 +2505,10 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441117704395734, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723c34af3df18d042af0b3ba1a379ea0, type: 2}

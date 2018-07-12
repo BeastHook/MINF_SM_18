@@ -106,7 +106,10 @@ public class MultisceneManager : MonoBehaviour
 		SceneManager.LoadSceneAsync(minigame.Scene, LoadSceneMode.Additive);
 		_hasAdditionalScene = true;
 		_currentMinigame = minigame;
-		_currentMinigame.WasPlayedAlready = true;
+
+		//Quickfix group 12
+		if(SceneManager.GetSceneByName(minigame.Scene.SceneName).buildIndex != 12)
+			_currentMinigame.WasPlayedAlready = true;
 	}
 
 	private IEnumerator StartGameCountdown(Minigame minigame)
