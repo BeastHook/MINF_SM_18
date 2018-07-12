@@ -181,7 +181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1539672295685114
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,13 +349,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399578930871096}
-  m_LocalRotation: {x: 0.00000017881392, y: -0.10987386, z: 0.000000026077029, w: 0.99394554}
-  m_LocalPosition: {x: -0.172, y: 0, z: 0.587}
-  m_LocalScale: {x: 0.6351472, y: 0.6351472, z: 0.6351472}
+  m_LocalRotation: {x: 0.00000026822084, y: -0.27002645, z: 0.000000044703473, w: 0.96285295}
+  m_LocalPosition: {x: -0.78995836, y: 0.000059604645, z: 6.1000295}
+  m_LocalScale: {x: 0.06351472, y: 0.06351472, z: 0.06351472}
   m_Children: []
   m_Father: {fileID: 4280110316731804}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -12.616, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -31.332, z: 0}
 --- !u!4 &4095986139474596
 Transform:
   m_ObjectHideFlags: 1
@@ -406,7 +406,7 @@ Transform:
   m_GameObject: {fileID: 1753182896287302}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.009, y: 0.542, z: 0.025}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4323710187462234}
   - {fileID: 4065093616049302}
@@ -445,8 +445,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441117704395734}
-  m_LocalRotation: {x: 0.19373636, y: -0.41300723, z: -0.0073311552, w: 0.8898525}
-  m_LocalPosition: {x: 6.68, y: -2.7699971, z: -0.18999982}
+  m_LocalRotation: {x: -0.3546171, y: 0.18902773, z: -0.30818042, w: 0.86228776}
+  m_LocalPosition: {x: 6.330227, y: -2.5773926, z: 0.4370623}
   m_LocalScale: {x: 1.1076069, y: 1.1076069, z: 1.1076068}
   m_Children:
   - {fileID: 4060185064774598}
@@ -457,7 +457,7 @@ Transform:
   - {fileID: 4280110316731804}
   m_Father: {fileID: 224159096643579424}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 19.8, y: -51.65, z: -10.6}
+  m_LocalEulerAnglesHint: {x: -29.673002, y: 38.811, z: -49.996002}
 --- !u!4 &4811862408039174
 Transform:
   m_ObjectHideFlags: 1
@@ -810,8 +810,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0.9724138, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 1.7
-  m_SpotAngle: 83.7
+  m_Range: 0.17
+  m_SpotAngle: 123.6
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -1294,7 +1294,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -539853391
+  randomSeed: 1413421261
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1446,7 +1446,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1690,7 +1690,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 250
+    maxNumParticles: 1000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -1745,7 +1745,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.42, y: 0.82, z: 0.39}
+    m_Scale: {x: 0.15, y: 0.75, z: 0.39}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1854,7 +1854,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 500
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4655,7 +4655,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 905476184
+  randomSeed: -891798966
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5099,7 +5099,7 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 8
-    angle: 40
+    angle: 30
     length: 1
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
