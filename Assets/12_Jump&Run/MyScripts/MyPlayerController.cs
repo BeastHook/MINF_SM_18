@@ -136,7 +136,8 @@ public class MyPlayerController : MonoBehaviour
             {
                 gameRestarting = true;
                container.attempts -= 1;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(false));
             }
         }
 

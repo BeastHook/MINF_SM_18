@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.7129697
+  mAspectRatio: 0.7069562
   mImageTargetType: 0
   mWidth: 0.297
   mHeight: 0.211752
@@ -588,7 +588,7 @@ MonoBehaviour:
   - _scene:
       m_SceneAsset: {fileID: 102900000, guid: 77742ba489153574bb97cf7b5453ee69, type: 3}
       m_SceneName: 7_TinyToolTime
-    _maximumPlaytime: 120
+    _maximumPlaytime: 210
     _accordingTrackable: {fileID: 141871479}
     _descriptionCanvas: {fileID: 1778460501}
     _name: TinyToolTime
@@ -1420,7 +1420,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.35648486}
+      m_Extent: {x: 0.5, y: 0, z: 0.3534781}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1473,7 +1473,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf000000002f85b6be000000000000803f000000000000000000000000000000bf000000002f85b63e000000000000803f00000000000000000000803f0000003f000000002f85b6be000000000000803f000000000000803f000000000000003f000000002f85b63e000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf0000000015fbb4be000000000000803f000000000000000000000000000000bf0000000015fbb43e000000000000803f00000000000000000000803f0000003f0000000015fbb4be000000000000803f000000000000803f000000000000003f0000000015fbb43e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -2490,7 +2490,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 12_Forest_RunMaterial
+  m_Name: 08_GearBoxMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2503,7 +2503,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 24efa8a01c2c4e6baf93999b195b72ec, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9a450b40782d494093a71c853e58f71b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -4257,7 +4257,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 479ad94b90e243ff8f6f716f8551f5c8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4fb5df4bd4274d52ba726ce458be2981, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -5011,7 +5011,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9e5eb396ae1f4ef2b9b3659a94c84b3f, type: 3}
+        m_Texture: {fileID: 2800000, guid: a440351628d747f98e6ef1660d499fb3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
