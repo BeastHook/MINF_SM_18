@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 24870187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1909249478}
   m_Father: {fileID: 0}
@@ -158,15 +158,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker3
+  mTrackableName: 04_Kugellabyrinth
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.7129697
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.211752
 --- !u!33 &24870190
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -469,15 +469,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker6
+  mTrackableName: 07_tinytooltime
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.70700336
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.20998
 --- !u!4 &141871480
 Transform:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ Transform:
   m_GameObject: {fileID: 141871474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1778460500}
   m_Father: {fileID: 0}
@@ -752,15 +752,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker9
+  mTrackableName: 10_TowerDefense
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.56216836
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.166964
 --- !u!4 &167947455
 Transform:
   m_ObjectHideFlags: 0
@@ -769,7 +769,7 @@ Transform:
   m_GameObject: {fileID: 167947449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1239252288}
   m_Father: {fileID: 0}
@@ -960,15 +960,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker
+  mTrackableName: ar_marker11
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/InitialTargets.xml
   mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 1000000
+  mHeight: 1000000
 --- !u!4 &267543228
 Transform:
   m_ObjectHideFlags: 0
@@ -977,7 +977,7 @@ Transform:
   m_GameObject: {fileID: 267543222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03, y: 0, z: 14.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1000000, y: 1000000, z: 1000000}
   m_Children:
   - {fileID: 1923013720}
   m_Father: {fileID: 0}
@@ -1000,7 +1000,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.28108418}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1053,7 +1053,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf0000000044ea8fbe000000000000803f000000000000000000000000000000bf0000000044ea8f3e000000000000803f00000000000000000000803f0000003f0000000044ea8fbe000000000000803f000000000000803f000000000000003f0000000044ea8f3e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1290,7 +1290,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35648486}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1343,7 +1343,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf000000002f85b6be000000000000803f000000000000000000000000000000bf000000002f85b63e000000000000803f00000000000000000000803f0000003f000000002f85b6be000000000000803f000000000000803f000000000000003f000000002f85b63e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1420,7 +1420,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35648486}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1473,7 +1473,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf000000002f85b6be000000000000803f000000000000000000000000000000bf000000002f85b63e000000000000803f00000000000000000000803f0000003f000000002f85b6be000000000000803f000000000000803f000000000000003f000000002f85b63e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1550,7 +1550,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.28094444}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1603,7 +1603,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000f3d78fbe000000000000803f000000000000000000000000000000bf00000000f3d78f3e000000000000803f00000000000000000000803f0000003f00000000f3d78fbe000000000000803f000000000000803f000000000000003f00000000f3d78f3e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1691,7 +1691,7 @@ Transform:
   m_GameObject: {fileID: 613820972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1304612532}
   m_Father: {fileID: 0}
@@ -1708,15 +1708,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker2
+  mTrackableName: 03_CupBoy
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.5618889
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.166881
 --- !u!33 &613820975
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1874,15 +1874,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker10
+  mTrackableName: 11_PuzzlePferd
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.7129697
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.211752
 --- !u!4 &764290679
 Transform:
   m_ObjectHideFlags: 0
@@ -1891,7 +1891,7 @@ Transform:
   m_GameObject: {fileID: 764290673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1588130268}
   m_Father: {fileID: 0}
@@ -1914,7 +1914,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35648486}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1967,7 +1967,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf000000002f85b6be000000000000803f000000000000000000000000000000bf000000002f85b63e000000000000803f00000000000000000000803f0000003f000000002f85b6be000000000000803f000000000000803f000000000000003f000000002f85b63e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -2371,7 +2371,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35638383}
   m_Shapes:
     vertices: []
     shapes: []
@@ -2424,7 +2424,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000f177b6be000000000000803f000000000000000000000000000000bf00000000f177b63e000000000000803f00000000000000000000803f0000003f00000000f177b6be000000000000803f000000000000803f000000000000003f00000000f177b63e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -2490,7 +2490,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ar_marker7Material
+  m_Name: 06_dosenwerfenMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2503,7 +2503,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0784c9448b9e4f14bca83b093f5a0bf8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3b6a52cb59aa4de388c18fa61915d0c8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -2789,15 +2789,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker4
+  mTrackableName: 05_kreide
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.5618889
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.166881
 --- !u!4 &1178097695
 Transform:
   m_ObjectHideFlags: 0
@@ -2806,7 +2806,7 @@ Transform:
   m_GameObject: {fileID: 1178097689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1448542607}
   m_Father: {fileID: 0}
@@ -3291,15 +3291,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker8
+  mTrackableName: 09_P3zzleD
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.71276766
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.21169199
 --- !u!4 &1298431145
 Transform:
   m_ObjectHideFlags: 0
@@ -3308,7 +3308,7 @@ Transform:
   m_GameObject: {fileID: 1298431139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 305237481}
   m_Father: {fileID: 0}
@@ -3568,15 +3568,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker11
+  mTrackableName: 12_Forest_Run
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.7129697
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.211752
 --- !u!4 &1415415066
 Transform:
   m_ObjectHideFlags: 0
@@ -3585,7 +3585,7 @@ Transform:
   m_GameObject: {fileID: 1415415060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1545060160}
   m_Father: {fileID: 0}
@@ -3845,15 +3845,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker5
+  mTrackableName: 06_dosenwerfen
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.5618889
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.166881
 --- !u!4 &1468965158
 Transform:
   m_ObjectHideFlags: 0
@@ -3862,7 +3862,7 @@ Transform:
   m_GameObject: {fileID: 1468965152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1209506730}
   m_Father: {fileID: 0}
@@ -4187,15 +4187,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker7
+  mTrackableName: 08_GearBox
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.7129697
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.211752
 --- !u!4 &1557023172
 Transform:
   m_ObjectHideFlags: 0
@@ -4204,7 +4204,7 @@ Transform:
   m_GameObject: {fileID: 1557023166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1941845719}
   m_Father: {fileID: 0}
@@ -4376,7 +4376,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ar_marker1Material
+  m_Name: 02_RPGMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -4389,7 +4389,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1e7cd1500f1e47d8873b9e113e0812b8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 259bbf0810a1458992d6c2c7c625b516, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -4412,7 +4412,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35648486}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4465,7 +4465,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf000000002f85b6be000000000000803f000000000000000000000000000000bf000000002f85b63e000000000000803f00000000000000000000803f0000003f000000002f85b6be000000000000803f000000000000803f000000000000003f000000002f85b63e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -4615,7 +4615,7 @@ Transform:
   m_GameObject: {fileID: 1747173129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.42, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 94376692}
   m_Father: {fileID: 0}
@@ -4695,15 +4695,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker1
+  mTrackableName: 02_RPG
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.71304715
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 0.297
+  mHeight: 0.21177499
 --- !u!43 &1747530551
 Mesh:
   m_ObjectHideFlags: 0
@@ -4721,7 +4721,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.28094444}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4774,7 +4774,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000f3d78fbe000000000000803f000000000000000000000000000000bf00000000f3d78f3e000000000000803f00000000000000000000803f0000003f00000000f3d78fbe000000000000803f000000000000803f000000000000003f00000000f3d78f3e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -5130,7 +5130,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ar_markerMaterial
+  m_Name: ar_marker11Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -5143,7 +5143,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1daf7cea1f434c2984ca5167e8d38e05, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5ae9c16e7ccb413287615707dc1ac806, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -5478,7 +5478,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.28094444}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5531,7 +5531,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000f3d78fbe000000000000803f000000000000000000000000000000bf00000000f3d78f3e000000000000803f00000000000000000000803f0000003f00000000f3d78fbe000000000000803f000000000000803f000000000000003f00000000f3d78f3e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -5608,7 +5608,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35350168}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5661,7 +5661,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf000000002cfeb4be000000000000803f000000000000000000000000000000bf000000002cfeb43e000000000000803f00000000000000000000803f0000003f000000002cfeb4be000000000000803f000000000000803f000000000000003f000000002cfeb43e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -5738,7 +5738,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35652357}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5791,7 +5791,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000428ab6be000000000000803f000000000000000000000000000000bf00000000428ab63e000000000000803f00000000000000000000803f0000003f00000000428ab6be000000000000803f000000000000803f000000000000003f00000000428ab63e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
