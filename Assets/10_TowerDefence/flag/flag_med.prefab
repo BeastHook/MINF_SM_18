@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 4000012494585278}
   - component: {fileID: 33000014029446292}
   - component: {fileID: 23000012858997648}
-  - component: {fileID: 54000010448347436}
   m_Layer: 0
   m_Name: polest
   m_TagString: Untagged
@@ -58,8 +57,6 @@ GameObject:
   - component: {fileID: 33000012226493260}
   - component: {fileID: 65000010856413394}
   - component: {fileID: 23000011170507554}
-  - component: {fileID: 54000013055774356}
-  - component: {fileID: 138000014081588628}
   m_Layer: 0
   m_Name: basest
   m_TagString: Untagged
@@ -227,36 +224,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013065888612}
   m_Mesh: {fileID: 4300002, guid: 8a2ecdc9357d87d429af6f58cafb5839, type: 3}
---- !u!54 &54000010448347436
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013065888612}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &54000013055774356
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013345796598}
-  serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65000010856413394
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -332,19 +299,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.2144174, z: -0.00025004143}
     m_Extent: {x: 0.5, y: 0.849393, z: 0.00025149016}
   m_DirtyAABB: 0
---- !u!138 &138000014081588628
-FixedJoint:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013345796598}
-  m_ConnectedBody: {fileID: 54000010448347436}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!183 &183000011722118194
 Cloth:
   m_ObjectHideFlags: 1
