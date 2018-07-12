@@ -960,15 +960,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ar_marker11
+  mTrackableName: 01_dots
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/InitialTargets.xml
+  mDataSetPath: Vuforia/MINF2018_INIT_MARKER.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 0.7129091
   mImageTargetType: 0
-  mWidth: 1000000
-  mHeight: 1000000
+  mWidth: 0.297
+  mHeight: 0.211734
 --- !u!4 &267543228
 Transform:
   m_ObjectHideFlags: 0
@@ -977,7 +977,7 @@ Transform:
   m_GameObject: {fileID: 267543222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03, y: 0, z: 14.86}
-  m_LocalScale: {x: 1000000, y: 1000000, z: 1000000}
+  m_LocalScale: {x: 0.297, y: 0.297, z: 0.297}
   m_Children:
   - {fileID: 1923013720}
   m_Father: {fileID: 0}
@@ -2490,7 +2490,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 06_dosenwerfenMaterial
+  m_Name: 08_GearBoxMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2503,7 +2503,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3b6a52cb59aa4de388c18fa61915d0c8, type: 3}
+        m_Texture: {fileID: 2800000, guid: ba14b45ecd24417e9988117f73ecc257, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -4389,7 +4389,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 259bbf0810a1458992d6c2c7c625b516, type: 3}
+        m_Texture: {fileID: 2800000, guid: be02e34346054261ae1658347c9bf8d3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -4851,7 +4851,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.35645455}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4904,7 +4904,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf000000003681b6be000000000000803f000000000000000000000000000000bf000000003681b63e000000000000803f00000000000000000000803f0000003f000000003681b6be000000000000803f000000000000803f000000000000003f000000003681b63e000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -5130,7 +5130,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ar_marker11Material
+  m_Name: 01_dotsMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -5143,7 +5143,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5ae9c16e7ccb413287615707dc1ac806, type: 3}
+        m_Texture: {fileID: 2800000, guid: 69c7c35f09ea47ca98243f4376eee6b2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
