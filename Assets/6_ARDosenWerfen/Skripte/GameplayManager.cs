@@ -76,7 +76,8 @@ public class GameplayManager : MonoBehaviour {
             // Fadenkreuz und Ballspawn wird deaktiviert in der Main ARCamera -> Spieler geht weiter zur nächsten Experience
             arCamera.transform.GetChild(0).gameObject.SetActive(false);
             arCamera.transform.GetChild(1).gameObject.SetActive(false);
-        }
+	        MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+		}
 
         //VERLOREN
         if (hasLost)
@@ -87,9 +88,9 @@ public class GameplayManager : MonoBehaviour {
             // Wartezeit
            if (waitTime >= 4.0)
            {
-               //Ursprünglich: erneutes laden der MainScene
-               //ChangeScene("MainScene");
-	           MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+				//Ursprünglich: erneutes laden der MainScene
+				//ChangeScene("MainScene");
+				MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(false));
 
 				currentLevel = 0;
                ScoreManager.score = 0;
