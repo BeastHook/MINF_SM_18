@@ -103,7 +103,7 @@ public class MultisceneManager : MonoBehaviour
 
 	private void LoadMinigame(Minigame minigame)
 	{
-		SceneManager.LoadScene(minigame.Scene, LoadSceneMode.Additive);
+		SceneManager.LoadSceneAsync(minigame.Scene, LoadSceneMode.Additive);
 		_hasAdditionalScene = true;
 		_currentMinigame = minigame;
 		_currentMinigame.WasPlayedAlready = true;
