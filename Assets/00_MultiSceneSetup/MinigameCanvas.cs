@@ -12,6 +12,7 @@ public class MinigameCanvas : MonoBehaviour
 	[SerializeField] private Image _gameImage;
 	[SerializeField] private GameObject _winObject;
 	[SerializeField] private GameObject _failureObject;
+	[SerializeField] private Transform[] _letters;
 
 	private MultisceneManager.Minigame _minigame;
 
@@ -20,6 +21,12 @@ public class MinigameCanvas : MonoBehaviour
 		_minigameName.text = minigame.Name;
 		_descriptionText.text = minigame.Description;
 		_gameImage.sprite = minigame.Sprite;
+
+		if(minigame.SolutionLetters.Length > 0)
+			for (int i = 0; i < minigame.SolutionLetters.Length; i++)
+			{
+				Instantiate(minigame.SolutionLetters[i], _letters[i]);
+			}
 
 		_minigame = minigame;
 	}
@@ -40,6 +47,6 @@ public class MinigameCanvas : MonoBehaviour
 			_failureObject.SetActive(true);
 		}
 
-		_startsInText.gameObject.SetActive(false);
+		_startsInText.text = "Game Already Played";
 	}
 }

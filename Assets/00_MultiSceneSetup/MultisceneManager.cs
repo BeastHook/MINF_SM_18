@@ -168,7 +168,7 @@ public class MultisceneManager : MonoBehaviour
 		[SerializeField] private string _name;
 		[SerializeField] private string _description;
 		[SerializeField] private Sprite _sprite;
-		[SerializeField] private GameObject _solutionLetters;
+		[SerializeField] private GameObject[] _solutionLetters;
 
 		public bool WasPlayedAlready { get; set; }
 
@@ -176,7 +176,7 @@ public class MultisceneManager : MonoBehaviour
 		public SceneField Scene => _scene;
 		public int MaximumPlaytime => _maximumPlaytime;
 		public MinigameCanvas DescriptionCanvas => _descriptionCanvas;
-		public GameObject SolutionLetters => _solutionLetters;
+		public GameObject[] SolutionLetters => _solutionLetters;
 		public string Name => _name;
 		public string Description => _description;
 		public Sprite @Sprite => _sprite;
