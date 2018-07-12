@@ -113,6 +113,7 @@ public class AudioVisualization : MonoBehaviour
     private float[] zSamples;
 
     private bool startInterpolation = false;
+    private bool zInterpolation = false;
 
     private int clipCount = 1;
     private int counterA = 0;
@@ -131,6 +132,7 @@ public class AudioVisualization : MonoBehaviour
     private bool halfProcent = false;
     private bool hiddenSecretRevealed = false;
     private bool gameOver = false;
+    private bool zStart = false;
 
     private float waitTimeInterpolationsZyklus = 7f;
     private float timerInterpolationsZyklus;
@@ -247,52 +249,78 @@ public class AudioVisualization : MonoBehaviour
         }
     }
 
+    IEnumerator SceneFinish(int waitTime)
+    {
+        yield return new WaitForSeconds(waitTime + 2);
+        MultisceneManager.Instance.StartCoroutine(MultisceneManager.Instance.FinishLevel(true));
+    }
+
     private IEnumerator RereadAudioClips()
     {
-        Debug.Log("####################################################################");
-        Debug.Log("File: " + clips[0].name);
-        //AudioClipA
-        zSamples = new float[clips[0].samples * clips[0].channels];
-        zChannel1 = new float[clips[0].samples];
-        zChannel2 = new float[clips[0].samples];
-        zChannel3 = new float[clips[0].samples];
-        zChannel4 = new float[clips[0].samples];
-        Debug.Log("Mystery Audio Channels: " + clips[0].channels);
-        Debug.Log("Mystery Audio Samples: " + clips[0].samples);
-        clips[0].GetData(zSamples, 0);
-        Debug.Log("Mystery Audio Samples all channels: " + zSamples.Length);
-
-        Debug.Log("####################################################################");
-        Debug.Log("Starting Clip: " + clips[clipCount].name);
-        //AudioClipA
-        aSamples = new float[clips[clipCount].samples * clips[clipCount].channels];
-        aChannel1 = new float[clips[clipCount].samples];
-        aChannel2 = new float[clips[clipCount].samples];
-        aChannel3 = new float[clips[clipCount].samples];
-        aChannel4 = new float[clips[clipCount].samples];
-        Debug.Log("Clib A Audio Channels: " + clips[clipCount].channels);
-        Debug.Log("Clib A Audio Samples: " + clips[clipCount].samples);
-        clips[clipCount].GetData(aSamples, 0);
-        Debug.Log("Clib A Audio Samples all channels: " + aSamples.Length);
-
-        if (clipCount == clips.Length - 1)
+        if (!zStart)
         {
-            clipCount = 0;
-        }
-        Debug.Log("--------------------------------------------------------------------");
-        Debug.Log("Following Clip: " + clips[clipCount+1].name);
-        //AudioClipB
-        bSamples = new float[clips[clipCount + 1].samples * clips[clipCount + 1].channels];
-        bChannel1 = new float[clips[clipCount + 1].samples];
-        bChannel2 = new float[clips[clipCount + 1].samples];
-        bChannel3 = new float[clips[clipCount + 1].samples];
-        bChannel4 = new float[clips[clipCount + 1].samples];
-        Debug.Log("Clib B Channels: " + clips[clipCount + 1].channels);
-        Debug.Log("Clib B Samples: " + clips[clipCount + 1].samples);
-        clips[clipCount + 1].GetData(bSamples, 0);
-        Debug.Log("Clib B Audio Samples all channels: " + bSamples.Length);
+            Debug.Log("####################################################################");
+            Debug.Log("File: " + clips[0].name);
+            //AudioClipA
+            zSamples = new float[clips[0].samples * clips[0].channels];
+            zChannel1 = new float[clips[0].samples];
+            zChannel2 = new float[clips[0].samples];
+            zChannel3 = new float[clips[0].samples];
+            zChannel4 = new float[clips[0].samples];
+            Debug.Log("Mystery Audio Channels: " + clips[0].channels);
+            Debug.Log("Mystery Audio Samples: " + clips[0].samples);
+            clips[0].GetData(zSamples, 0);
+            Debug.Log("Mystery Audio Samples all channels: " + zSamples.Length);
 
-        yield return new WaitForSeconds(0.01f);
+            Debug.Log("####################################################################");
+            Debug.Log("Starting Clip: " + clips[clipCount].name);
+            //AudioClipA
+            aSamples = new float[clips[clipCount].samples * clips[clipCount].channels];
+            aChannel1 = new float[clips[clipCount].samples];
+            aChannel2 = new float[clips[clipCount].samples];
+            aChannel3 = new float[clips[clipCount].samples];
+            aChannel4 = new float[clips[clipCount].samples];
+            Debug.Log("Clib A Audio Channels: " + clips[clipCount].channels);
+            Debug.Log("Clib A Audio Samples: " + clips[clipCount].samples);
+            clips[clipCount].GetData(aSamples, 0);
+            Debug.Log("Clib A Audio Samples all channels: " + aSamples.Length);
+
+            if (clipCount == clips.Length - 1)
+            {
+                clipCount = 0;
+            }
+            Debug.Log("--------------------------------------------------------------------");
+            Debug.Log("Following Clip: " + clips[clipCount + 1].name);
+            //AudioClipB
+            bSamples = new float[clips[clipCount + 1].samples * clips[clipCount + 1].channels];
+            bChannel1 = new float[clips[clipCount + 1].samples];
+            bChannel2 = new float[clips[clipCount + 1].samples];
+            bChannel3 = new float[clips[clipCount + 1].samples];
+            bChannel4 = new float[clips[clipCount + 1].samples];
+            Debug.Log("Clib B Channels: " + clips[clipCount + 1].channels);
+            Debug.Log("Clib B Samples: " + clips[clipCount + 1].samples);
+            clips[clipCount + 1].GetData(bSamples, 0);
+            Debug.Log("Clib B Audio Samples all channels: " + bSamples.Length);
+
+
+            yield return new WaitForSeconds(0.01f);
+        }
+        else
+        {
+            Debug.Log("####################################################################");
+            Debug.Log("File: " + clips[0].name);
+            //AudioClipA
+            aSamples = new float[clips[0].samples * clips[0].channels];
+            aChannel1 = new float[clips[0].samples];
+            aChannel2 = new float[clips[0].samples];
+            aChannel3 = new float[clips[0].samples];
+            aChannel4 = new float[clips[0].samples];
+            Debug.Log("Mystery Audio Channels: " + clips[0].channels);
+            Debug.Log("Mystery Audio Samples: " + clips[0].samples);
+            clips[0].GetData(aSamples, 0);
+            Debug.Log("Mystery Audio Samples all channels: " + aSamples.Length);
+        }
+        
     }
 
     private void Update()
@@ -331,17 +359,29 @@ public class AudioVisualization : MonoBehaviour
             {
                 Debug.Log("100% erreicht");
                 ChangeVoiceOver(4);
+                float clipLength = voiceOverSource.clip.length;
+                int waittime = (int)clipLength;
+                StartCoroutine(SceneFinish(waittime));
                 hiddenSecretRevealed = true;
+                gameOver = true;
             }
+        }
+        if(gameTime >= 10 && pd.correct >= 60 && !zStart)
+        {
+            zStart = true;
+            zInterpolation = true;
         }
         // Game Ends after 3 Minutes = 180 Secounds
         if(gameTime >= 180 && !gameOver)
         {
-            if(pd.correct < 70)
+            if(pd.correct < 60)
             {
                 //TODO-Minigame
                 Debug.Log("< color = red >Zeit ist um</color>");
                 ChangeVoiceOver(5);
+                float clipLength = voiceOverSource.clip.length;
+                int waittime = (int)clipLength;
+                StartCoroutine(SceneFinish(waittime));
                 gameOver = true;
             }
             else
@@ -349,6 +389,9 @@ public class AudioVisualization : MonoBehaviour
                 //TODO-Minigame & Interpolation zu Z
                 Debug.Log("< color = red >100% erreicht</color>");
                 ChangeVoiceOver(4);
+                float clipLength = voiceOverSource.clip.length;
+                int waittime = (int)clipLength;
+                StartCoroutine(SceneFinish(waittime));
                 pd.correct = 100;
                 gameOver = true;
                 hiddenSecretRevealed = true;
@@ -458,12 +501,12 @@ public class AudioVisualization : MonoBehaviour
                         //#Übergabe A zu B und dann soll weiter laufen auf B und nächstes mal inverse B zu A damit nicht der Laufende Cyklus gebrochen wird. 
 
                         //TODO-Interpolation Z raus und ab 100 % Interpolation zu Z bzw ab 180 Sekunden und Correct >= 70 !
-                        if (startInterpolation)
+                        if (startInterpolation && !zStart)
                         {
                             particles[i].transform.position = new Vector3(
-                                                                          ((((aChannel1[i] + micChannel1[i]) * interpolationA) * 100) + (((bChannel1[i] + micChannel1[i]) * interpolationB) * 100) * ((interpolationToZ - pd.correct) / 100)) + (zChannel1[i] * pd.correct / 100 * 100),
-                                                                          ((((aChannel2[i] + micChannel2[i]) * interpolationA) * 100) + (((bChannel2[i] + micChannel2[i]) * interpolationB) * 100) * ((interpolationToZ - pd.correct) / 100)) + (zChannel2[i] * pd.correct / 100 * 100),
-                                                                          (((aChannel3[i] + ((micChannel1[i] + micChannel2[i])) * interpolationA) * 100) + (((bChannel3[i] + ((micChannel1[i] + micChannel2[i])) * interpolationB) * 100)) * ((interpolationToZ - pd.correct) / 100)) + (zChannel3[i] * pd.correct / 100 * 100)
+                                                                          ((((aChannel1[i] + micChannel1[i]) * interpolationA) * 100) + (((bChannel1[i] + micChannel1[i]) * interpolationB) * 100)),
+                                                                          ((((aChannel2[i] + micChannel2[i]) * interpolationA) * 100) + (((bChannel2[i] + micChannel2[i]) * interpolationB) * 100)),
+                                                                          (((aChannel3[i] + ((micChannel1[i] + micChannel2[i])) * interpolationA) * 100) + (((bChannel3[i] + ((micChannel1[i] + micChannel2[i])) * interpolationB) * 100)))
                                                                          );
                             if (interpolationA < 0)
                             {
@@ -480,10 +523,43 @@ public class AudioVisualization : MonoBehaviour
                         }
                         else
                         {
-                            particles[i].transform.position = new Vector3((((aChannel1[i] + micChannel1[i]) * ((interpolationToZ - pd.correct) / 100)) * 100) + (zChannel1[i] * pd.correct / 100 * 100), 
-                                                                          (((aChannel2[i] + micChannel2[i]) * ((interpolationToZ - pd.correct) / 100)) * 100) + (zChannel2[i] * pd.correct / 100 * 100), 
-                                                                          (((aChannel3[i] + (micChannel1[i] + micChannel2[i])) * ((interpolationToZ - pd.correct) / 100)) * 100) + (zChannel3[i] * pd.correct / 100 * 100)
-                                                                         );
+                            if (zStart)
+                            {
+                                if (zInterpolation)
+                                {
+                                    particles[i].transform.position = new Vector3((((aChannel1[i] + micChannel1[i]) * interpolationA) * 100) + ((zChannel1[i] * interpolationB) * 100),
+                                              (((aChannel2[i] + micChannel2[i]) * interpolationA) * 100) + ((zChannel2[i] * interpolationB) * 100),
+                                              (((aChannel3[i] + (micChannel1[i] + micChannel2[i])) * interpolationA) * 100) + ((zChannel3[i] * interpolationB) * 100)
+                                             );
+
+                                    if (interpolationA < 0)
+                                    {
+                                        StartCoroutine(RereadAudioClips());
+                                        zInterpolation = false;
+                                        interpolationA = 1;
+                                        interpolationB = 0;
+                                        timerInterpolationsZyklus = 0f;
+
+                                    }
+                                    interpolationA -= Time.deltaTime / 4000;
+                                    interpolationB += Time.deltaTime / 4000;
+                                }
+                                else
+                                {
+                                    particles[i].transform.position = new Vector3(((aChannel1[i] + micChannel1[i]) * 100),
+                                                                                  ((aChannel2[i] + micChannel2[i]) * 100),
+                                                                                  ((aChannel3[i] + (micChannel1[i] + micChannel2[i])) * 100)
+                                                                                 );
+                                }
+
+                            }
+                            else
+                            {
+                                particles[i].transform.position = new Vector3(((aChannel1[i] + micChannel1[i]) * 100),
+                                                                              ((aChannel2[i] + micChannel2[i]) * 100),
+                                                                              ((aChannel3[i] + (micChannel1[i] + micChannel2[i])) * 100)
+                                                                             );
+                            }
                         }
 
                     }
@@ -575,7 +651,7 @@ public class AudioVisualization : MonoBehaviour
         if (color)
         {
             //TODO richtige Prozentsteps sollte letzter build 
-            if ((pd.correct % 2.0408f) == 0f)
+            if ((pd.correct % 2) == 0f)
             {
                 oldCorrect = pd.correct;
             }
