@@ -366,7 +366,7 @@ public class AudioVisualization : MonoBehaviour
                 gameOver = true;
             }
         }
-        if(gameTime >= 10 && pd.correct >= 60 && !zStart)
+        if(gameTime >= 150 && pd.correct >= 60 && !zStart)
         {
             zStart = true;
             zInterpolation = true;
